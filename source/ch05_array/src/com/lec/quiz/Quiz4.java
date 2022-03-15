@@ -7,9 +7,14 @@ public class Quiz4 {
 		int[] coin = {500, 100, 50, 10};
 		System.out.print(money+"원은 ");
 		for(int i = 0 ; i<coin.length ; i++) {
-			System.out.printf("%d원짜리 %d개, ", coin[i], money/coin[i]);
+			System.out.printf("%d원짜리 %d개  ", coin[i], money/coin[i]);
 			money %= coin[i];
 		}
+		
+//		for(int temp : coin) {
+//			System.out.printf("%d원짜리 %d개\t", temp, money/temp);
+//			money %= temp;
+//		}
 
 	}
 

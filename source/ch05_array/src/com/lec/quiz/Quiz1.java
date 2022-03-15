@@ -7,7 +7,9 @@ public class Quiz1 {
 		for(int i = 0 ; i<arr.length ; i++) {
 			tot += arr[i];
 		}
+//		for(int temp : arr) {
+//			tot += temp;
+//		} 확장 for문
 		System.out.println("배열에 담긴 숫자들의 합은 "+tot);
 	}
-
 }

@@ -18,8 +18,8 @@ public class Quiz3 {
 		}
 		System.out.println("합계는 "+tot);
 		System.out.println("평균은 "+(double)tot/arr.length);
-		System.out.println("최소값는 "+min);
-		System.out.println("최대값는 "+max);
+		System.out.println("최소값은 "+min);
+		System.out.println("최대값은 "+max);
 	}
 
 }
