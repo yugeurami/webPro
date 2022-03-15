@@ -19,5 +19,13 @@ for(int temp : arr) {
 	System.out.println(temp);
 }
 
+
 <API를 이용한 배열 복사>
 System.arraycopy(원본,원본시작idx,복사본배열,복사본시작idx,방갯수)
+
+
+<다차원 배열>
+배열이 가리키는 데이터에 또 다른 배열이 들어있는 구조
+int[][] iArr = new int[length][length]
+int[][] test = {{1,2,3} , 
+                {4,5,6}};
