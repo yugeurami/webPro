@@ -1,8 +1,8 @@
-package com.lec.homework;
+package com.lec.quiz;
 
 import java.util.Scanner;
 
-public class homework1 {
+public class Quiz1 {
 
 	public static void main(String[] args) {
 		int dansu;
@@ -10,7 +10,7 @@ public class homework1 {
 		do {
 			System.out.print("2~9사이의 수를 입력해주세요 : ");
 			dansu = su.nextInt();
-		} while(2>=dansu || dansu>=9);
+		} while(2>dansu || dansu>9);
 		gugudan(dansu);
 		su.close();
 	}

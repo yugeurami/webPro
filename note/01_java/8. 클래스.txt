@@ -1,0 +1,10 @@
+[클래스(class)]
+하나의 파일에는 하나의 public class만 와야함
+
+<생성자 함수>
+return type이 없고, 클래스명과 같은 함수
+defalut 생성자
+public 클래스명() {}
+
+파라미터는 타입으로 구분함
+

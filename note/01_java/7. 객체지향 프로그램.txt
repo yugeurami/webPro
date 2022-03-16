@@ -1,0 +1,22 @@
+[객체 지향 프로그램]
+객체 : 같은 종류의 데이터와 메소드가 함께 있는 구성체
+클래스는 객체를 만들기 위한 설계도
+
+하나의 클래스에 여러 개의 객체 형성 가능함
+그 객체들끼리는 영향을 주지 않음
+
+﻿
+<this>
+같은 변수명이 있을 때 지역변수가 우선임
+this.변수명 = 객체변수
+변수명 = 지역변수
+
+<setter, getter>
+private String color; // 외부에서 접근이 불가능함
+public void setColor(String color) { // 외부의 값이 영향을 줄 수 있음
+this.color = color; //this.color을 매개변수, color을 지역변수
+}
+public String getColor() { // 외부에서 값을 가져올 수 있음
+return color; 
+} 
+ 
