@@ -5,6 +5,8 @@ public class Ex03 {
 		int tot = Arithmetic.sum(10);
 		System.out.println("1~10 гую╨ "+tot);
 		System.out.println(Arithmetic.evenOdd(tot));
+		Arithmetic ar = new Arithmetic(); 
+		System.out.println(ar.abs(-8));
 	}
 
 }
