@@ -32,5 +32,5 @@ git commit –m “버전이름”
 git push –u origin main
 
 <다른 pc에 git 내용 받기>
-git clone 주소 폴더이름
-git pull origin main
+git clone 주소 폴더이름 // git과 똑같은 내용 복사하기
+git pull origin main // 내 pc에서 자료를 올리기 전에 git과 연동하기

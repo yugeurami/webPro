@@ -25,7 +25,7 @@ public class Ex02 {
 		for (int i = from ; i<=to ; i++) {
 			result += i;
 		}
-		return result; // return이 나오면 호출한 곳으로 값을 출력
+		return result; // return이 나오면 호출한 곳으로 값을 출력, 밑으로는 실행X
 	}
 	
 	private static String evenOdd(int tot) {
