@@ -5,9 +5,11 @@ public class Student {
 	private int kor, eng, mat;
 	private int tot; 
 	private double avg;	
+	private int studentNo;
 	private static int count = 0;
 	public Student() {}
 	public Student(String name, int kor, int eng, int mat) {
+		studentNo = ++count;
 		this.name = name;
 		this.kor = kor;
 		this.eng = eng;
@@ -16,8 +18,7 @@ public class Student {
 		avg = tot/3.0;
 	}
 	public void print() {
-		int studentNo = ++count;
-		System.out.print("\t"+studentNo+"\t");
+		System.out.print("\t" + studentNo +"\t");
 		System.out.print(name+"\t");
 		System.out.print(kor+"\t");
 		System.out.print(eng+"\t");

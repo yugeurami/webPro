@@ -41,8 +41,11 @@ public class StudentMain {
 			tot[3] += s.getTot();
 			tot[4] += s.getAvg(); 
 		}
-		for( int i = 0 ; i<avg.length ; i++) { 
-			avg[i] = (double)tot[i]/student.length;
+		for(int i = 0 ; i<avg.length ; i++) { 
+//			avg[i] = tot[i]/student.length; // 버림
+//			avg[i] = (double)tot[i]/student.length;
+//			avg[i] = (int)((double)tot[i]/student.length+0.5); //반올림
+			avg[i] = (int)Math.round((double)tot[i]/student.length); //반올림
 		}
 		printLine(60);
 		System.out.print("\t\t총점\t");
@@ -56,5 +59,4 @@ public class StudentMain {
 		System.out.println();
 		printLine('■', 80);
 	}
-
 }

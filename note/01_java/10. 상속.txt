@@ -1,0 +1,9 @@
+[상속(Inheritance)]
+부모클래스가 가지고 있는 속성과 메서드를 활용하는 것
+
+접근제어자 [final/abstract] class 클래스이름 extends 상위클래스(super class) {
+	추가할 멤버변수선언;
+	생성자;
+	추가할 메소드선언;
+    }
+
