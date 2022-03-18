@@ -1,5 +1,5 @@
 package com.lec.loop;
-//1~10±îÁöÀÇ °ö
+//1~10ê¹Œì§€ì˜ ê³±
 public class Quiz01for {
 
 	public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class Quiz01for {
 		for (int i = 1; i<=10 ; i++) {
 			tot *= i; 
 		}
-		System.out.println("1ºÎÅÍ 10±îÁöÀÇ ´©Àû °öÀº "+tot);
+		System.out.println("1ë¶€í„° 10ê¹Œì§€ì˜ ëˆ„ì  ê³±ì€ "+tot);
 	}
 
 }

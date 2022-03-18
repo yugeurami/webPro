@@ -1,15 +1,15 @@
 package com.lec.loop;
-//break : ºí·°À» ¿ÏÀüÈ÷ ºüÁ®³ª°¨
-//continue : ºí·°ÀÇ ½ÇÇàÀ» ¸ØÃß°í Áõ°¨ºÎºĞÀ¸·Î °¨
+//break : ë¸”ëŸ­ì„ ì™„ì „íˆ ë¹ ì ¸ë‚˜ê°
+//continue : ë¸”ëŸ­ì˜ ì‹¤í–‰ì„ ë©ˆì¶”ê³  ì¦ê°ë¶€ë¶„ìœ¼ë¡œ ê°
 public class Ex05_breakContinue {
 
 	public static void main(String[] args) {
 		for( int i = 0 ; i<=5 ; i++ ) {
 			if(i==3) {
-				//break; ¹İº¹¹® ºí·° ºüÁ® ³ª°¡±â
+				//break; ë°˜ë³µë¬¸ ë¸”ëŸ­ ë¹ ì ¸ ë‚˜ê°€ê¸°
 				continue;
 			}
-			System.out.println(i+". ¾È³ç");
+			System.out.println(i+". ì•ˆë…•");
 		}
 
 	}

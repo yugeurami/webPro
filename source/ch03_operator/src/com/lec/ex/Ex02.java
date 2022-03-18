@@ -1,27 +1,27 @@
 package com.lec.ex;
-// Áõ°¨¿¬»ê: ++ --
+// ì¦ê°ì—°ì‚°: ++ --
 public class Ex02 {
 
 	public static void main(String[] args) {
 		int n1 = 10;
-		int n2 = ++n1; // n1°ªÀÌ ÇÏ³ª Áõ°¡
+		int n2 = ++n1; // n1ê°’ì´ í•˜ë‚˜ ì¦ê°€
 		
 		System.out.println("n1="+n1+"\t n2="+n2);
 		
 		int n3 = 10;
-		int n4 = n3--; // ;ÀÌÈÄ¿¡ n3°ªÀÌ ÇÏ³ª °¨¼Ò 
+		int n4 = n3--; // ;ì´í›„ì— n3ê°’ì´ í•˜ë‚˜ ê°ì†Œ 
 		
 		System.out.println("n3="+n3+"\t n4="+n4);
 		
 		int n5 = 10;
-		++n5; // n5°ªÀÌ ÇÏ³ª Áõ°¡
-		int n6 = n5; // Áõ°¡µÈ n5°ªÀ» n6¿¡
+		++n5; // n5ê°’ì´ í•˜ë‚˜ ì¦ê°€
+		int n6 = n5; // ì¦ê°€ëœ n5ê°’ì„ n6ì—
 		
 		System.out.println("n5="+n5+"\t n6="+n6);
 		
 		int n7 = 10;
-		int n8 = n7; // n7ÀÇ °ªÀ» n8¿¡ ´ëÀÀ
-		++n7; // n7°ªÀÌ ÇÏ³ª Áõ°¡
+		int n8 = n7; // n7ì˜ ê°’ì„ n8ì— ëŒ€ì‘
+		++n7; // n7ê°’ì´ í•˜ë‚˜ ì¦ê°€
 		
 		System.out.println("n7="+ n7+"\t n8="+ n8);
 

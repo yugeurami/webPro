@@ -8,28 +8,28 @@ public class Quiz03 {
 		int kor, eng, mat;
 		double avg;
 		Scanner sc = new Scanner(System.in);
-		System.out.print("±¹¾î Á¡¼ö´Â : ");
+		System.out.print("êµ­ì–´ ì ìˆ˜ëŠ” : ");
 		kor = sc.nextInt();
-		System.out.print("¿µ¾î Á¡¼ö´Â : ");
+		System.out.print("ì˜ì–´ ì ìˆ˜ëŠ” : ");
 		eng = sc.nextInt();
-		System.out.print("¼öÇĞ Á¡¼ö´Â : ");
+		System.out.print("ìˆ˜í•™ ì ìˆ˜ëŠ” : ");
 		mat = sc.nextInt();
 		
 		int sum = kor + eng+ mat;
 		avg = sum/3;
 		
 		if (kor>=avg) {
-			System.out.printf("±¹¾îÁ¡¼ö´Â Æò±Õ %.2fÁ¡ ÀÌ»óÀÌ´Ù.", avg);
+			System.out.printf("êµ­ì–´ì ìˆ˜ëŠ” í‰ê·  %.2fì  ì´ìƒì´ë‹¤.", avg);
 		}else {
-			System.out.printf("±¹¾îÁ¡¼ö´Â Æò±Õ %.2fÁ¡ ¹Ì¸¸ÀÌ´Ù.", avg);
+			System.out.printf("êµ­ì–´ì ìˆ˜ëŠ” í‰ê·  %.2fì  ë¯¸ë§Œì´ë‹¤.", avg);
 		}if (eng>=avg) {
-			System.out.printf("¿µ¾îÁ¡¼ö´Â Æò±Õ %.2fÁ¡ ÀÌ»óÀÌ´Ù.", avg);
+			System.out.printf("ì˜ì–´ì ìˆ˜ëŠ” í‰ê·  %.2fì  ì´ìƒì´ë‹¤.", avg);
 		}else {
-			System.out.printf("¿µ¾îÁ¡¼ö´Â Æò±Õ %.2fÁ¡ ¹Ì¸¸ÀÌ´Ù.", avg);
+			System.out.printf("ì˜ì–´ì ìˆ˜ëŠ” í‰ê·  %.2fì  ë¯¸ë§Œì´ë‹¤.", avg);
 		}if (mat>=avg) {
-			System.out.printf("¼öÇĞÁ¡¼ö´Â Æò±Õ %.2fÁ¡ ÀÌ»óÀÌ´Ù.", avg);
+			System.out.printf("ìˆ˜í•™ì ìˆ˜ëŠ” í‰ê·  %.2fì  ì´ìƒì´ë‹¤.", avg);
 		}else {
-			System.out.println("¼öÇĞÁ¡¼ö´Â Æò±Õ"+ avg + "¹Ì¸¸ÀÌ´Ù.");
+			System.out.println("ìˆ˜í•™ì ìˆ˜ëŠ” í‰ê· "+ avg + "ë¯¸ë§Œì´ë‹¤.");
 		}
 		
 		sc.close();

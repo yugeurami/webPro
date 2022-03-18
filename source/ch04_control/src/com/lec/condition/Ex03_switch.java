@@ -5,19 +5,19 @@ public class Ex03_switch {
 	public static void main(String[] args) {
 		int num1 = 2;
 		
-		switch(num1) {// Á¤¼öÇü, ¹®ÀÚÇü, ¹®ÀÚ¿­¸¸ °¡´É
-			case 1: System.out.println("1ÀÔ´Ï´Ù."); break;
-			case 2: System.out.println("2ÀÔ´Ï´Ù."); break;
-			case 3: System.out.println("3ÀÔ´Ï´Ù."); break;
-			default: System.out.println("±× ¿ÜÀÇ ¼öÀÔ´Ï´Ù");
+		switch(num1) {// ì •ìˆ˜í˜•, ë¬¸ìí˜•, ë¬¸ìì—´ë§Œ ê°€ëŠ¥
+			case 1: System.out.println("1ì…ë‹ˆë‹¤."); break;
+			case 2: System.out.println("2ì…ë‹ˆë‹¤."); break;
+			case 3: System.out.println("3ì…ë‹ˆë‹¤."); break;
+			default: System.out.println("ê·¸ ì™¸ì˜ ìˆ˜ì…ë‹ˆë‹¤");
 		}
 		
 //		if (num1==1) {
-//			System.out.println("1ÀÔ´Ï´Ù.");
+//			System.out.println("1ì…ë‹ˆë‹¤.");
 //		} else if (num1==2) {
-//			System.out.println("2ÀÔ´Ï´Ù.");
+//			System.out.println("2ì…ë‹ˆë‹¤.");
 //		} else if (num1==3) {
-//			System.out.println("3ÀÔ´Ï´Ù.");
+//			System.out.println("3ì…ë‹ˆë‹¤.");
 //		}
 
 	}

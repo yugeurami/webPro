@@ -7,8 +7,8 @@ public class BoxOrRectTestMain {
 		BoxOrRect rect = new BoxOrRect(10, 5);
 		box.vPrint();
 		rect.vPrint();
-		System.out.println("¹Ú½º ºÎÇÇ´Â "+box.getVolume());
-		System.out.println("rect ³ĞÀÌ´Â "+rect.getVolume());
+		System.out.println("ë°•ìŠ¤ ë¶€í”¼ëŠ” "+box.getVolume());
+		System.out.println("rect ë„“ì´ëŠ” "+rect.getVolume());
 	}
 
 }

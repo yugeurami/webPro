@@ -7,27 +7,27 @@ public class Man {
 	private int height;
 	private double weight;
 	private String phoneNum;
-	public Man() {} // µğÆúÆ® »ı¼ºÀÚ ÇÔ¼ö
+	public Man() {} // ë””í´íŠ¸ ìƒì„±ì í•¨ìˆ˜
 	public Man(int age) {
 			this.age = age;
 	}
-//	public Man(int height) { °°Àº Å¸ÀÔÀÌ±â ¶§¹®¿¡ ±¸ºĞÀÌ ¾ÈµÊ
+//	public Man(int height) { ê°™ì€ íƒ€ì…ì´ê¸° ë•Œë¬¸ì— êµ¬ë¶„ì´ ì•ˆë¨
 //		this.height = height;
 //	}
 	public Man(int age, int height, double weight) {
 		this.age = age;
 		this.height = height;
 		this.weight = weight;
-		System.out.println("ÆÄ¶ó¹ÌÅÍ°¡ 3°³Â¥¸® »ı¼ºÀÚ ÇÔ¼ö È£Ãâ");
+		System.out.println("íŒŒë¼ë¯¸í„°ê°€ 3ê°œì§œë¦¬ ìƒì„±ì í•¨ìˆ˜ í˜¸ì¶œ");
 	}
 	public Man(int age, int height, double weight, String phoneNum) {
 		this.age = age;
 		this.height = height;
 		this.weight = weight;
 		this.phoneNum = phoneNum;
-		System.out.println("ÆÄ¶ó¹ÌÅÍ°¡ 4°³Â¥¸® »ı¼ºÀÚ ÇÔ¼ö È£Ãâ");
+		System.out.println("íŒŒë¼ë¯¸í„°ê°€ 4ê°œì§œë¦¬ ìƒì„±ì í•¨ìˆ˜ í˜¸ì¶œ");
 	}
-	// ¸Ş¼Òµå
+	// ë©”ì†Œë“œ
 	public double calculateBMI() {
 		double result = weight / ((height/100.0)*(height/100.0));
 		return result;

@@ -1,34 +1,60 @@
 package com.lec.ex1_student;
 
 public class StudentMain {
-	
+	private static void printLine(int j) {
+		System.out.print("\t");
+		for (int i = 1 ; i<j ; i++) {
+			System.out.print('-');
+		}System.out.println();
+	}
 	private static void printLine(char a, int j) {
 		for (int i = 1 ; i<j ; i++) {
 			System.out.print(a);
-		}
+		}System.out.println();
 	}
 	
 	public static void main(String[] args) {
-		Student s1 = new Student("Á¤¿ì¼º", 90, 90, 90);
-		Student s2 = new Student("±èÇÏ´Ã", 90, 90, 91);
-		Student s3 = new Student("È²Á¤¹Î", 80, 80, 80);
-		Student s4 = new Student("°­µ¿¿ø", 80, 80, 81);
-		Student s5 = new Student("À¯¾ÆÀÎ", 70, 70, 70); 
+		int tot[] = new int[5]; // tot[0] = êµ­ì–´ ëˆ„ì 
+		double avg[] = new double[5]; // í‰ê· ì €ìž¥
+		
+		Student s1 = new Student("ì •ìš°ì„±", 90, 90, 90);
+		Student s2 = new Student("ê¹€í•˜ëŠ˜", 81, 90, 91);
+		Student s3 = new Student("í™©ì •ë¯¼", 80, 80, 80);
+		Student s4 = new Student("ê°•ë™ì›", 80, 80, 81);
+		Student s5 = new Student("ìœ ì•„ì¸", 70, 70, 70); 
 		
 		Student [] student = {s1,s2,s3,s4,s5};
-		String[] title = {"ÀÌ¸§", "±¹¾î", "¿µ¾î", "¼öÇÐ", "ÃÑÁ¡", "Æò±Õ"};
+		String[] title = {"ì´ë¦„", "êµ­ì–´", "ì˜ì–´", "ìˆ˜í•™", "ì´ì ", "í‰ê· "};
 		
-		printLine('¡á', 50);
-		System.out.println("\t\t\t¼ºÀûÇ¥");
-		printLine('-', 40);
+		printLine('â– ', 65);
+		System.out.println("\t\t\t      ì„±ì í‘œ");
+		printLine(47);
 		for(String t : title ) {
-			System.out.print('\t'+t);
-		}
+			System.out.print("\t"+t);
+		}System.out.println();
+		printLine(47);
 		for(Student s : student) {
-			s.print();
+			s.print(); // ì¶œë ¥ í›„ ëˆ„ì 
+			tot[0] += s.getKor();
+			tot[1] += s.getEng();
+			tot[2] += s.getMat();
+			tot[3] += s.getTot();
+			tot[4] += s.getAvg(); // tot[4] = (int)(tot[4]+s.getAvg());
 		}
-		printLine('-', 40);
-		
+		for( int i = 0 ; i<avg.length ; i++) { //ì¶œë ¥í•  í‰ê·  ê³„ì‚°
+			avg[i] = (double)tot[i]/student.length;
+		}
+		printLine(47);
+		System.out.print("\tì´ì \t");
+		for (int t : tot) {
+			System.out.print(t+"\t");
+		}
+		System.out.print("\n\tí‰ê· \t");
+		for(double a : avg) {
+			System.out.print(a+"\t");
+		}
+		System.out.println();
+		printLine('â– ', 65);
 	}
 
 }

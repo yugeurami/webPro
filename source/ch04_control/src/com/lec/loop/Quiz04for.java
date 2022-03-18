@@ -1,5 +1,5 @@
 package com.lec.loop;
-// ±¸±¸´Ü Ç¥ Ãâ·Â
+// êµ¬êµ¬ë‹¨ í‘œ ì¶œë ¥
 public class Quiz04for {
 
 	public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class Quiz04for {
 			for (int j = 2 ; j <= 9 ; j++) {
 				System.out.printf("%d*%d=%d \t", j, i, j*i);
 			} // for- j
-			System.out.println(); // °³Çà
+			System.out.println(); // ê°œí–‰
 		} // for -i
 
 	} // main

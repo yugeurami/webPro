@@ -6,9 +6,9 @@ public class Quiz2 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		int n1 = scanner.nextInt();
-		String result = n1%2 == 0 ? "ÀÌ ¼ö´Â Â¦¼öÀÔ´Ï´Ù" : "ÀÌ ¼ö´Â È¦¼öÀÔ´Ï´Ù";
+		String result = n1%2 == 0 ? "ì´ ìˆ˜ëŠ” ì§ìˆ˜ì…ë‹ˆë‹¤" : "ì´ ìˆ˜ëŠ” í™€ìˆ˜ì…ë‹ˆë‹¤";
 		System.out.println(result);
 		
 	}

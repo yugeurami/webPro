@@ -1,5 +1,5 @@
 package com.lec.ex;
-//API¸¦ ÀÌ¿ëÇÑ ¹è¿­ º¹»ç System.arraycopy(¿øº»,¿øº»½ÃÀÛidx,º¹»çº»¹è¿­,º¹»çº»½ÃÀÛidx,¹æ°¹¼ö)
+//APIë¥¼ ì´ìš©í•œ ë°°ì—´ ë³µì‚¬ System.arraycopy(ì›ë³¸,ì›ë³¸ì‹œì‘idx,ë³µì‚¬ë³¸ë°°ì—´,ë³µì‚¬ë³¸ì‹œì‘idx,ë°©ê°¯ìˆ˜)
 public class Ex04_arrayCopy2 {
 
 	public static void main(String[] args) {

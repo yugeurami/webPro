@@ -1,18 +1,18 @@
 package com.lec.ex;
 import java.util.Scanner;
-//»ç¿ëÀÚ·ÎºÎÅÍ ¿µÈñ, Ã¶¼ö, ±æµ¿, ¿µ¼ö, ¸»ÀÚÀÇ Å°¸¦ ÀÔ·Â¹Ş¾Æ, Æò±ÕÅ°¸¦ Ãâ·Â
+//ì‚¬ìš©ìë¡œë¶€í„° ì˜í¬, ì² ìˆ˜, ê¸¸ë™, ì˜ìˆ˜, ë§ìì˜ í‚¤ë¥¼ ì…ë ¥ë°›ì•„, í‰ê· í‚¤ë¥¼ ì¶œë ¥
 public class Ex05_avg {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		String[] arrName = {"¿µÈñ","Ã¶¼ö","±æµ¿","¿µ¼ö","¸»ÀÚ"};
+		String[] arrName = {"ì˜í¬","ì² ìˆ˜","ê¸¸ë™","ì˜ìˆ˜","ë§ì"};
 		int[] arrHeight = new int[arrName.length];
-		int totalHeight = 0; // ÀÔ·Â¹ŞÀº Å° ´©Àû º¯¼ö
+		int totalHeight = 0; // ì…ë ¥ë°›ì€ í‚¤ ëˆ„ì  ë³€ìˆ˜
 		for(int idx =0 ; idx<arrName.length ; idx++) {
-			System.out.print(arrName[idx]+"ÀÇ Å°´Â : ");
+			System.out.print(arrName[idx]+"ì˜ í‚¤ëŠ” : ");
 			arrHeight[idx] = scanner.nextInt();
 			totalHeight += arrHeight[idx];
 		}
-		System.out.println("Æò±ÕÅ°´Â "+(double)totalHeight/arrName.length);
+		System.out.println("í‰ê· í‚¤ëŠ” "+(double)totalHeight/arrName.length);
 		scanner.close();
 	}
 

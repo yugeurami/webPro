@@ -2,15 +2,15 @@ package com.lec.quiz;
 
 import java.util.Scanner;
 
-// »ç¿ëÀÚ·ÎºÎÅÍ ¼ö¸¦ ÀÔ·Â¹Ş¾Æ Àı´ë°ªÀ» Ãâ·Â(´Ü, ¸Å°³º¯¼ö¸¦ ¹Ş¾Æ Àı´ë°ªÀ» ¸®ÅÏÇÏ´Â ÇÔ¼ö ÀÌ¿ë)
+// ì‚¬ìš©ìë¡œë¶€í„° ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ ì ˆëŒ€ê°’ì„ ì¶œë ¥(ë‹¨, ë§¤ê°œë³€ìˆ˜ë¥¼ ë°›ì•„ ì ˆëŒ€ê°’ì„ ë¦¬í„´í•˜ëŠ” í•¨ìˆ˜ ì´ìš©)
 public class Quiz2 {
 
 	public static void main(String[] args) {
 		int su;
 		Scanner sc = new Scanner(System.in);
-		System.out.print("¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		su = sc.nextInt();
-		System.out.printf("ÀÌ ¼öÀÇ Àı´ë°ªÀº %dÀÔ´Ï´Ù", abs(su));
+		System.out.printf("ì´ ìˆ˜ì˜ ì ˆëŒ€ê°’ì€ %dì…ë‹ˆë‹¤", abs(su));
 		sc.close();
 	}
 	

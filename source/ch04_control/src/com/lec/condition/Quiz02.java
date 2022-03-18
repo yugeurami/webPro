@@ -7,7 +7,7 @@ public class Quiz02 {
 		int num2 = 32;
 		int max;
 		if(num1>num2){
-			max = num1; // ºí·° ¾È¿¡¼­ ¼±¾ðÇÑ º¯¼ö´Â ºí·° ¾È¿¡¼­¸¸ Á¸ÀçÇÔ
+			max = num1; // ë¸”ëŸ­ ì•ˆì—ì„œ ì„ ì–¸í•œ ë³€ìˆ˜ëŠ” ë¸”ëŸ­ ì•ˆì—ì„œë§Œ ì¡´ìž¬í•¨
 		} else {
 			max = num2;
 		}

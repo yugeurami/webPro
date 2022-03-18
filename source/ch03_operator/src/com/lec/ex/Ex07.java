@@ -1,5 +1,5 @@
 package com.lec.ex;
-// ÇÒ´ç¿¬»êÀÚ: = += -= *= /= %=
+// í• ë‹¹ì—°ì‚°ì: = += -= *= /= %=
 public class Ex07 {
 
 	public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class Ex07 {
 		int n2 = n1 = 10;
 		System.out.println("n1 = "+n1+"\t n2 = "+n2);
 		
-		// ¸ğµÎ n1À» 1 Áõ°¡½ÃÅ´
+		// ëª¨ë‘ n1ì„ 1 ì¦ê°€ì‹œí‚´
 		n1 += 1; 
 		n1++;
 		++n1;

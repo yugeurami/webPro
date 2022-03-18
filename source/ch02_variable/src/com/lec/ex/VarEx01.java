@@ -4,13 +4,13 @@ public class VarEx01 {
 
 	public static void main(String[] args) {
 		int age = 22;
-		String name = "¹è¼öÁö";
-		// µ¥ÀÌÅÍÅ¸ÀÔ º¯¼ö¸í = (ÇÒ´ç¿¬»êÀÚ) °ª;
-		System.out.println("¾È³çÇÏ¼¼¿ä?" + age + "»ì " + name + "ÀÔ´Ï´Ù");
-		System.out.println("¾È³çÇÏ¼¼¿ä?" + age + "»ì " + name + "ÀÔ´Ï´Ù");
-		System.out.println("¾È³çÇÏ¼¼¿ä?" + age + "»ì " + name + "ÀÔ´Ï´Ù");
-		System.out.println("¾È³çÇÏ¼¼¿ä?" + age + "»ì " + name + "ÀÔ´Ï´Ù");
-		System.out.println("¾È³çÇÏ¼¼¿ä?" + age + "»ì " + name + "ÀÔ´Ï´Ù");
+		String name = "ë°°ìˆ˜ì§€";
+		// ë°ì´í„°íƒ€ì… ë³€ìˆ˜ëª… = (í• ë‹¹ì—°ì‚°ì) ê°’;
+		System.out.println("ì•ˆë…•í•˜ì„¸ìš”?" + age + "ì‚´ " + name + "ì…ë‹ˆë‹¤");
+		System.out.println("ì•ˆë…•í•˜ì„¸ìš”?" + age + "ì‚´ " + name + "ì…ë‹ˆë‹¤");
+		System.out.println("ì•ˆë…•í•˜ì„¸ìš”?" + age + "ì‚´ " + name + "ì…ë‹ˆë‹¤");
+		System.out.println("ì•ˆë…•í•˜ì„¸ìš”?" + age + "ì‚´ " + name + "ì…ë‹ˆë‹¤");
+		System.out.println("ì•ˆë…•í•˜ì„¸ìš”?" + age + "ì‚´ " + name + "ì…ë‹ˆë‹¤");
 	
 	}
 

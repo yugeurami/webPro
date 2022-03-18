@@ -3,7 +3,7 @@ package com.lec.ex6_member;
 public class MemberTestMian {
 
 	public static void main(String[] args) {
-		Member name = new Member("aaa", "000", "È«±æµ¿", "hong@company.com", "¼­¿ï °­³²±¸", "2000-01-01", "³²");
+		Member name = new Member("aaa", "000", "í™ê¸¸ë™", "hong@company.com", "ì„œìš¸ ê°•ë‚¨êµ¬", "2000-01-01", "ë‚¨");
 		System.out.println(name.infoString());
 	}
 }

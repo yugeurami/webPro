@@ -1,7 +1,7 @@
-// Hello.java --(ÄÄÆÄÀÏ javac Hello.java)--> Hello.class --(½ÇÇà java Hello Hong Jang go)--> °á°ú
+// Hello.java --(ì»´íŒŒì¼ javac Hello.java)--> Hello.class --(ì‹¤í–‰ java Hello Hong Jang go)--> ê²°ê³¼
 public class Hello {
 	public static void main(String[] args) {
-		System.out.print("¾È³çÇÏ¼¼¿ä");
+		System.out.print("ì•ˆë…•í•˜ì„¸ìš”");
 		for(int idx = 0 ; idx<args.length ; idx++) {
 			System.out.print(", " + args[idx]);
 		}

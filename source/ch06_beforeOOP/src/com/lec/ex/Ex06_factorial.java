@@ -2,22 +2,22 @@ package com.lec.ex;
 
 import java.util.Scanner;
 
-// »ç¿ëÀÚ·ÎºÎÅÍ ¼ö¸¦ ÀÔ·Â¹Ş¾Æ ÀÔ·Â¹ŞÀº ¼ö(3) ! = 3*2*1 (ÆÑÅä¸®¾ó °è»êÇÏ´Â ¸Ş¼Òµå ÀÌ¿ë)
+// ì‚¬ìš©ìë¡œë¶€í„° ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ ì…ë ¥ë°›ì€ ìˆ˜(3) ! = 3*2*1 (íŒ©í† ë¦¬ì–¼ ê³„ì‚°í•˜ëŠ” ë©”ì†Œë“œ ì´ìš©)
 public class Ex06_factorial {
 	
 	public static void main(String[] args) {
 		int su;
 		Scanner sc = new Scanner(System.in);
 		do {
-			System.out.print("¾ç¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ì–‘ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			su = sc.nextInt();
 		} while(su<=0);
 		long result = factorial(su);
-		System.out.printf("ÀÔ·ÂÇÏ½Å %d! = %d", su, result);
+		System.out.printf("ì…ë ¥í•˜ì‹  %d! = %d", su, result);
 		sc.close();
 	}
 	
-	private static long factorial(int su) { // su°¡ 1ÃÊ°ú ÀÏ °æ¿ì : su * factorial(su-1);
+	private static long factorial(int su) { // suê°€ 1ì´ˆê³¼ ì¼ ê²½ìš° : su * factorial(su-1);
 		if (su==1) {
 			return 1;
 		}else {

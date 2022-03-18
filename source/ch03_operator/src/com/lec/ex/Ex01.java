@@ -1,11 +1,11 @@
 package com.lec.ex;
-// »ê¼ú¿¬»êÀÚ :  + - * / %(³ª¸ÓÁö)
+// ì‚°ìˆ ì—°ì‚°ì :  + - * / %(ë‚˜ë¨¸ì§€)
 public class Ex01 {
 
 	public static void main(String[] args) {
 		int n1 = 33, n2 = 10;
-		int result; 		 // + - * %ÀÇ °á°ú
-		double resultDouble; // /ÀÇ °á°ú
+		int result; 		 // + - * %ì˜ ê²°ê³¼
+		double resultDouble; // /ì˜ ê²°ê³¼
 		
 		result = n1+n2;
 		System.out.printf("%d %c %d = %d \n", n1, '+', n2, result);
@@ -16,24 +16,24 @@ public class Ex01 {
 		result = n1*n2;
 		System.out.printf("%d %c %d = %d \n", n1, '*', n2, result);
 		
-		result = n1%n2; // ³ª¸ÓÁö ¿¬»êÀÚ
+		result = n1%n2; // ë‚˜ë¨¸ì§€ ì—°ì‚°ì
 		System.out.printf("%d %c %d = %d \n", n1, '%', n2, result);
 		
 		resultDouble = (double)n1/n2;
 		System.out.printf("%d %c %d = %.1f \n", n1, '/', n2, resultDouble);
 		
 		if (n1%2 == 0) {
-			System.out.println("n1Àº Â¦¼ö");
-			System.out.println("n1ÀÌ Â¦¼ö¶ó ÁÁ¾Æ");
+			System.out.println("n1ì€ ì§ìˆ˜");
+			System.out.println("n1ì´ ì§ìˆ˜ë¼ ì¢‹ì•„");
 		} // if
 		else {
-			System.out.println("n1Àº È¦¼ö");
+			System.out.println("n1ì€ í™€ìˆ˜");
 		}
 		if (n1%5 == 0) {
-			System.out.println("n1ÀÇ 5ÀÇ ¹è¼ö");
+			System.out.println("n1ì˜ 5ì˜ ë°°ìˆ˜");
 		}
 		else {
-			System.out.println("n1Àº 5ÀÇ ¹è¼ö°¡ ¾Æ´Ô");
+			System.out.println("n1ì€ 5ì˜ ë°°ìˆ˜ê°€ ì•„ë‹˜");
 		}
 
 	}

@@ -1,18 +1,18 @@
 package com.lec.loop;
 
 import java.util.Scanner;
-//Â¦¼ö¸¦ ÀÔ·Â¹Ş´Â ÇÁ·Î±×·¥
+//ì§ìˆ˜ë¥¼ ì…ë ¥ë°›ëŠ” í”„ë¡œê·¸ë¨
 public class Ex08_do_while {
 
 	public static void main(String[] args) {
 		int num;
 		Scanner scanner = new Scanner(System.in);
 		do {
-			System.out.print("Â¦¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ì§ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			num = scanner.nextInt();
 		}while(num%2 != 0);
 		
-		System.out.println("ÀÔ·ÂÇÏ½Å ¼ö´Â Â¦¼ö "+num+"ÀÔ´Ï´Ù");
+		System.out.println("ì…ë ¥í•˜ì‹  ìˆ˜ëŠ” ì§ìˆ˜ "+num+"ì…ë‹ˆë‹¤");
 		
 		scanner.close();
 	}

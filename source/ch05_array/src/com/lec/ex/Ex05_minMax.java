@@ -1,36 +1,36 @@
 package com.lec.ex;
 import java.util.Scanner;
-//»ç¿ëÀÚ·ÎºÎÅÍ ¿µÈñ, Ã¶¼ö, ±æµ¿, ¿µ¼ö, ¸»ÀÚÀÇ Å°¸¦ ÀÔ·Â¹Ş¾Æ, Æò±ÕÅ°¸¦ Ãâ·Â
-//ÃÖÀå½Å ÀÌ¸§°ú Å°, ÃÖ´Ü½Å ÀÌ¸§°ú Å° Ãâ·Â
+//ì‚¬ìš©ìë¡œë¶€í„° ì˜í¬, ì² ìˆ˜, ê¸¸ë™, ì˜ìˆ˜, ë§ìì˜ í‚¤ë¥¼ ì…ë ¥ë°›ì•„, í‰ê· í‚¤ë¥¼ ì¶œë ¥
+//ìµœì¥ì‹  ì´ë¦„ê³¼ í‚¤, ìµœë‹¨ì‹  ì´ë¦„ê³¼ í‚¤ ì¶œë ¥
 public class Ex05_minMax {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		String[] arrName = {"¿µÈñ","Ã¶¼ö","±æµ¿","¿µ¼ö","¸»ÀÚ"};
+		String[] arrName = {"ì˜í¬","ì² ìˆ˜","ê¸¸ë™","ì˜ìˆ˜","ë§ì"};
 		int[] arrHeight = new int[arrName.length];
-		int totalHeight = 0; // ÀÔ·Â¹ŞÀº Å° ´©Àû º¯¼ö
+		int totalHeight = 0; // ì…ë ¥ë°›ì€ í‚¤ ëˆ„ì  ë³€ìˆ˜
 		for(int idx =0 ; idx<arrName.length ; idx++) {
-			System.out.print(arrName[idx]+"ÀÇ Å°´Â : ");
+			System.out.print(arrName[idx]+"ì˜ í‚¤ëŠ” : ");
 			arrHeight[idx] = scanner.nextInt();
 			totalHeight += arrHeight[idx];
 		}
-		System.out.println("Æò±ÕÅ°´Â "+(double)totalHeight/arrName.length);
-		scanner.close();//ÀÌ ÀÌÈÄ¿¡´Â scanner »ç¿ëºÒ°¡´É
-		//ÃÖÀå½Å ÀÌ¸§°ú Å°, ÃÖ´Ü½Å ÀÌ¸§°ú Å° Ãâ·Â
-		int minHeight = 999, minIdx = 0; //ÃÖ´Ü½Å Å°¿Í index(À§Ä¡)
-		int maxHeight = 0, maxIdx = 0;   //ÃÖÀå½Å Å°¿Í index(À§Ä¡)
+		System.out.println("í‰ê· í‚¤ëŠ” "+(double)totalHeight/arrName.length);
+		scanner.close();//ì´ ì´í›„ì—ëŠ” scanner ì‚¬ìš©ë¶ˆê°€ëŠ¥
+		//ìµœì¥ì‹  ì´ë¦„ê³¼ í‚¤, ìµœë‹¨ì‹  ì´ë¦„ê³¼ í‚¤ ì¶œë ¥
+		int minHeight = 999, minIdx = 0; //ìµœë‹¨ì‹  í‚¤ì™€ index(ìœ„ì¹˜)
+		int maxHeight = 0, maxIdx = 0;   //ìµœì¥ì‹  í‚¤ì™€ index(ìœ„ì¹˜)
 		for(int i = 0 ; i<arrName.length ; i++) {
 			if(arrHeight[i]<minHeight) {
 				minHeight = arrHeight[i];
 				minIdx = i;
-			} // if ÃÖ´Ü½Å Å°¿Í ÃÖ´Ü½Å indexÃ£±â
+			} // if ìµœë‹¨ì‹  í‚¤ì™€ ìµœë‹¨ì‹  indexì°¾ê¸°
 		}
 		for(int i = 0 ; i<arrName.length ; i++) {
 			if(arrHeight[i]>maxHeight) {
 				maxHeight = arrHeight[i];
 				maxIdx = i;
-			} // if ÃÖÀå½Å Å°¿Í ÃÖÀå½Å indexÃ£±â
+			} // if ìµœì¥ì‹  í‚¤ì™€ ìµœì¥ì‹  indexì°¾ê¸°
 		}
-		System.out.printf("ÃÖÀå½Å ÇĞ»ıÀº %s, Å°´Â %dcm \n", arrName[maxIdx], maxHeight);
-		System.out.printf("ÃÖ´Ü½Å ÇĞ»ıÀº %s, Å°´Â %dcm", arrName[minIdx], minHeight);
+		System.out.printf("ìµœì¥ì‹  í•™ìƒì€ %s, í‚¤ëŠ” %dcm \n", arrName[maxIdx], maxHeight);
+		System.out.printf("ìµœë‹¨ì‹  í•™ìƒì€ %s, í‚¤ëŠ” %dcm", arrName[minIdx], minHeight);
 	}
 }

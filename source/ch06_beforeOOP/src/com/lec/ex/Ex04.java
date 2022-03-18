@@ -6,8 +6,8 @@ public class Ex04 {
 	
 	public static void main(String[] args) {
 		int tot = Arithmetic.sum(10);
-		Arithmetic ar = new Arithmetic(); //staticÀÌ ¾Æ´Ñ ¸Ş¼Òµå´Â ÀÎ½ºÅÏ½º¸¦ ¸¸µé¾îÁà¾ßÇÔ
-		System.out.println("-7ÀÇ Àı´ë°ªÀº "+ar.abs(-7));
+		Arithmetic ar = new Arithmetic(); //staticì´ ì•„ë‹Œ ë©”ì†Œë“œëŠ” ì¸ìŠ¤í„´ìŠ¤ë¥¼ ë§Œë“¤ì–´ì¤˜ì•¼í•¨
+		System.out.println("-7ì˜ ì ˆëŒ€ê°’ì€ "+ar.abs(-7));
 		
 	}
 }

@@ -1,46 +1,46 @@
 package com.lec.ex3_account;
-/*	µ¥ÀÌÅÍ(¼Ó¼º) : 	°èÁÂ¹øÈ£(accountNo:String), 
-				¿¹±İÁÖ(ownerName:String), 
-				ÀÜ¾×(balance:long)
-	±â´É(¸Ş¼Òµå) : 	¿¹±İÇÏ´Ù(void deposit(int)), 
-				ÀÎÃâÇÏ´Ù(int withdraw(int)), 
-				ÀÜ¾×Á¶È¸(String infoPrint()) 
-	Account a = new Account("100-1", "È«±æµ¿"); / Account("100-1", "È«±æµ¿", 2200000000);
+/*	ë°ì´í„°(ì†ì„±) : 	ê³„ì¢Œë²ˆí˜¸(accountNo:String), 
+				ì˜ˆê¸ˆì£¼(ownerName:String), 
+				ì”ì•¡(balance:long)
+	ê¸°ëŠ¥(ë©”ì†Œë“œ) : 	ì˜ˆê¸ˆí•˜ë‹¤(void deposit(int)), 
+				ì¸ì¶œí•˜ë‹¤(int withdraw(int)), 
+				ì”ì•¡ì¡°íšŒ(String infoPrint()) 
+	Account a = new Account("100-1", "í™ê¸¸ë™"); / Account("100-1", "í™ê¸¸ë™", 2200000000);
  */
 public class Account {
 	private String accountNo;
 	private String ownerName;
 	private long balance;
-	public Account() {}; //µğÆúÆ® »ı¼ºÀÚ
-	public Account(String accountNo, String ownerName) { // »ı¼ºÀÚ ¿ªÇÒ : µ¥ÀÌÅÍ ÃÊ±âÈ­
+	public Account() {}; //ë””í´íŠ¸ ìƒì„±ì
+	public Account(String accountNo, String ownerName) { // ìƒì„±ì ì—­í•  : ë°ì´í„° ì´ˆê¸°í™”
 		this.accountNo = accountNo;
 		this.ownerName = ownerName;
-		System.out.printf("%s(%s)´Ô °èÁÂ °³¼³ °¨»çÇÕ´Ï´Ù. µ·Àº ¿Ö ¾È °®°í ¿À¼Ì¾î¿ä\n", ownerName, accountNo);
+		System.out.printf("%s(%s)ë‹˜ ê³„ì¢Œ ê°œì„¤ ê°ì‚¬í•©ë‹ˆë‹¤. ëˆì€ ì™œ ì•ˆ ê°–ê³  ì˜¤ì…¨ì–´ìš”\n", ownerName, accountNo);
 	}
-	// ¸Ş¼Òµå ¿¹±İÇÏ´Ù(void deposit(int)), ÀÎÃâÇÏ´Ù(int withdraw(int)), ÀÜ¾×Á¶È¸(String infoPrint()) 
+	// ë©”ì†Œë“œ ì˜ˆê¸ˆí•˜ë‹¤(void deposit(int)), ì¸ì¶œí•˜ë‹¤(int withdraw(int)), ì”ì•¡ì¡°íšŒ(String infoPrint()) 
 	public Account(String accountNo, String ownerName, long balance) {
 		this.accountNo = accountNo;
 		this.ownerName = ownerName;
 		this.balance = balance;
-		System.out.printf("%s(%s)´Ô %d¿ø ÀÔ±İ °èÁÂ °³¼³ °¨»çÇÕ´Ï´Ù.\n", ownerName, accountNo, balance);
+		System.out.printf("%s(%s)ë‹˜ %dì› ì…ê¸ˆ ê³„ì¢Œ ê°œì„¤ ê°ì‚¬í•©ë‹ˆë‹¤.\n", ownerName, accountNo, balance);
 	}
-	public void deposit(int money) { //¿¹±İÀº ¹«Á¶°Ç ¾ç¼ö money°¡ µé¾î¿À¸é ¿¹±İÃ³¸®
+	public void deposit(int money) { //ì˜ˆê¸ˆì€ ë¬´ì¡°ê±´ ì–‘ìˆ˜ moneyê°€ ë“¤ì–´ì˜¤ë©´ ì˜ˆê¸ˆì²˜ë¦¬
 		if(money>=0) {
 			balance += money;
 		}else {
-			System.out.println("ÀÔ·ÂÀÌ Àß¸øµÆ½À´Ï´Ù.");
+			System.out.println("ì…ë ¥ì´ ì˜ëª»ëìŠµë‹ˆë‹¤.");
 		}
 	}
 	public void withdraw(int money) {
 		if(money<=balance) {
 			balance -= money;
 		}else {
-			System.out.println(ownerName+"´Ô ÀÜ¾×ÀÌ ºÎÁ·ÇÏ¿© ÀÎÃâÀÌ ºÒ°¡ÇÕ´Ï´Ù.");
+			System.out.println(ownerName+"ë‹˜ ì”ì•¡ì´ ë¶€ì¡±í•˜ì—¬ ì¸ì¶œì´ ë¶ˆê°€í•©ë‹ˆë‹¤.");
 		}
 	}
 	public String infoPrint() {
-		return String.format("%s(%s)´Ô ÀÜ¾× : %d¿ø", ownerName, accountNo, balance);
-		// return ownerName + "("+ accountNo + ")´Ô ÀÜ¾× : " + balance + "¿ø";
+		return String.format("%s(%s)ë‹˜ ì”ì•¡ : %dì›", ownerName, accountNo, balance);
+		// return ownerName + "("+ accountNo + ")ë‹˜ ì”ì•¡ : " + balance + "ì›";
 	}
 	// setter & getter
 	public String getAccountNo() {

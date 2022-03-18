@@ -1,5 +1,5 @@
 package com.lec.quiz;
-//2Â÷¿ø ¹è¿­¿¡ ÀúÀåµÈ °ªÀÇ ÇÕ°è¸¦ ±¸ÇÏ½Ã¿À
+//2ì°¨ì› ë°°ì—´ì— ì €ì¥ëœ ê°’ì˜ í•©ê³„ë¥¼ êµ¬í•˜ì‹œì˜¤
 public class Quiz2 {
 
 	public static void main(String[] args) {
@@ -13,7 +13,7 @@ public class Quiz2 {
 				tot += arr[i][j];
 			}
 		}
-		System.out.println("2Â÷¿ø ¹è¿­ÀÇ ÃÑÇÕÀº "+tot);
+		System.out.println("2ì°¨ì› ë°°ì—´ì˜ ì´í•©ì€ "+tot);
 	}
 
 }

@@ -1,5 +1,5 @@
 package com.lec.quiz;
-//76,45,34,89,100,50,90,92  8°³ÀÇ °ªÀ» 1Â÷¿ø ¹è¿­·Î ÃÊ±âÈ­ ÇÏ°í °ª¿¡ ÇÕ°è¿Í  Æò±Õ ±×¸®°í ÃÖ´ë°ª°ú ÃÖ¼Ò°ª
+//76,45,34,89,100,50,90,92  8ê°œì˜ ê°’ì„ 1ì°¨ì› ë°°ì—´ë¡œ ì´ˆê¸°í™” í•˜ê³  ê°’ì— í•©ê³„ì™€  í‰ê·  ê·¸ë¦¬ê³  ìµœëŒ€ê°’ê³¼ ìµœì†Œê°’
 public class Quiz3 {
 
 	public static void main(String[] args) {
@@ -16,10 +16,10 @@ public class Quiz3 {
 			}
 			tot += arr[i];
 		}
-		System.out.println("ÇÕ°è´Â "+tot);
-		System.out.println("Æò±ÕÀº "+(double)tot/arr.length);
-		System.out.println("ÃÖ¼Ò°ªÀº "+min);
-		System.out.println("ÃÖ´ë°ªÀº "+max);
+		System.out.println("í•©ê³„ëŠ” "+tot);
+		System.out.println("í‰ê· ì€ "+(double)tot/arr.length);
+		System.out.println("ìµœì†Œê°’ì€ "+min);
+		System.out.println("ìµœëŒ€ê°’ì€ "+max);
 	}
 
 }

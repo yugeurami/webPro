@@ -8,7 +8,7 @@ public class Quiz1 {
 		int dansu;
 		Scanner su = new Scanner(System.in);
 		do {
-			System.out.print("2~9»çÀÌÀÇ ¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+			System.out.print("2~9ì‚¬ì´ì˜ ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 			dansu = su.nextInt();
 		} while(2>dansu || dansu>9);
 		gugudan(dansu);

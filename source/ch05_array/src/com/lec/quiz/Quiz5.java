@@ -2,7 +2,7 @@ package com.lec.quiz;
 
 //import java.util.Arrays;
 
-//76,45,34,89,100,50,90,92  8°³ÀÇ °ªÀ» 1Â÷¿ø ¹è¿­·Î ÃÊ±âÈ­ ÇÏ°í ÀÌµé °ªµéÀ» Å©±â ¼øÀ¸·Î ³ªÅ¸³»´Â ÇÁ·Î±×·¥ 
+//76,45,34,89,100,50,90,92  8ê°œì˜ ê°’ì„ 1ì°¨ì› ë°°ì—´ë¡œ ì´ˆê¸°í™” í•˜ê³  ì´ë“¤ ê°’ë“¤ì„ í¬ê¸° ìˆœìœ¼ë¡œ ë‚˜íƒ€ë‚´ëŠ” í”„ë¡œê·¸ë¨ 
 public class Quiz5 {
 	public static void main(String[] args) {
 		int[] arr = {76,45,34,89,100,50,90,92};
@@ -10,22 +10,22 @@ public class Quiz5 {
 		for(int i = 0 ; i<arr.length ; i++) {
 			sortArr[i] = arr[i];
 		}
-		//¿À¸§Â÷¼ø Á¤·Ä: Arrays.sort(sortArr);
-		for(int i = 0 ; i<sortArr.length-1 ; i++) {// i = 0~7±îÁö
-			for(int j = i+1 ; j<sortArr.length ; j++) {// j = i+1 ~ 7±îÁö
-				// i¹øÂ°¿Í j¹øÂ° ºñ±³ÇØ¼­ i¹øÂ°°¡ Å©¸é ±³È¯
+		//ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬: Arrays.sort(sortArr);
+		for(int i = 0 ; i<sortArr.length-1 ; i++) {// i = 0~7ê¹Œì§€
+			for(int j = i+1 ; j<sortArr.length ; j++) {// j = i+1 ~ 7ê¹Œì§€
+				// ië²ˆì§¸ì™€ jë²ˆì§¸ ë¹„êµí•´ì„œ ië²ˆì§¸ê°€ í¬ë©´ êµí™˜
 				if(sortArr[i] > sortArr[j]) { 
-					int temp = sortArr[i]; // »ç¶÷Ã³·³ ±³È¯ÀÌ ¾ÈµÊ ´Ù¸¥ °÷¿¡ °ªÀ» ÀúÀåÇØ¾ßÇÔ
+					int temp = sortArr[i]; // ì‚¬ëŒì²˜ëŸ¼ êµí™˜ì´ ì•ˆë¨ ë‹¤ë¥¸ ê³³ì— ê°’ì„ ì €ì¥í•´ì•¼í•¨
 					sortArr[i] = sortArr[j];
 					sortArr[j] = temp;
-				} // if - ±³È¯			
+				} // if - êµí™˜			
 			} // for - j
 		} // for - i
-		System.out.print("¿øµ¥ÀÌÅÍ");
+		System.out.print("ì›ë°ì´í„°");
 		for (int i : arr) {
             System.out.printf("[%d]",i);
 		}
-		System.out.print("\n¿À¸§Â÷¼ø µ¥ÀÌÅÍ Á¤·Ä:");
+		System.out.print("\nì˜¤ë¦„ì°¨ìˆœ ë°ì´í„° ì •ë ¬:");
 	    for (int i : sortArr) {
 	            System.out.printf("[%d]",i);
 		}

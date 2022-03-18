@@ -3,13 +3,13 @@ package com.lec.ex1_square;
 public class SquareTestMain {
 	
 	public static void main(String[] args) {
-		Square s1 = new Square();// new µÚ¿¡ ÀÖ´Â °Ç »ı¼ºÀÚ ÇÔ¼ö
-		System.out.println("s1ÀÇ ÇÑº¯ÀÇ ±æÀÌ : "+s1.getSide());
+		Square s1 = new Square();// new ë’¤ì— ìˆëŠ” ê±´ ìƒì„±ì í•¨ìˆ˜
+		System.out.println("s1ì˜ í•œë³€ì˜ ê¸¸ì´ : "+s1.getSide());
 		s1.setSide(5);
-		System.out.println("s1ÀÇ ³ĞÀÌ : "+s1.area());
-		Square s2 = new Square(10);// side¿¡ 10À¸·Î ÃÊ±âÈ­
-		System.out.println("s2ÀÇ ³ĞÀÌ : "+s2.area());
+		System.out.println("s1ì˜ ë„“ì´ : "+s1.area());
+		Square s2 = new Square(10);// sideì— 10ìœ¼ë¡œ ì´ˆê¸°í™”
+		System.out.println("s2ì˜ ë„“ì´ : "+s2.area());
 		s2.setSide(50);
-		System.out.println("s2ÀÇ ³ĞÀÌ : "+s2.area());
+		System.out.println("s2ì˜ ë„“ì´ : "+s2.area());
 	}
 }

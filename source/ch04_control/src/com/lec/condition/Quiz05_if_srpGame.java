@@ -10,46 +10,46 @@ public class Quiz05_if_srpGame {
 		Scanner sc = new Scanner(System.in);
 		int you, com;
 		com = (int)(Math.random()*3);
-		System.out.println("°¡À§(0),¹ÙÀ§(1),º¸(2) Áß ÇÏ³ª¸¦ ¼±ÅÃÇÏ¼¼¿ä : ");
-		you = sc.nextInt(); // Á¤¼ö¸¦ ÀÔ·Â ¹ŞÀº
+		System.out.println("ê°€ìœ„(0),ë°”ìœ„(1),ë³´(2) ì¤‘ í•˜ë‚˜ë¥¼ ì„ íƒí•˜ì„¸ìš” : ");
+		you = sc.nextInt(); // ì •ìˆ˜ë¥¼ ì…ë ¥ ë°›ì€
 		if(you == 0) {
-			System.out.print("´ç½ÅÀº °¡À§ \t");
+			System.out.print("ë‹¹ì‹ ì€ ê°€ìœ„ \t");
 		}else if (you == 1) {
-			System.out.print("´ç½ÅÀº ¹ÙÀ§ \t");
+			System.out.print("ë‹¹ì‹ ì€ ë°”ìœ„ \t");
 		}else if(you == 2) {
-			System.out.print("´ç½ÅÀº º¸ÀÚ±â \t");
+			System.out.print("ë‹¹ì‹ ì€ ë³´ìê¸° \t");
 		}else {
-			System.out.println("´ç½ÅÀº Àß¸ø ³Â¾î¿ä. ¹ÙÀÌ");
-			you = 3;//³¡³»±â À§ÇÑ Á¶°Ç
+			System.out.println("ë‹¹ì‹ ì€ ì˜ëª» ëƒˆì–´ìš”. ë°”ì´");
+			you = 3;//ëë‚´ê¸° ìœ„í•œ ì¡°ê±´
 		}
-		if(you !=3) {//ÄÄÇ»ÅÍ°¡ ³½ °Í°ú ½ÂÆĞ Ãâ·Â
-			String msg = (com == 0)? "ÄÄÇ»ÅÍ´Â °¡À§" : (com == 1)? "ÄÄÇ»ÅÍ´Â ¹ÙÀ§" : "ÄÄÇ»ÅÍ´Â º¸ÀÚ±â";
+		if(you !=3) {//ì»´í“¨í„°ê°€ ë‚¸ ê²ƒê³¼ ìŠ¹íŒ¨ ì¶œë ¥
+			String msg = (com == 0)? "ì»´í“¨í„°ëŠ” ê°€ìœ„" : (com == 1)? "ì»´í“¨í„°ëŠ” ë°”ìœ„" : "ì»´í“¨í„°ëŠ” ë³´ìê¸°";
 			System.out.println(msg);
 			if(you==0) {
 				if(com==0) {
-					System.out.println("¹«½ÂºÎ ÀÔ´Ï´Ù");
+					System.out.println("ë¬´ìŠ¹ë¶€ ì…ë‹ˆë‹¤");
 				}else if(com == 1) {
-					System.out.println("ÄÄÇ»ÅÍ°¡ ÀÌ°å´Ù");
+					System.out.println("ì»´í“¨í„°ê°€ ì´ê²¼ë‹¤");
 				}else{
-					System.out.println("´ç½ÅÀÌ ÀÌ°å´Ù");
+					System.out.println("ë‹¹ì‹ ì´ ì´ê²¼ë‹¤");
 				}
 			}
 			if(you==1) {
 				if(com==0) {
-					System.out.println("´ç½ÅÀÌ ÀÌ°å´Ù");
+					System.out.println("ë‹¹ì‹ ì´ ì´ê²¼ë‹¤");
 				}else if(com == 1) {
-					System.out.println("¹«½ÂºÎ ÀÔ´Ï´Ù");
+					System.out.println("ë¬´ìŠ¹ë¶€ ì…ë‹ˆë‹¤");
 				}else{
-					System.out.println("ÄÄÇ»ÅÍ°¡ ÀÌ°å´Ù");
+					System.out.println("ì»´í“¨í„°ê°€ ì´ê²¼ë‹¤");
 				}
 			}
 			if(you==2) {
 				if(com==0) {
-					System.out.println("ÄÄÇ»ÅÍ°¡ ÀÌ°å´Ù");
+					System.out.println("ì»´í“¨í„°ê°€ ì´ê²¼ë‹¤");
 				}else if(com == 1) {
-					System.out.println("´ç½ÅÀÌ ÀÌ°å´Ù");
+					System.out.println("ë‹¹ì‹ ì´ ì´ê²¼ë‹¤");
 				}else{
-					System.out.println("¹«½ÂºÎ ÀÔ´Ï´Ù");
+					System.out.println("ë¬´ìŠ¹ë¶€ ì…ë‹ˆë‹¤");
 				}
 			}
 		}

@@ -1,5 +1,5 @@
 package com.lec.loop;
-//Áú ¶§±îÁö °¡À§¹ÙÀ§º¸ÇÏ´Â ÇÁ·Î±×·¥À» ±¸Çö
+//ì§ˆ ë•Œê¹Œì§€ ê°€ìœ„ë°”ìœ„ë³´í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ êµ¬í˜„
 import java.util.Scanner;
 
 public class Quiz05while {
@@ -9,35 +9,35 @@ public class Quiz05while {
 		int you, com;
 		
 		do {
-			System.out.println("°¡À§(0),¹ÙÀ§(1),º¸(2) Áß ÇÏ³ª¸¦ ¼±ÅÃÇÏ¼¼¿ä : ");
+			System.out.println("ê°€ìœ„(0),ë°”ìœ„(1),ë³´(2) ì¤‘ í•˜ë‚˜ë¥¼ ì„ íƒí•˜ì„¸ìš” : ");
 			you = sc.nextInt(); 
 			com = (int)(Math.random()*3);
 			if(you == 0) {
-				System.out.print("´ç½ÅÀº °¡À§ \t");
+				System.out.print("ë‹¹ì‹ ì€ ê°€ìœ„ \t");
 			}else if (you == 1) {
-				System.out.print("´ç½ÅÀº ¹ÙÀ§ \t");
+				System.out.print("ë‹¹ì‹ ì€ ë°”ìœ„ \t");
 			}else if(you == 2) {
-				System.out.print("´ç½ÅÀº º¸ÀÚ±â \t");
+				System.out.print("ë‹¹ì‹ ì€ ë³´ìê¸° \t");
 			}else {
-				System.out.println("´ç½ÅÀº Àß¸ø ³Â¾î¿ä. ¹ÙÀÌ");
+				System.out.println("ë‹¹ì‹ ì€ ì˜ëª» ëƒˆì–´ìš”. ë°”ì´");
 				you = 3;
 				break;
 			}
 			if(you !=3) {
-				String msg = (com == 0)? "ÄÄÇ»ÅÍ´Â °¡À§" : (com == 1)? "ÄÄÇ»ÅÍ´Â ¹ÙÀ§" : "ÄÄÇ»ÅÍ´Â º¸ÀÚ±â";
+				String msg = (com == 0)? "ì»´í“¨í„°ëŠ” ê°€ìœ„" : (com == 1)? "ì»´í“¨í„°ëŠ” ë°”ìœ„" : "ì»´í“¨í„°ëŠ” ë³´ìê¸°";
 				System.out.println(msg);
 				
 				if ((you+1)%3==com) {
-					System.out.println("´ç½ÅÀº Á³½À´Ï´Ù");
+					System.out.println("ë‹¹ì‹ ì€ ì¡ŒìŠµë‹ˆë‹¤");
 					break;
 				} else if(you==com) {
-					System.out.println("¹«½ÂºÎÀÔ´Ï´Ù");
+					System.out.println("ë¬´ìŠ¹ë¶€ì…ë‹ˆë‹¤");
 				} else {
-					System.out.println("´ç½ÅÀÌ ÀÌ°å½À´Ï´Ù");
+					System.out.println("ë‹¹ì‹ ì´ ì´ê²¼ìŠµë‹ˆë‹¤");
 				} 
 			} 
 		} while(true);
-		System.out.println("¾È³çÈ÷ °¡¼¼¿ä");	
+		System.out.println("ì•ˆë…•íˆ ê°€ì„¸ìš”");	
 		sc.close();
 
 	}

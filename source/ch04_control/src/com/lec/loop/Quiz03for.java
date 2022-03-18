@@ -1,5 +1,5 @@
 package com.lec.loop;
-//5´Ü ±¸±¸´Ü Ãâ·Â
+//5ë‹¨ êµ¬êµ¬ë‹¨ ì¶œë ¥
 public class Quiz03for {
 
 	public static void main(String[] args) {

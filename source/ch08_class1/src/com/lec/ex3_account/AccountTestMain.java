@@ -3,11 +3,11 @@ package com.lec.ex3_account;
 public class AccountTestMain {
 
 	public static void main(String[] args) {
-		Account hong = new Account("100-1", "ȫ�浿", 2200000000L);
-		Account shin = new Account("101-1", "�ű浿");
+		Account hong = new Account("100-1", "홍길동", 2200000000L);
+		Account shin = new Account("101-1", "신길동");
 		Account acc = new Account();
 		acc.setAccountNo("101-2");
-		acc.setOwnerName("���浿");
+		acc.setOwnerName("유길동");
 		System.out.println(hong.infoPrint());
 		System.out.println(shin.infoPrint());
 		System.out.println(acc.infoPrint());

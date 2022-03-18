@@ -1,18 +1,18 @@
 package com.lec.ex;
-// »ïÇ×¿¬»êÀÚ    (Á¶°Ç) ? (ÂüÀÏ °æ¿ì ÃëÇÒ °ª/½Ä) : (°ÅÁşÀÏ °á¿ì ÃëÇÒ °ª/½Ä)
+// ì‚¼í•­ì—°ì‚°ì    (ì¡°ê±´) ? (ì°¸ì¼ ê²½ìš° ì·¨í•  ê°’/ì‹) : (ê±°ì§“ì¼ ê²°ìš° ì·¨í•  ê°’/ì‹)
 public class Ex06 {
 
 	public static void main(String[] args) {
 		int h = 100;
 		String result;
 //		if (h%2==0) {
-//			result = "Â¦¼ö";
+//			result = "ì§ìˆ˜";
 //		}
 //		else {
-//			result = "È¦¼ö";
+//			result = "í™€ìˆ˜";
 //		}
 		
-		result = (h%2==0) ? "Â¦¼ö" : "È¦¼ö";
+		result = (h%2==0) ? "ì§ìˆ˜" : "í™€ìˆ˜";
 		
 		System.out.println(result);
 

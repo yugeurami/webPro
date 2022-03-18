@@ -6,19 +6,19 @@ public class Ex05_evenOdd {
 		int num = 3;
 		// if
 		if (num%2 == 0) {
-			System.out.println("Â¦¼ö");
+			System.out.println("ì§ìˆ˜");
 		} else {
-			System.out.println("È¦¼ö");
+			System.out.println("í™€ìˆ˜");
 		}
 		
 		//switch
 		switch(num%2) {
-		case 0: System.out.println("Â¦¼ö");break;
-		default: System.out.println("È¦¼ö");break;
+		case 0: System.out.println("ì§ìˆ˜");break;
+		default: System.out.println("í™€ìˆ˜");break;
 		}
 		
-		//»ïÇ×¿¬»êÀÚ
-		System.out.println(num%2==0 ? "Â¦¼ö" : "È¦¼ö");
+		//ì‚¼í•­ì—°ì‚°ì
+		System.out.println(num%2==0 ? "ì§ìˆ˜" : "í™€ìˆ˜");
 
 	}
 

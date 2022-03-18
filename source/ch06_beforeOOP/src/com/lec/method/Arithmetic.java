@@ -23,6 +23,6 @@ public class Arithmetic {
 	}
 	
 	public static String evenOdd(int tot) {
-		return tot%2==0 ? "¦���Դϴ�" : "Ȧ���Դϴ�";
+		return tot%2==0 ? "짝수입니다" : "홀수입니다";
 	}
 }

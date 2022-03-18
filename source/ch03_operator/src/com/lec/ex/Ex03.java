@@ -1,5 +1,5 @@
 package com.lec.ex;
-// °ü°è¿¬»êÀÚ(ºñ±³¿¬»êÀÚ) > >= < <= ==(°°´Ù) !=(´Ù¸£´Ù)
+// ê´€ê³„ì—°ì‚°ìž(ë¹„êµì—°ì‚°ìž) > >= < <= ==(ê°™ë‹¤) !=(ë‹¤ë¥´ë‹¤)
 public class Ex03 {
 
 	public static void main(String[] args) {

@@ -3,15 +3,15 @@ package com.lec.ex4_boxorrect;
 public class BoxOrRect {
 	private int width;
 	private int height;
-	private int depth; // boxÀÇ °æ¿ì´Â ±íÀÌ, rectÀÏ °æ¿ì´Â 0
-	private int volume; //boxÀÏ °æ¿ì´Â ºÎÇÇ, rectÀÏ °æ¿ì´Â ³ĞÀÌ
-	public BoxOrRect() {	} // µğÆúÆ® »ı¼ºÀÚ
-	public BoxOrRect(int width, int height) { // rectÀÏ °æ¿ì
+	private int depth; // boxì˜ ê²½ìš°ëŠ” ê¹Šì´, rectì¼ ê²½ìš°ëŠ” 0
+	private int volume; //boxì¼ ê²½ìš°ëŠ” ë¶€í”¼, rectì¼ ê²½ìš°ëŠ” ë„“ì´
+	public BoxOrRect() {	} // ë””í´íŠ¸ ìƒì„±ì
+	public BoxOrRect(int width, int height) { // rectì¼ ê²½ìš°
 		this.width = width;
 		this.height = height;
 		volume = width*height;
 	}
-	public BoxOrRect(int width, int height, int depth) { // boxÀÏ °æ¿ì
+	public BoxOrRect(int width, int height, int depth) { // boxì¼ ê²½ìš°
 		this.width = width;
 		this.height = height;
 		this.depth = depth;
@@ -22,9 +22,9 @@ public class BoxOrRect {
 	}
 	public void vPrint() {
 		if(depth!=0) { //box
-			System.out.println("ºÎÇÇ´Â "+volume);
+			System.out.println("ë¶€í”¼ëŠ” "+volume);
 		}else { //rect
-			System.out.println("³ĞÀÌ´Â "+volume);
+			System.out.println("ë„“ì´ëŠ” "+volume);
 		}
 	}
 }

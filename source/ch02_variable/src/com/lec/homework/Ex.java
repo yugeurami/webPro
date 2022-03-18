@@ -10,7 +10,7 @@ public class Ex {
 		int tot = kor+mat+eng;
 		double avg = (double)tot/3;
 		
-		System.out.println("±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ");
+		System.out.println("êµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· \t");
 		System.out.println(kor+"\t"+eng+"\t"+mat+"\t"+tot+"\t"+avg);
 		
 	}

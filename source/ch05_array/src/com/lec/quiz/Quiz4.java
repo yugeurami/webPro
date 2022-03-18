@@ -1,18 +1,18 @@
 package com.lec.quiz;
-//°Å½º¸§µ· 2680À» 500, 100, 50, 10Â¥¸® µ¿ÀüÀ¸·Î ÁÙ ¶§, ¸î°³¾¿ ÁÖ¾î¾ß ÇÏ³ª?
+//ê±°ìŠ¤ë¦„ëˆ 2680ì„ 500, 100, 50, 10ì§œë¦¬ ë™ì „ìœ¼ë¡œ ì¤„ ë•Œ, ëª‡ê°œì”© ì£¼ì–´ì•¼ í•˜ë‚˜?
 public class Quiz4 {
 
 	public static void main(String[] args) {
 		int money = 2680;
 		int[] coin = {500, 100, 50, 10};
-		System.out.print(money+"¿øÀº ");
+		System.out.print(money+"ì›ì€ ");
 		for(int i = 0 ; i<coin.length ; i++) {
-			System.out.printf("%d¿øÂ¥¸® %d°³  ", coin[i], money/coin[i]);
+			System.out.printf("%dì›ì§œë¦¬ %dê°œ  ", coin[i], money/coin[i]);
 			money %= coin[i];
 		}
 		
 //		for(int temp : coin) {
-//			System.out.printf("%d¿øÂ¥¸® %d°³\t", temp, money/temp);
+//			System.out.printf("%dì›ì§œë¦¬ %dê°œ\t", temp, money/temp);
 //			money %= temp;
 //		}
 

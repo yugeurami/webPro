@@ -1,12 +1,12 @@
 package com.lec.loop;
-// 1~40±îÁö ÇÑÁÙ¿¡ 4°³¾¿
+// 1~40ê¹Œì§€ í•œì¤„ì— 4ê°œì”©
 public class Ex04_for {
 
 	public static void main(String[] args) {
 		for (int i=1 ; i<=40 ; i++) {
 			System.out.print(i+"\t");
 			if (i%4 == 0) {
-				System.out.println();//i°¡ 4ÀÇ ¹è¼öÀÌ¸é °³Çà
+				System.out.println();//iê°€ 4ì˜ ë°°ìˆ˜ì´ë©´ ê°œí–‰
 			}//if
 		}//for
 	}//main

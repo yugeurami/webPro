@@ -1,5 +1,5 @@
 package com.lec.condition;
-// »ç¿ëÀÚ·Î ºÎÅÍ µÎ ¼ö¸¦ ÀÔ·Â¹Ş¾Æ Ã¹¹øÂ° ¼ö°¡ ´õ Å«Áö µÎ¹øÂ° ¼ö°¡ ´õ Å«Áö Ãâ·Â
+// ì‚¬ìš©ìë¡œ ë¶€í„° ë‘ ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ ì²«ë²ˆì§¸ ìˆ˜ê°€ ë” í°ì§€ ë‘ë²ˆì§¸ ìˆ˜ê°€ ë” í°ì§€ ì¶œë ¥
 import java.util.Scanner;
 
 public class Ex02_if {
@@ -7,16 +7,16 @@ public class Ex02_if {
 	public static void main(String[] args) {
 		int num1, num2;
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Ã¹¹øÂ° ¼ö´Â : ");
-		num1 = sc.nextInt(); // Á¤¼ö¸¦ ÀÔ·ÂÇÏ°í ¿£ÅÍ¸¦ ´©¸£¸é ÇØ´ç Á¤¼ö°¡ num1 ÇÒ´ç
-		System.out.print("µÎ¹øÂ° ¼ö´Â : ");
+		System.out.print("ì²«ë²ˆì§¸ ìˆ˜ëŠ” : ");
+		num1 = sc.nextInt(); // ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ê³  ì—”í„°ë¥¼ ëˆ„ë¥´ë©´ í•´ë‹¹ ì •ìˆ˜ê°€ num1 í• ë‹¹
+		System.out.print("ë‘ë²ˆì§¸ ìˆ˜ëŠ” : ");
 		num2 = sc.nextInt();
 		if(num1 > num2) {
-			System.out.println("Ã¹¹øÂ° ¼ö°¡ "+ (num1-num2) + "¸¸Å­ ´õ Å®´Ï´Ù");
+			System.out.println("ì²«ë²ˆì§¸ ìˆ˜ê°€ "+ (num1-num2) + "ë§Œí¼ ë” í½ë‹ˆë‹¤");
 		}else if(num2 > num1) {
-			System.out.printf("µÎ¹øÂ° ¼ö°¡ %d¸¸Å­ ´õ Å®´Ï´Ù\n", num2-num1);
+			System.out.printf("ë‘ë²ˆì§¸ ìˆ˜ê°€ %dë§Œí¼ ë” í½ë‹ˆë‹¤\n", num2-num1);
 		}else{
-			System.out.println("ÀÔ·ÂÇÑ µÎ ¼ö´Â °°½À´Ï´Ù");
+			System.out.println("ì…ë ¥í•œ ë‘ ìˆ˜ëŠ” ê°™ìŠµë‹ˆë‹¤");
 		}
 		sc.close();
 		

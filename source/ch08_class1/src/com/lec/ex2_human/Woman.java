@@ -3,7 +3,7 @@ package com.lec.ex2_human;
 public class Woman {
 
 	public Woman(){
-		System.out.println("¸Å°³º¯¼ö=ÆÄ¶ó¹ÌÅÍ ¾ø´Â Woman »ı¼ºÀÚ ÇÔ¼ö");
+		System.out.println("ë§¤ê°œë³€ìˆ˜=íŒŒë¼ë¯¸í„° ì—†ëŠ” Woman ìƒì„±ì í•¨ìˆ˜");
 	}
 	
 	public void method() {

@@ -1,5 +1,5 @@
 /*
- *2022.03.10 Ã¹¹øÂ° ÀÚ¹Ù ÇÁ·Î±×·¥ ±èÀ¯Áø
+ *2022.03.10 ì²«ë²ˆì§¸ ìë°” í”„ë¡œê·¸ë¨ ê¹€ìœ ì§„
  */
 
 public class Hello {
@@ -7,9 +7,9 @@ public class Hello {
 	public static void main(String[] args) {
 		System.out.println("Hello, Java");
 		System.out.print("Welcome~");
-		System.out.print("³¡");
-		// ÇÑÁÙ ÁÖ¼® - ¼³¸í¹® (ÄÄÇ»ÅÍ´Â ½ÇÇàÇÏÁö ¾ÊÀ½)
-		// ÄÜ¼ÖÃâ·Â : println(°³ÇàÆ÷ÇÔ), print(°³Çà¹ÌÆ÷ÇÔ)
+		System.out.print("ë");
+		// í•œì¤„ ì£¼ì„ - ì„¤ëª…ë¬¸ (ì»´í“¨í„°ëŠ” ì‹¤í–‰í•˜ì§€ ì•ŠìŒ)
+		// ì½˜ì†”ì¶œë ¥ : println(ê°œí–‰í¬í•¨), print(ê°œí–‰ë¯¸í¬í•¨)
 	}
 
 }

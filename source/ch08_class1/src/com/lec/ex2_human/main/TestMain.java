@@ -1,47 +1,47 @@
 package com.lec.ex2_human.main;
 
-import com.lec.ex2_human.*; // com.lec.ex2_human ÆÐÅ°ÁöÀÇ ¸ðµç class import
-							//ºÒÇÊ¿äÇÑ package import »èÁ¦ Ctrl + Shift + o
+import com.lec.ex2_human.*; // com.lec.ex2_human íŒ¨í‚¤ì§€ì˜ ëª¨ë“  class import
+							//ë¶ˆí•„ìš”í•œ package import ì‚­ì œ Ctrl + Shift + o
 
 public class TestMain {
 
 	public static void main(String[] args) {
 		int i = 10;
 		int j = 10;
-		if(i==j) { // ±âÃÊµ¥ÀÌÅÍ ´ÙÀÔ¿¡¼­ÀÇ °°Àº Áö ºñ±³
-			System.out.println("i¿Í j´Â °°´Ù");
+		if(i==j) { // ê¸°ì´ˆë°ì´í„° ë‹¤ìž…ì—ì„œì˜ ê°™ì€ ì§€ ë¹„êµ
+			System.out.println("iì™€ jëŠ” ê°™ë‹¤");
 		}
 		
-		String name = "È«±æµ¿"; // String name = new String("È«±æµ¿")
-		String name2 = "È«±æµ¿"; //String : µ¥ÀÌÅÍ ÇÒ´ç Àü¿¡ °°Àº µ¥ÀÌÅÍ°¡ ÀÖ´ÂÁö È®ÀÎÇØº¸°í ÀÖÀ¸¸é °°Àº ÁÖ¼Ò¸¦ ºÒ·¯¿È
-		if(name.equals(name2)) { // °´Ã¼¿Í °´Ã¼°¡ °°Àº Áö ºñ±³ÇÏ´Â ¹æ¹ý
-			System.out.println("name°ú name2´Â °°´Ù");
+		String name = "í™ê¸¸ë™"; // String name = new String("í™ê¸¸ë™")
+		String name2 = "í™ê¸¸ë™"; //String : ë°ì´í„° í• ë‹¹ ì „ì— ê°™ì€ ë°ì´í„°ê°€ ìžˆëŠ”ì§€ í™•ì¸í•´ë³´ê³  ìžˆìœ¼ë©´ ê°™ì€ ì£¼ì†Œë¥¼ ë¶ˆëŸ¬ì˜´
+		if(name.equals(name2)) { // ê°ì²´ì™€ ê°ì²´ê°€ ê°™ì€ ì§€ ë¹„êµí•˜ëŠ” ë°©ë²•
+			System.out.println("nameê³¼ name2ëŠ” ê°™ë‹¤");
 		}
 		
 		Woman hee1 = new Woman();
 		Woman hee2 = new Woman();
 //		hee1.method();
-		if(hee1.equals(hee2)) { // equals : ³»°¡ ¸¸µç ÀûÀº ¾øÁö¸¸ class»ý¼º ½Ã »ó¼ÓµÊ
-			System.out.println("hee1°ú hee2´Â °°´Ù");
+		if(hee1.equals(hee2)) { // equals : ë‚´ê°€ ë§Œë“  ì ì€ ì—†ì§€ë§Œ classìƒì„± ì‹œ ìƒì†ë¨
+			System.out.println("hee1ê³¼ hee2ëŠ” ê°™ë‹¤");
 		}
 		
 		Man kang = new Man(22, 165, 60.1);
 		Man kim = new Man(22, 180, 65.6);
-		Man kim1; // ·¹ÆÛ·±½º º¯¼ö(°´Ã¼º¯¼ö) ¼±¾ð
+		Man kim1; // ë ˆí¼ëŸ°ìŠ¤ ë³€ìˆ˜(ê°ì²´ë³€ìˆ˜) ì„ ì–¸
 		kim1 = kim;
-		Man kim2 = new Man(22, 180, 65.6); // ÇöÀç »óÅÂ¿¡¼­ equals·Î ºñ±³ÇÏ¸é kim != kim2 ÁÖ¼Ò°¡ ´Ù¸£¸é ´Ù¸¥ °ÍÀ¸·Î º»´Ù
+		Man kim2 = new Man(22, 180, 65.6); // í˜„ìž¬ ìƒíƒœì—ì„œ equalsë¡œ ë¹„êµí•˜ë©´ kim != kim2 ì£¼ì†Œê°€ ë‹¤ë¥´ë©´ ë‹¤ë¥¸ ê²ƒìœ¼ë¡œ ë³¸ë‹¤
 		if(kim.equals(kim1)){
-			System.out.println("kim°ú kim1Àº °°´Ù(°°Àº ÁÖ¼Ò¸¦ °¡¸®Å²´Ù)");
+			System.out.println("kimê³¼ kim1ì€ ê°™ë‹¤(ê°™ì€ ì£¼ì†Œë¥¼ ê°€ë¦¬í‚¨ë‹¤)");
 		}
 		if(!kim.equals(kim2)){
-			System.out.println("kim°ú kim2´Â ´Ù¸¥ °´Ã¼ÀÌ´Ù(´Ù¸¥ ÁÖ¼Ò°ªÀÌ ÀÖ´Ù)");
+			System.out.println("kimê³¼ kim2ëŠ” ë‹¤ë¥¸ ê°ì²´ì´ë‹¤(ë‹¤ë¥¸ ì£¼ì†Œê°’ì´ ìžˆë‹¤)");
 		}
 		kang.setHeight(160);
 		kang.setWeight(50.9);
 		if(kang.calculateBMI() > 30 ) {
-			System.out.println("°Ç°­ÇÏ¼¼¿ä");
+			System.out.println("ê±´ê°•í•˜ì„¸ìš”");
 		}else {
-			System.out.println("°Ç°­ÇÏ°Ú³×¿ä");
+			System.out.println("ê±´ê°•í•˜ê² ë„¤ìš”");
 		}
 		
 	}

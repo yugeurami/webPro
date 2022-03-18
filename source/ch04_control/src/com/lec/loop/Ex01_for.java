@@ -1,9 +1,9 @@
 package com.lec.loop;
-// ¹İº¹¹® - for(¸î¹ø ¹İº¹), while(Á¶°ÇÀÌ ¸¸Á·µÉ ¶§±îÁö ¹İº¹), do~while(1È¸ ½ÇÇà ÈÄ Á¶°ÇÀÌ ¸¸Á·ÇÏ¸é ¹İº¹)
+// ë°˜ë³µë¬¸ - for(ëª‡ë²ˆ ë°˜ë³µ), while(ì¡°ê±´ì´ ë§Œì¡±ë  ë•Œê¹Œì§€ ë°˜ë³µ), do~while(1íšŒ ì‹¤í–‰ í›„ ì¡°ê±´ì´ ë§Œì¡±í•˜ë©´ ë°˜ë³µ)
 public class Ex01_for {
 	public static void main(String[] args) {
 		for(int i = 0 ; i<5 ; i++) {
-			System.out.println(i+". ¾È³çÇÏ¼¼¿ä");
+			System.out.println(i+". ì•ˆë…•í•˜ì„¸ìš”");
 		}
 
 	}

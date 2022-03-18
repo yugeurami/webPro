@@ -1,17 +1,17 @@
 package com.lec.ex;
-// 1~10╠НаЖ а╓╪Жюг гую╩ цБ╥бго╟М ╠в гуюл б╕╪ЖюнаЖ х╕╪ЖюнаЖ цБ╥б
+// 1~10Й╧▄Л╖─ Л═∙Л┬≤Л²≤ М∙╘Л²└ Л╤°К═╔М∙≤ЙЁ═ Й╥╦ М∙╘Л²╢ Л╖²Л┬≤Л²╦Л╖─ М≥─Л┬≤Л²╦Л╖─ Л╤°К═╔
 public class Ex01 {
 	public static void main(String[] args) {
 		int tot = 0;
 		for(int i = 1 ; i<11 ; i++) {
 			tot += i;
 		}
-		System.out.println("1╨нем 10╠НаЖ а╓╪Жюг гую╨ "+tot+"ют╢о╢ы");
+		System.out.println("1К╤─М└╟ 10Й╧▄Л╖─ Л═∙Л┬≤Л²≤ М∙╘Л²─ "+tot+"Л·┘К▀┬К▀╓");
 		String msg;
 		if(tot%2==0) {
-			msg = "б╕╪Жют╢о╢ы";
+			msg = "Л╖²Л┬≤Л·┘К▀┬К▀╓";
 		}else {
-			msg = "х╕╪Жют╢о╢ы";
+			msg = "М≥─Л┬≤Л·┘К▀┬К▀╓";
 		}
 		System.out.println(msg);
 	}

@@ -1,5 +1,5 @@
 package com.lec.loop;
-//1~100±îÁö 3ÀÇ ¹è¼öÀÇ ÇÕ¸¸ ´©ÀûÇÑ °á°ú
+//1~100ê¹Œì§€ 3ì˜ ë°°ìˆ˜ì˜ í•©ë§Œ ëˆ„ì í•œ ê²°ê³¼
 public class Ex07_for_while {
 
 	public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class Ex07_for_while {
 //				tot += i;
 //			}
 //		}
-//		System.out.println("1ºÎÅÍ 100±îÁö 3ÀÇ ¹è¼öÀÇ ÇÕÀº "+tot);
+//		System.out.println("1ë¶€í„° 100ê¹Œì§€ 3ì˜ ë°°ìˆ˜ì˜ í•©ì€ "+tot);
 		
 		int i = 1;
 		while(i<=100) {
@@ -18,7 +18,7 @@ public class Ex07_for_while {
 			}
 			++i;
 		}
-		System.out.println("1ºÎÅÍ 100±îÁö 3ÀÇ ¹è¼öÀÇ ÇÕÀº "+tot);
+		System.out.println("1ë¶€í„° 100ê¹Œì§€ 3ì˜ ë°°ìˆ˜ì˜ í•©ì€ "+tot);
 	}
 
 }

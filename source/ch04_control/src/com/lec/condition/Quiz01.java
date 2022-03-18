@@ -7,12 +7,12 @@ public class Quiz01 {
 	public static void main(String[] args) {
 		int num;
 		Scanner sc = new Scanner(System.in);
-		System.out.print("¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		System.out.print("ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 		num = sc.nextInt();
 		if (num > 0) {
-			System.out.println("Àı´ë°ªÀº :"+ num);
+			System.out.println("ì ˆëŒ€ê°’ì€ :"+ num);
 		}else {
-			System.out.println("Àı´ë°ªÀº :"+ -num);
+			System.out.println("ì ˆëŒ€ê°’ì€ :"+ -num);
 		}
 		sc.close();
 

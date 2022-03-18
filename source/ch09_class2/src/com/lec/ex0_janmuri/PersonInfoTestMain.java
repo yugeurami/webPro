@@ -7,15 +7,15 @@ class PersonInfo{
 		this.age = age;
 	}
 	public void print() {
-		System.out.printf("ÀÌ¸§=%s\t³ªÀÌ=%d\n", name, age);
+		System.out.printf("ì´ë¦„=%s\të‚˜ì´=%d\n", name, age);
 	}
 	
 }
 public class PersonInfoTestMain {
 
 	public static void main(String[] args) {
-		PersonInfo[] person = {	new PersonInfo("È«±æµ¿", 22),
-								new PersonInfo("½Å±æµ¿", 33)};
+		PersonInfo[] person = {	new PersonInfo("í™ê¸¸ë™", 22),
+								new PersonInfo("ì‹ ê¸¸ë™", 33)};
 		for (PersonInfo p : person) {
 			p.print();
 		}

@@ -1,5 +1,5 @@
 package com.lec.ex;
-// µ¥ÀÌÅÍ(private)-width/height, ¸Ş¼Òµå(public)-area(), setter&getter
+// ë°ì´í„°(private)-width/height, ë©”ì†Œë“œ(public)-area(), setter&getter
 // Rect r1 = new Rect()
 public class Rect {
 	private int width;

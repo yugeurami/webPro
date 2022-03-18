@@ -5,7 +5,7 @@ public class Ex04_arrayCopy {
 	public static void main(String[] args) {
 		int[] score = {100,10,20,30,40};
 		int[] s = new int[score.length];
-		for(int idx = 0 ; idx<score.length ; idx++) { // for¹®À» ÀÌ¿ëÇÑ ¹è¿­ º¹»ç
+		for(int idx = 0 ; idx<score.length ; idx++) { // forë¬¸ì„ ì´ìš©í•œ ë°°ì—´ ë³µì‚¬
 			s[idx] = score[idx];
 		}
 		s[0] = 99;

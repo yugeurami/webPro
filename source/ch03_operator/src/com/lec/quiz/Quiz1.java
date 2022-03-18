@@ -1,13 +1,13 @@
 package com.lec.quiz;
-//»ç¿ëÀÚ·ÎºÎÅÍ ÀÔ·Â¹ŞÀº ¼ö°¡ 3ÀÇ ¹è¼öÀÎÁö ¿©ºÎ Ãâ·Â
+//ì‚¬ìš©ìë¡œë¶€í„° ì…ë ¥ë°›ì€ ìˆ˜ê°€ 3ì˜ ë°°ìˆ˜ì¸ì§€ ì—¬ë¶€ ì¶œë ¥
 import java.util.Scanner;
 
 public class Quiz1 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
-		int su = scanner.nextInt(); // »ç¿ëÀÚ·ÎºÎÅÍ Á¤¼ö ÀÔ·Â ¹Ş±â
-		String result = su%3 == 0 ? "ÀÔ·ÂÇÏ½Å ¼ö´Â 3ÀÇ ¹è¼ö" :"ÀÔ·ÂÇÏ½Å ¼ö´Â 3ÀÇ ¹è¼ö°¡ ¾Æ´Ô";
+		System.out.print("ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
+		int su = scanner.nextInt(); // ì‚¬ìš©ìë¡œë¶€í„° ì •ìˆ˜ ì…ë ¥ ë°›ê¸°
+		String result = su%3 == 0 ? "ì…ë ¥í•˜ì‹  ìˆ˜ëŠ” 3ì˜ ë°°ìˆ˜" :"ì…ë ¥í•˜ì‹  ìˆ˜ëŠ” 3ì˜ ë°°ìˆ˜ê°€ ì•„ë‹˜";
 		System.out.println(result);
 		scanner.close();
 	}

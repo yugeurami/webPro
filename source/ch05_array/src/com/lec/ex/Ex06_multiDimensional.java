@@ -1,12 +1,12 @@
 package com.lec.ex;
-// ¹è¿­Àº 1Â÷¿ø ¹è¿­À» ÁÖ·Î ¾´´Ù
+// ë°°ì—´ì€ 1ì°¨ì› ë°°ì—´ì„ ì£¼ë¡œ ì“´ë‹¤
 public class Ex06_multiDimensional {
 	public static void main(String[] args) {
 		int[] arr = {1,2,3};
 		int[][] test = {{1,2,3} , {4,5,6}};
-		System.out.println(arr[2]); //0~2¹ø index
-		System.out.println(test[0][0]); // 0~1Çà 0~2¿­
-		for(int i = 0 ; i<test.length ; i++) { // i = 0~1Çà
+		System.out.println(arr[2]); //0~2ë²ˆ index
+		System.out.println(test[0][0]); // 0~1í–‰ 0~2ì—´
+		for(int i = 0 ; i<test.length ; i++) { // i = 0~1í–‰
 			for(int j = 0 ; j<test[i].length ; j++) {
 				System.out.printf("test[%d][%d] = %d\t", i, j, test[i][j]);
 			} 

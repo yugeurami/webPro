@@ -1,5 +1,5 @@
 package com.lec.ex;
-// ÀÏ¹İ for¹® vs È®Àå for¹®(¹è¿­ Ãâ·Â)
+// ì¼ë°˜ forë¬¸ vs í™•ì¥ forë¬¸(ë°°ì—´ ì¶œë ¥)
 public class Ex02 {
 
 	public static void main(String[] args) {
@@ -7,23 +7,23 @@ public class Ex02 {
 		
 		for(int idx = 0 ; idx<arr.length ; idx++) {
 			System.out.printf("arr[%d]=%d\n", idx, arr[idx]);
-		}//ÀÏ¹İ for¹® ÀÌ¿ëÇÑ Ãâ·Â
+		}//ì¼ë°˜ forë¬¸ ì´ìš©í•œ ì¶œë ¥
 		
 		for(int temp : arr) {
 			System.out.println(temp);
-		}//È®Àå for¹®À» ÀÌ¿ëÇÑ Ãâ·Â
+		}//í™•ì¥ forë¬¸ì„ ì´ìš©í•œ ì¶œë ¥
 		
-		for(int i = 0 ; i<arr.length ; i++) {// ÀÏ¹İ for¹®À» ÀÌ¿ëÇÑ ¹è¿­ º¯°æ °¡´É
+		for(int i = 0 ; i<arr.length ; i++) {// ì¼ë°˜ forë¬¸ì„ ì´ìš©í•œ ë°°ì—´ ë³€ê²½ ê°€ëŠ¥
 			arr[i] = 5;
 		}
 		for(int temp : arr) {
 			System.out.println(temp);
 		}
 		
-		for(int temp : arr) { // È®Àå for¹®À» ÀÌ¿ëÇÑ ¹è¿­ º¯°æ ºÒ°¡´É
-			temp = 9; //temp °ªÀÌ ¹Ù²î´Â °Í ¹è¿­Àº ¿µÇâÀ» ÁÖÁö ¾ÊÀ½
+		for(int temp : arr) { // í™•ì¥ forë¬¸ì„ ì´ìš©í•œ ë°°ì—´ ë³€ê²½ ë¶ˆê°€ëŠ¥
+			temp = 9; //temp ê°’ì´ ë°”ë€ŒëŠ” ê²ƒ ë°°ì—´ì€ ì˜í–¥ì„ ì£¼ì§€ ì•ŠìŒ
 		}
-		System.out.println("¼öÁ¤ ÈÄ");
+		System.out.println("ìˆ˜ì • í›„");
 		for(int temp : arr) {
 			System.out.println(temp);
 		}

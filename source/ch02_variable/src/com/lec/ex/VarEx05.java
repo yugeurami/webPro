@@ -14,9 +14,9 @@ public class VarEx05 {
 		f1 = 10.1f;
 		d = 10.1;
 		if (f1==d) 
-			System.out.println("µÎ º¯¼ö´Â °°´Ù.");
+			System.out.println("ë‘ ë³€ìˆ˜ëŠ” ê°™ë‹¤.");
 		else 
-			System.out.println("µÎ º¯¼ö´Â ´Ù¸£´Ù.");
+			System.out.println("ë‘ ë³€ìˆ˜ëŠ” ë‹¤ë¥´ë‹¤.");
 		
 		
 	}

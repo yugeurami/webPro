@@ -4,10 +4,10 @@ public class VarEx06 {
 	public static void main(String[] args) {
 		int i1 = 10; 			// 4byte
 		long l = 2200000000l;   // 8byte
-		double d1 = 10;         // 8bye = 4byte ¹¬½ÃÀû Çüº¯È¯ (ÀÛÀº byte°ªÀ» Å« byte°ø°£¿¡)
+		double d1 = 10;         // 8bye = 4byte ë¬µì‹œì  í˜•ë³€í™˜ (ì‘ì€ byteê°’ì„ í° byteê³µê°„ì—)
 		System.out.println("d1="+d1);
 		double d2 = 10.19;
-		int i2 = (int)d2;       // ¸í½ÃÀûÀÎ Çüº¯È¯(µ¥ÀÌÅÍ ¼Õ½ÇÀÌ ¹ß»ıÇÒ ¼öµµ ÀÖÀ½)
+		int i2 = (int)d2;       // ëª…ì‹œì ì¸ í˜•ë³€í™˜(ë°ì´í„° ì†ì‹¤ì´ ë°œìƒí•  ìˆ˜ë„ ìˆìŒ)
 		System.out.println("i2="+i2);
 	}
 }

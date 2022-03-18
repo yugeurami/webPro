@@ -1,47 +1,47 @@
 package com.lec.ex;
-/* ¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á
+/* â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– 
  * Hello, World!
  * ------------- printLine()
  * Hello, Java!
  * ~~~~~~~~~~~~~ printLine('~')
  * Hello, Hong!
- * ¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á
+ * â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– 
  */
 
 public class Ex05_line {
 	public static void main(String[] args) {
-		printLine('¡á',40);
+		printLine('â– ',40);
 		System.out.println("\tHello, World!");
 		printLine(40);
 		System.out.println("\tHello, Java!");
 		printLine('~');
 		System.out.println("\tHello, Hong!");
-		printLine('¡á',40);
+		printLine('â– ',40);
 	}
 	private static void printLine(int cnt) {
 		for(int i = 0 ; i<cnt ; i++) {
 			System.out.print('-');
 		}
-		System.out.println(); // ¸Å°³º¯¼ö·Î ¹ÞÀº ¼ýÀÚ¸¸Å­ '-'Ãâ·Â
+		System.out.println(); // ë§¤ê°œë³€ìˆ˜ë¡œ ë°›ì€ ìˆ«ìžë§Œí¼ '-'ì¶œë ¥
 	}
 	
 	private static void printLine(char c, int cnt) {
 		for(int i = 0 ; i<cnt ; i++) {
 			System.out.print(c);
 		}
-		System.out.println(); // ¸Å°³º¯¼ö·Î ¹ÞÀº ¼ýÀÚ¸¸Å­ ¸Å°³º¯¼ö·Î ¹ÞÀº ¹®ÀÚ Ãâ·Â
+		System.out.println(); // ë§¤ê°œë³€ìˆ˜ë¡œ ë°›ì€ ìˆ«ìžë§Œí¼ ë§¤ê°œë³€ìˆ˜ë¡œ ë°›ì€ ë¬¸ìž ì¶œë ¥
 	}
 	
 	private static void printLine(char c) {
 		for(int i = 0 ; i<30 ; i++) {
 			System.out.print(c);
 		}
-		System.out.println(); // ¸Å°³º¯¼ö·Î ¹ÞÀº c¹®ÀÚ 30°³ Ãâ·ÂÇÏ°í °³Çà
+		System.out.println(); // ë§¤ê°œë³€ìˆ˜ë¡œ ë°›ì€ cë¬¸ìž 30ê°œ ì¶œë ¥í•˜ê³  ê°œí–‰
 	}
-	private static void printLine() { // returnÅ¸ÀÔÀÌ ¾ø°í ¸Å°³º¯¼ö°¡ ¾ø´Â ¸Þ¼Òµå(ÇÔ¼ö)
+	private static void printLine() { // returníƒ€ìž…ì´ ì—†ê³  ë§¤ê°œë³€ìˆ˜ê°€ ì—†ëŠ” ë©”ì†Œë“œ(í•¨ìˆ˜)
 		for(int i = 0 ; i<30 ; i++) {
 			System.out.print('-');
 		}
-		System.out.println(); //¾ãÀº '-'20°³ Ãâ·ÂÇÏ°í °³Çà
+		System.out.println(); //ì–‡ì€ '-'20ê°œ ì¶œë ¥í•˜ê³  ê°œí–‰
 	}
 }

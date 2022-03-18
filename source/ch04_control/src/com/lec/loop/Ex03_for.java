@@ -1,10 +1,10 @@
 package com.lec.loop;
-// ÁßÃ¸ for¹®
+// ì¤‘ì²© forë¬¸
 public class Ex03_for {
 
 	public static void main(String[] args) {
-		for (int j=1 ; j<=5 ; j++) { // 5È¸ ¹Ýº¹
-			for (int i=1 ; i<=j ; i++) { // jÈ¸ ¹Ýº¹
+		for (int j=1 ; j<=5 ; j++) { // 5íšŒ ë°˜ë³µ
+			for (int i=1 ; i<=j ; i++) { // jíšŒ ë°˜ë³µ
 				System.out.print('*');
 			}// for -i
 			System.out.println();

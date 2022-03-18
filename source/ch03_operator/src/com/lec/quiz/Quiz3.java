@@ -7,14 +7,14 @@ public class Quiz3 {
 	public static void main(String[] args) {
 		Scanner scanner1 = new Scanner(System.in);
 		Scanner scanner2 = new Scanner(System.in);
-		System.out.print("Ã¹¹øÂ° ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì²«ë²ˆì§¸ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		int n1 = scanner1.nextInt();
-		System.out.print("µÎ¹øÂ° ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ë‘ë²ˆì§¸ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		int n2 = scanner2.nextInt();
 		char result1 = n1==n2? 'O' : 'x';
 		char result2 = n1>n2 ? 'O' : 'X';
-		System.out.println("µÎ ¼ö°¡ °°³ª¿ä? \t"+result1);
-		System.out.println("Ã¹¹øÂ° ¼ö°¡ ´õ Å«°¡¿ä? \t"+result2);
+		System.out.println("ë‘ ìˆ˜ê°€ ê°™ë‚˜ìš”? \t"+result1);
+		System.out.println("ì²«ë²ˆì§¸ ìˆ˜ê°€ ë” í°ê°€ìš”? \t"+result2);
 
 	}
 

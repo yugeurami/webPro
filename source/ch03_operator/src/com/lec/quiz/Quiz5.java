@@ -10,7 +10,7 @@ public class Quiz5 {
 		int tot = kor + eng + mat;
 		double agv = tot/3.0;
 		
-		System.out.println("±¹¾î\t ¿µ¾î\t ¼öÇĞ\t ÃÑÁ¡\t Æò±Õ");
+		System.out.println("êµ­ì–´\t ì˜ì–´\t ìˆ˜í•™\t ì´ì \t í‰ê· ");
 		System.out.printf("%d\t %d\t %d\t %d\t %.2f", kor, eng, mat, tot, agv);
 
 	}

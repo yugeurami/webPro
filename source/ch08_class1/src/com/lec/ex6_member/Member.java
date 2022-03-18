@@ -1,12 +1,12 @@
 package com.lec.ex6_member;
 //id, pw, name, email, address, birth, gender
 /*
- * ¸Ş¼Òµå : ¡°¾ÆÀÌµğ = aaa
-         ÀÌ¸§ = È«±æµ¿
-         ÀÌ¸ŞÀÏ = hong@company.com
-         ÁÖ¼Ò = ¼­¿ï °­³²±¸
-         »ıÀÏ = 2000-01-01
-         ¼ºº° = ³² ¡±(°´Ã¼ Á¤º¸)À» returnÇÏ´Â infoString() ¸Ş¼Òµå
+ * ë©”ì†Œë“œ : â€œì•„ì´ë”” = aaa
+         ì´ë¦„ = í™ê¸¸ë™
+         ì´ë©”ì¼ = hong@company.com
+         ì£¼ì†Œ = ì„œìš¸ ê°•ë‚¨êµ¬
+         ìƒì¼ = 2000-01-01
+         ì„±ë³„ = ë‚¨ â€(ê°ì²´ ì •ë³´)ì„ returní•˜ëŠ” infoString() ë©”ì†Œë“œ
 
  */
 public class Member {
@@ -29,7 +29,7 @@ public class Member {
 		this.gender = gender;
 	}
 	public String infoString() {
-		return String.format("¾ÆÀÌµğ = %s\nÀÌ¸§ = %s\nÀÌ¸ŞÀÏ = %s\nÁÖ¼Ò = %s\n»ıÀÏ = %s\n¼ºº° = %s", id, name, email, address, birth, gender);
+		return String.format("ì•„ì´ë”” = %s\nì´ë¦„ = %s\nì´ë©”ì¼ = %s\nì£¼ì†Œ = %s\nìƒì¼ = %s\nì„±ë³„ = %s", id, name, email, address, birth, gender);
 	}
 	
 }

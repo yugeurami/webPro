@@ -1,9 +1,9 @@
 package com.lec.method;
-// Arithmetic.sum/ evenOdd(static) vs abs(¿œπ›)
+// Arithmetic.sum/ evenOdd(static) vs abs(ÏùºÎ∞ò)
 public class Ex03 {
 	public static void main(String[] args) {
 		int tot = Arithmetic.sum(10);
-		System.out.println("1~10 «’¿∫ "+tot);
+		System.out.println("1~10 Ìï©ÏùÄ "+tot);
 		System.out.println(Arithmetic.evenOdd(tot));
 		Arithmetic ar = new Arithmetic(); 
 		System.out.println(ar.abs(-8));

@@ -6,18 +6,18 @@ public class Quiz06 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("ÇöÀç ¸î¿ùÀÔ´Ï±î? : ");
+		System.out.println("í˜„ì¬ ëª‡ì›”ì…ë‹ˆê¹Œ? : ");
 		int month = scanner.nextInt();
 		switch(month) {
 			case 12: case 1: case 2:
-				System.out.println("°Ü¿ïÀÌ³×¿ä");break;
+				System.out.println("ê²¨ìš¸ì´ë„¤ìš”");break;
 			case 3: case 4: case 5:
-				System.out.println("º½ÀÌ³×¿ä");break;
+				System.out.println("ë´„ì´ë„¤ìš”");break;
 			case 6: case 7: case 8:
-				System.out.println("¿©¸§ÀÌ³×¿ä");break;
+				System.out.println("ì—¬ë¦„ì´ë„¤ìš”");break;
 			case 9: case 10: case 11:
-				System.out.println("°¡À»ÀÌ³×¿ä");break;
-			default: System.out.println("¶¼³¢");
+				System.out.println("ê°€ì„ì´ë„¤ìš”");break;
+			default: System.out.println("ë–¼ë¼");
 		}
 		scanner.close();
 	}

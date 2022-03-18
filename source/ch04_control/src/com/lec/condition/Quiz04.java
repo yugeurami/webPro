@@ -6,16 +6,16 @@ public class Quiz04 {
 	public static void main(String[] args) {
 		int num;
 		Scanner sc = new Scanner(System.in);
-		System.out.print("°¡À§(0),¹ÙÀ§(1),º¸(2) Áß ÇÏ³ª¸¦ ¼±ÅÃÇÏ¼¼¿ä : ");
+		System.out.print("ê°€ìœ„(0),ë°”ìœ„(1),ë³´(2) ì¤‘ í•˜ë‚˜ë¥¼ ì„ íƒí•˜ì„¸ìš” : ");
 		num = sc.nextInt();
 		if(num == 0) {
-			System.out.println("´ç½ÅÀº °¡À§");
+			System.out.println("ë‹¹ì‹ ì€ ê°€ìœ„");
 		}else if (num == 1) {
-			System.out.println("´ç½ÅÀº ¹ÙÀ§");
+			System.out.println("ë‹¹ì‹ ì€ ë°”ìœ„");
 		}else if(num == 2) {
-			System.out.println("´ç½ÅÀº º¸");
+			System.out.println("ë‹¹ì‹ ì€ ë³´");
 		}else {
-			System.out.println("À¯È¿ÇÏÁö ¾ÊÀº °ªÀÔ´Ï´Ù.");
+			System.out.println("ìœ íš¨í•˜ì§€ ì•Šì€ ê°’ì…ë‹ˆë‹¤.");
 		}
 		sc.close();
 	}

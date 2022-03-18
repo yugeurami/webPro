@@ -5,13 +5,13 @@ public class Ex01_if {
 	public static void main(String[] args) {
 		int seoulLunchPrice = 5000;
 		if(seoulLunchPrice >= 8000) {
-			System.out.println("¼­¿ï Á¡½É°ª ºñ½Î³×¿ä");
+			System.out.println("ì„œìš¸ ì ì‹¬ê°’ ë¹„ì‹¸ë„¤ìš”");
 		}else if(seoulLunchPrice >= 6000) {
-			System.out.println("¼­¿ï ¹ä°ª ÀÎÁ¤. ±×·¡");
+			System.out.println("ì„œìš¸ ë°¥ê°’ ì¸ì •. ê·¸ë˜");
 		}else if(seoulLunchPrice >=5000) {
-			System.out.println("ÁÁ³×");
+			System.out.println("ì¢‹ë„¤");
 		}else {
-			System.out.println("½Ä´ç ÁÖÀÎ ¸ÁÇÒ±îºÁ °ÆÁ¤µÇ³×");
+			System.out.println("ì‹ë‹¹ ì£¼ì¸ ë§í• ê¹Œë´ ê±±ì •ë˜ë„¤");
 		}
 
 	}

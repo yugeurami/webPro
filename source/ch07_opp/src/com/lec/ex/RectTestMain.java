@@ -6,7 +6,7 @@ public class RectTestMain {
 		Rect r2 = new Rect();
 		r1.setWidth(10);
 		r1.setHeight(5);
-		System.out.println("r1ÀÇ ³ĞÀÌ´Â "+r1.area());
-		System.out.println("r2ÀÇ ³ĞÀÌ´Â "+r2.area());
+		System.out.println("r1ì˜ ë„“ì´ëŠ” "+r1.area());
+		System.out.println("r2ì˜ ë„“ì´ëŠ” "+r2.area());
 	}
 }

@@ -1,29 +1,29 @@
 package com.lec.ex;
-// class : µ¥ÀÌÅÍ(¼Ó¼º, ÀÎ½ºÅÏ½ºº¯¼ö)¿Í ¸Ş¼Òµå(±â´É, setter, getter)
+// class : ë°ì´í„°(ì†ì„±, ì¸ìŠ¤í„´ìŠ¤ë³€ìˆ˜)ì™€ ë©”ì†Œë“œ(ê¸°ëŠ¥, setter, getter)
 // Car c = new Car()
 // c.park()
 public class Car {
-	private String 	color; 	// »ö»ó
-	private int 	cc; 	// ¹è±â·®
-	private int 	speed; 	// ¼Óµµ
+	private String 	color; 	// ìƒ‰ìƒ
+	private int 	cc; 	// ë°°ê¸°ëŸ‰
+	private int 	speed; 	// ì†ë„
 	public void drive() {
 		speed = 60;
-		System.out.println(color+"»ö Â÷¸¦ ¿îÀüÇÑ´Ù. Áö±İ ¼Óµµ : "+speed);
+		System.out.println(color+"ìƒ‰ ì°¨ë¥¼ ìš´ì „í•œë‹¤. ì§€ê¸ˆ ì†ë„ : "+speed);
 	}
 	public void park() {
 		speed = 0;
-		System.out.println(color+"»ö Â÷¸¦ ÁÖÂ÷ÇÑ´Ù. Áö±İ ¼Óµµ : "+speed);
+		System.out.println(color+"ìƒ‰ ì°¨ë¥¼ ì£¼ì°¨í•œë‹¤. ì§€ê¸ˆ ì†ë„ : "+speed);
 	}
 	public void race() {
 		speed = 120;
-		System.out.println(color+"»ö Â÷¸¦ ¿îÀüÇÑ´Ù. Áö±İ ¼Óµµ : "+speed);
+		System.out.println(color+"ìƒ‰ ì°¨ë¥¼ ìš´ì „í•œë‹¤. ì§€ê¸ˆ ì†ë„ : "+speed);
 	}
 	
 	//setter & getter (color, cc, speed)
 	//myPorsche.color = "red"
 	//=> myPorsche.methodName("red")
 	public void setColor(String color) {
-		this.color = color; //this = ³» °´Ã¼ÀÇ º¯¼ö
+		this.color = color; //this = ë‚´ ê°ì²´ì˜ ë³€ìˆ˜
 	}
 	
 	public void setCc(int cc) {

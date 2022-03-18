@@ -1,17 +1,17 @@
 package com.lec.ex;
-// ³í¸®¿¬»êÀÚ : &&(AND) ||(OR)
+// ë…¼ë¦¬ì—°ì‚°ì : &&(AND) ||(OR)
 public class Ex04 {
 	public static void main(String[] args) {
 		int i=1, j=10, h=10;
 		
-		//&&¿¬»êÀÚ ÁÂÇ×ÀÌ falseÀÏ ¶§´Â ¿ìÇ× ½ÇÇà ¾È ÇÔ
+		//&&ì—°ì‚°ì ì¢Œí•­ì´ falseì¼ ë•ŒëŠ” ìš°í•­ ì‹¤í–‰ ì•ˆ í•¨
 		boolean result = ( (i>j) && (++j>h) );
 		System.out.println("result="+result+"\t j="+j);
 		
 		result = ( (i<j) && (++j>h) ); 
 		System.out.println("result="+result+"\t j="+j);
 		
-		//||¿¬»êÀÚ ÁÂÇ×ÀÌ trueÀÏ ¶© ¿ìÇ× ½ÇÇà ¾È ÇÔ
+		//||ì—°ì‚°ì ì¢Œí•­ì´ trueì¼ ë• ìš°í•­ ì‹¤í–‰ ì•ˆ í•¨
 		result = (i<j) || (++j>h); 
 		System.out.println("result="+result+"\t j="+j);
 		

@@ -6,34 +6,34 @@ public class Ex04_switch_hakjum {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("Á¡¼ö : ");
+		System.out.print("ì ìˆ˜ : ");
 		int score = scanner.nextInt();
 		int temp = score==100? score-1 : score;
 		temp = (-9<=temp && temp<0)? -10 : temp;
 		
 		switch( temp / 10) {
-			case 9: System.out.println("AÇĞÁ¡");break;
-			case 8: System.out.println("BÇĞÁ¡");break;
-			case 7: System.out.println("CÇĞÁ¡");break;
-			case 6: System.out.println("DÇĞÁ¡");break;
+			case 9: System.out.println("Aí•™ì ");break;
+			case 8: System.out.println("Bí•™ì ");break;
+			case 7: System.out.println("Cí•™ì ");break;
+			case 6: System.out.println("Dí•™ì ");break;
 			case 5: case 4: case 3: case 2: case 1:
-			case 0: System.out.println("FÇĞÁ¡");break;
-			default: System.out.println("À¯¿äÇÏÁö ¾Ê´Â Á¡¼öÀÔ´Ï´Ù");
+			case 0: System.out.println("Fí•™ì ");break;
+			default: System.out.println("ìœ ìš”í•˜ì§€ ì•ŠëŠ” ì ìˆ˜ì…ë‹ˆë‹¤");
 		
 		}
 		
 //		if(90 <= score && score <= 100) {
-//			System.out.println("AÇĞÁ¡");
+//			System.out.println("Aí•™ì ");
 //		} else if(80 <= score && score < 90) {
-//			System.out.println("BÇĞÁ¡");
+//			System.out.println("Bí•™ì ");
 //		} else if(70 <= score && score < 80) {
-//			System.out.println("CÇĞÁ¡");
+//			System.out.println("Cí•™ì ");
 //		} else if(60 <= score && score < 70) {
-//			System.out.println("DÇĞÁ¡");
+//			System.out.println("Dí•™ì ");
 //		} else if(0 <= score && score < 60) {
-//			System.out.println("FÇĞÁ¡");
+//			System.out.println("Fí•™ì ");
 //		} else {
-//			System.out.println("À¯¿äÇÑ Á¡¼ö°¡ ¾Æ´Õ´Ï´Ù.");
+//			System.out.println("ìœ ìš”í•œ ì ìˆ˜ê°€ ì•„ë‹™ë‹ˆë‹¤.");
 //		}
 		
 		

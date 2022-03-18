@@ -1,18 +1,18 @@
 package com.lec.ex;
-// 1~10±îÁö Á¤¼öÀÇ ÇÕÀ» Ãâ·ÂÇÏ°í ±× ÇÕÀÌ Â¦¼öÀÎÁö È¦¼öÀÎÁö Ãâ·Â
+// 1~10ê¹Œì§€ ì •ìˆ˜ì˜ í•©ì„ ì¶œë ¥í•˜ê³  ê·¸ í•©ì´ ì§ìˆ˜ì¸ì§€ í™€ìˆ˜ì¸ì§€ ì¶œë ¥
 public class Ex02 {
 	public static void main(String[] args) {
 		
-		int tot = sum(10); //sum È£Ãâ
-		System.out.print("1~10±îÁö ´©ÀûÇÕÀº "+tot+", ");
+		int tot = sum(10); //sum í˜¸ì¶œ
+		System.out.print("1~10ê¹Œì§€ ëˆ„ì í•©ì€ "+tot+", ");
 		System.out.println(evenOdd(tot));
 		
 		tot = sum(10, 100);
-		System.out.print("10~100±îÁö ´©ÀûÇÕÀº "+tot+", ");
+		System.out.print("10~100ê¹Œì§€ ëˆ„ì í•©ì€ "+tot+", ");
 		System.out.println(evenOdd(tot));
 	}
 	
-	private static int sum(int to) { // ÇÔ¼öÀÇ ¿À¹ö·Îµù
+	private static int sum(int to) { // í•¨ìˆ˜ì˜ ì˜¤ë²„ë¡œë”©
 		int result = 0;
 		for (int i = 1 ; i<=to ; i++) {
 			result += i;
@@ -20,20 +20,20 @@ public class Ex02 {
 		return result;
 	}
 	
-	private static int sum(int from, int to) { // from ~ to±îÁö ´©ÀûÇÑ °á°ú return
+	private static int sum(int from, int to) { // from ~ toê¹Œì§€ ëˆ„ì í•œ ê²°ê³¼ return
 		int result = 0;
 		for (int i = from ; i<=to ; i++) {
 			result += i;
 		}
-		return result; // returnÀÌ ³ª¿À¸é È£ÃâÇÑ °÷À¸·Î °ªÀ» Ãâ·Â, ¹ØÀ¸·Î´Â ½ÇÇàX
+		return result; // returnì´ ë‚˜ì˜¤ë©´ í˜¸ì¶œí•œ ê³³ìœ¼ë¡œ ê°’ì„ ì¶œë ¥, ë°‘ìœ¼ë¡œëŠ” ì‹¤í–‰X
 	}
 	
 	private static String evenOdd(int tot) {
-		return tot%2==0 ? "Â¦¼öÀÔ´Ï´Ù" : "È¦¼öÀÔ´Ï´Ù";
+		return tot%2==0 ? "ì§ìˆ˜ì…ë‹ˆë‹¤" : "í™€ìˆ˜ì…ë‹ˆë‹¤";
 //		if(tot%2 == 0) {
-//			return "Â¦¼öÀÔ´Ï´Ù";
+//			return "ì§ìˆ˜ì…ë‹ˆë‹¤";
 //		}else {
-//			return "È¦¼öÀÔ´Ï´Ù";
+//			return "í™€ìˆ˜ì…ë‹ˆë‹¤";
 //		} 
 	}
 

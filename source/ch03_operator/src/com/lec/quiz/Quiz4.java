@@ -6,9 +6,9 @@ public class Quiz4 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("³ªÀÌ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ë‚˜ì´ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		int age = scanner.nextInt();
-		String result = age>=65? "°æ·Î¿ì´ë" : "ÀÏ¹İ";
+		String result = age>=65? "ê²½ë¡œìš°ëŒ€" : "ì¼ë°˜";
 		System.out.println(result);
 
 	}

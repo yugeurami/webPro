@@ -1,5 +1,5 @@
 package com.lec.ex;
-// ºñÆ®¿¬»êÀÚ (& | )
+//ë¹„íŠ¸ì—°ì‚°ì (& | )
 public class Ex05 {
 
 	public static void main(String[] args) {

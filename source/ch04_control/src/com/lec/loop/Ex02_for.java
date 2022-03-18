@@ -1,13 +1,13 @@
 package com.lec.loop;
-//1~20±îÁöÀÇ ´©Àû ÇÕ Ãâ·Â
+//1~20ê¹Œì§€ì˜ ëˆ„ì  í•© ì¶œë ¥
 public class Ex02_for {
 
 	public static void main(String[] args) {
-		int tot = 0; //´©ÀûÇÒ º¯¼ö
+		int tot = 0; //ëˆ„ì í•  ë³€ìˆ˜
 		for (int i = 1 ; i<=20 ; i++) {
 			tot += i; //tot = tot + i;
 		}
-		System.out.println("1ºÎÅÍ 20±îÁö ´©ÀûÇÕÀº "+tot);
+		System.out.println("1ë¶€í„° 20ê¹Œì§€ ëˆ„ì í•©ì€ "+tot);
 	}
 
 }

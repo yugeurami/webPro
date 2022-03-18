@@ -1,10 +1,10 @@
 package com.lec.ex;
-//º¯¼öÀÇ ¼±¾ğ À§Ä¡ : Á¦¾à ¾øÀ½
+//ë³€ìˆ˜ì˜ ì„ ì–¸ ìœ„ì¹˜ : ì œì•½ ì—†ìŒ
 public class VarEx03 {
 
 	public static void main(String[] args) {
-		System.out.println("ÇÁ·Î±×·¥ ½ÃÀÛ");
-//		System.out.println(i); ¾ÆÁ÷ º¯¼ö ¼±¾ğÀÌ ¾ÈµÊ
+		System.out.println("í”„ë¡œê·¸ë¨ ì‹œì‘");
+//		System.out.println(i); ì•„ì§ ë³€ìˆ˜ ì„ ì–¸ì´ ì•ˆë¨
 		int i = 10;
 		System.out.println(i);
 	}

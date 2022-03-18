@@ -3,8 +3,8 @@ package com.lec.ex;
 public class CarTestMain {
 	public static void main(String[] args) {
 		Car myPorsche = new Car();
-		myPorsche.setColor("red"); //yourPorsche¿¡´Â ¿µÇâÀ» ÁÖÁö ¾ÊÀ½
-		System.out.println(myPorsche.getColor()+", "+"¹è±â·®"+myPorsche.getCc()+", ¼Óµµ:"+myPorsche.getSpeed());
+		myPorsche.setColor("red"); //yourPorscheì—ëŠ” ì˜í–¥ì„ ì£¼ì§€ ì•ŠìŒ
+		System.out.println(myPorsche.getColor()+", "+"ë°°ê¸°ëŸ‰"+myPorsche.getCc()+", ì†ë„:"+myPorsche.getSpeed());
 		myPorsche.drive();
 		myPorsche.park();
 		myPorsche.race();

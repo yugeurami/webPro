@@ -12,6 +12,6 @@ public class PersonInfo {
 	}
 
 	public void print() {
-		System.out.printf("ÀÌ¸§=%s, ³ªÀÌ=%d, ¼ºº°=%c\n", name, age, gender);
+		System.out.printf("ì´ë¦„=%s, ë‚˜ì´=%d, ì„±ë³„=%c\n", name, age, gender);
 	}
 }

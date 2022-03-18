@@ -15,7 +15,12 @@ public class Student {
 		avg = tot/3.0;
 	}
 	public void print() {
-		System.out.printf("%s\t%d\t%d\t%d\t%d\t%d\n", name, kor, eng, mat, tot, avg);
+		System.out.print("\t"+name+"\t");
+		System.out.print(kor+"\t");
+		System.out.print(eng+"\t");
+		System.out.print(mat+"\t");
+		System.out.print(tot+"\t");
+		System.out.printf("%.1f\n",avg);
 	}
 	public String getName() {
 		return name;
