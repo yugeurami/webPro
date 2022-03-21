@@ -1,4 +1,4 @@
-package com.lec.ex1_parentchild;
+package com.lec.ex01_parentchild;
 
 public class ChildClass extends ParentClass {
 	String cStr = "아들클래스";

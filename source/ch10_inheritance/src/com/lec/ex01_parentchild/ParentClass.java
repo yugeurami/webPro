@@ -1,4 +1,4 @@
-package com.lec.ex1_parentchild;
+package com.lec.ex01_parentchild;
 
 public class ParentClass {
 	String pStr = "부모클래스";
