@@ -1,0 +1,32 @@
+[API]
+오라클에서 미리 만들어둔 인터페이스
+
+
+[날짜를 받는 변수 타입]
+1. Date
+Date date = new Date();
+
+2. Calendar
+Calendar cal = Calendar.getInstance();
+
+3. GregorianCalendar
+GregorianCalendar cal = new GregorianCalendar();
+
+이 유형들 모두 굉장히 복잡한 형식으로 현재 시간을 가져온다
+Date와 GregorianCalendar는 new로 바로 생성이 가능하지만 Calendar는 싱글톤 클래스임으로 getInstance로 호출해서 사용해야한다!
+셋 모두 월은 0부터 표기!
+
+[SimpleDateFormat]
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 E요일a hh시 mm분 ss초");
+yyyy(년도4자리) yy(년도 2자리) 
+M(3) MM(03) 
+d(9) dd(09)
+E(요일) 
+a(오전/오후) 
+H(24시간) h(12시간) 
+m(분) s(초)
+w(이번 년도에 몇번째 주인지) 
+D(올해 몇번째 날인지)
+
+
+﻿﻿

@@ -1,0 +1,27 @@
+[API]
+오라클에서 미리 만들어둔 인터페이스
+
+.concat(); 			//두 string을 합쳐준다
+.substring(3); 			// 3번째부터 끝까지
+.substring(3,5); 		// 3번째 부터 5번째 앞까지
+.length(); 			// 글자길이 7
+.toUpperCase(); 			// 모든 알파벳을 대문자로
+.toLowerCase(); 			// 모든 알파벳을 소문자로
+.charAt(3); 			// 3번째 문자
+.indexOf('b'); 			// 첫번째 'b'가 나오는 인덱스 
+.indexOf('b',3); 		// 3번째부터 검사해서 b가 나오는 위치 
+.indexOf("abc"); 		// 첫번째 "abc"나오는 위치
+.indexOf("abc",3); 		// 3번째 부터 검색해서 "abc"가 나오는 위치
+                   		// 없으면 -1
+.lastIndexOf('b'); 		// 마지막 'b'위치 반환 
+.lastIndexOf('b',3); 		// 3번째부터 맨 마지막 b 
+.equals(); 			// 두 문자열이 같은지 판단
+.equalsIgnoreCase()); 	// 대소문자없이 비교 true
+.trim()); 				// 앞뒤의 공백제거(중간의 공백은 제거하지 않음)
+.replace('a', '9')); 		// 'a'를 9로 교체
+.replace("abc", "#"); 	// "abc"를 "#"으로 교체
+.replaceAll("abc", "Z"));	// "abc"를 "Z"로 교체
+.replace("abc", "Z"));	// "abc"를 "Z"로 교체
+---------------------------------------------------
+replaceAll에서는 정규표현식을 사용할 수 있다
+﻿
