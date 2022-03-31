@@ -1,0 +1,24 @@
+Math.pow(a, b)  // a의 b승
+Math.abs(a)     // a의
+Math.sqrt(a)    // a의 제곱근
+Math.min(a, b)  // a와 b 중 최소값은?
+Math.max(a, b)  // a와 b 중 최대값은?
+Math.PI         // 자바에서 설정해 둔 파이값
+
+
+[반올림, 올림, 내림]
+소수점을 기준으로 한다
+Math.ceil       // 올릴 실수값	=>	double return
+Math.round      // 반올림할 실수값	=>	정수값 return
+Math.floor      // 내릴 실수값	=>	double return
+
+
+[난수생성]
+Math.random();          // 0~1미만의 난수
+
+Random random = new Random();
+random.nextInt();     // int 난수
+random.nextDouble();  // double 난수
+random.nextBoolean(); // T/F 중 하나 난수
+random.nextInt(3);    // 0~3미만의 정수 난수
+random.nextInt(45)+1; // 1~46까지의 정수 난수
