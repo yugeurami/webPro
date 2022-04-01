@@ -1,0 +1,13 @@
+[Scanner]
+사용자로부터 정보를 입력받음
+
+scanner.nextInt();  // '\n'앞의 숫자를 return
+scanner.next();     // whitespace앞까지 값만 return
+scanner.nextLine(); // '\n'앞에 있는 값을 return하고 '\n'부터는 buffer를 지움
+앞에 '\n'이 있으면 그 앞 부분만 출력하고 buffer를 지워버림으로 nextLine을 쓸 때는 앞에 '\n'이 있는 지 잘 확인하고 써야 한다.
+
+Scanner close();를 method에서 하면 문제가 생길 수 있음으로 Main에서만 한다.
+
+﻿
+
+﻿

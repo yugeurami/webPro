@@ -1,0 +1,28 @@
+[timer]
+1. 설정한 시간 후에 한번 작동하는 타이머
+2. 일정한 시간 마다 계속 작동하는 타이머
+
+//timerTask class
+import java.util.TimerTask;
+public class Timer extends TimerTask {
+	@Override
+	public void run() {
+		// TimerTask
+	}
+}
+
+//Main class에서의 사용
+import java.util.Timer;
+
+public class TimerTestMain {
+
+	public static void main(String[] args) throws InterruptedException { // 예외 처리를 해줘야 한다
+		Timer timer = new Timer(true); // true로 처리해주지 않으면 프로그램이 끝나도 계속 timer 상주함
+		Timer1 task1 = new Timer1();
+		timer.schedule(task1, 2000); // 2초 후에 task1 수행
+		timer.schedule(task1, 1000, 500); // 1초 후에 0.5초마다 task1.run()수행
+		Thread.sleep(3000); // 3초 동안 잠깐 멈춤, 멈추지 않으면 task 수행 전에 종료됨
+	}
+}
+
+﻿

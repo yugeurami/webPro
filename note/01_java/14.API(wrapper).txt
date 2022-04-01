@@ -1,0 +1,15 @@
+
+[wrapper]
+기초데이터를 객체데이터로 변환
+
+기초 데이터		객체 데이터
+byte		Byte
+short		Short
+int		Integer
+long		Long
+float		Float
+boolean		Boolean
+char		Char
+
+
+﻿
