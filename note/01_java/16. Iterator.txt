@@ -1,0 +1,28 @@
+[Iterator]
+
+<List>
+리스트는 Iterator보다 for문을 더 자주 사용함
+Iterator<objectType> iterator1 = list.iterator();
+while(iterator1.hasNext()) {
+	System.out.println(iterator1.next());
+}
+for(String l : list) {
+	System.out.println(l);
+}
+
+
+<Map>
+HashMap<KeyType, objectType> hashMap =  new HashMap<KeyType, objectType>();
+Iterator<KeyType> iterator2 = map.keySet().iterator();
+while(iterator2.hasNext()) {
+	KeyType key = iterator2.next();
+	System.out.println(key+"키의 데이터 : "+map.get(key));
+}
+
+
+<Set>
+HashSet<objectType> set = new HashSet<objectType>();
+Iterator<objectType> iterator3 = set.iterator();
+while(iterator3.hasNext()) {
+	System.out.println(iterator3.next());
+}
