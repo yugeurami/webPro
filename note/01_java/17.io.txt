@@ -1,0 +1,39 @@
+﻿[I/O]
+입력(Input)과 출력(Output)을 의미
+
+
+﻿<스트림(Stream)>
+데이터를 운반(입출력)하는데 사용되는 연결통로.
+하나의 스트림으로 입출력을 동시에 수행할 수 없다.(단방향통신)
+데이터 입력이나 출력을 완료한 후에는 꼭 스트림을 닫아야한다.
+
+
+﻿﻿<파일입출력 API>
+1. InputStream
+1byte단위 입력 API.
+이미지, 동영상 등의 데이터에 주로 사용
+
+2. OutputStream
+1byte단위 출력 API.
+이미지, 동영상 등의 데이터에 주로 사용
+﻿﻿
+3. Reader
+2byte단위 입력 API.
+문자열에 주로 사용
+
+4. Writer
+2byte단위 출력 API.
+문자열에 주로 사용
+
+5. DataInputStream / DataOutputStream
+외부에서는 보이지 않고 자바 프로그램에서만 보이게 하고 싶을 때 사용
+
+6.﻿ BufferedReader / BufferedWriter
+\n 이전까지 한번에 입출력
+
+7. ﻿PrintWriter
+System.out.print(); 쓰듯이 사용할 수 있음
+보조 스트림이지만 바로 객체를 생성할 수 있음
+﻿
+
+﻿

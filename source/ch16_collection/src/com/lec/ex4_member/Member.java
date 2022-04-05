@@ -1,7 +1,5 @@
 package com.lec.ex4_member;
 
-import java.util.Scanner;
-
 public class Member {
 	private String name;
 	private String tel;

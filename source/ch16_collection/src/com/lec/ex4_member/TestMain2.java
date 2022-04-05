@@ -18,6 +18,10 @@ public class TestMain2 {
 				m.setName(sc.next().trim());
 				System.out.print("회원의 전화번호는? : ");
 				m.setTel(sc.next().trim());
+				if((member.get(m.getTel()))!=null) {
+					System.out.println("같은 번호가 있어서 회원가입이 불가능합니다.");
+					continue;
+				}
 				System.out.print("회원의 주소는? : ");
 				sc.nextLine();
 				m.setAddress(sc.nextLine().trim());	
