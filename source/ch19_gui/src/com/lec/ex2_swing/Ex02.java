@@ -21,7 +21,7 @@ public class Ex02 extends JFrame implements ActionListener {
 	private JButton 			jBtn;
 	private JTextField 			jtxtField;
 	private Vector<String> 		items; // 컴보박스에 들어갈 item 리스트 (item이 가변적일 때는 Vector, 고정적일 때 String배열)
-	private String[] 			item = {"A", "B", "C"};
+	//private String[] 			item = {"A", "B", "C"};
 	private JComboBox<String> 	jCombo;
 	private JCheckBox 			jCheck;	
 	private JLabel 				jlBlank; // 빈라벨

@@ -22,7 +22,7 @@ public class Ex05_regex {
 		 * 
 		 * 4. 특정 정규표현식의 문자열 변경 : replaceAll("정규표현식", "대체문자열")
 		 */
-		// 전화번호 지
+		// 전화번호 지움
 		System.out.println(str.replaceAll("[(]?[0-9]{2,3}\\D[0-9]{3,4}-[0-9]{4}", "** 전화번호 지움 **"));
 		//이메일 지움
 		System.out.println(str.replaceAll("\\w+(@)\\w+(.)?\\w+(.)?\\w+", "이메일"));
