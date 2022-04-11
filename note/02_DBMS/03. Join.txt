@@ -1,0 +1,33 @@
+[JOIN]
+테이블 2개 이상을 연결하여 검색
+
+0. CROSS JOIN (FROM 절에 테이블 2개 이상)
+SELECT [출력을 원하는 필드]
+FROM [JOIN 하려는 테이블1], [JOIN 하려는 테이블2]; -- (테이블1의 행*테이블 2의 행) 행 출력
+
+
+1. EQUI JOIN(동등조인)
+공통 필드 값이 일치되는 것만 JOIN
+SELECT [출력을 원하는 필드]
+FROM [JOIN 하려는 테이블1], [JOIN 하려는 테이블2]
+WHERE [테이블1 공통 필드값] = [테이블2 공통 필드값];
+
+
+2. NON-EQUI JOIN
+SELECT [출력을 원하는 필드]
+FROM [JOIN 하려는 테이블1] T1, [JOIN 하려는 테이블2] T2
+WHERE [비교하고자 하는 필드] BETWEEN [작은 사이값] AND [큰 사이값];
+
+
+3. SELF JOIN
+SELECT [출력을 원하는 필드]
+FROM [JOIN 하려는 테이블1-1] T1, [JOIN 하려는 테이블1-2] T2
+WHERE T1.[비교하고자 하는 필드] = T2.[비교하고자 하는 필드]
+        
+
+4. OUTER JOIN 
+JOIN 시 조건에 만족하지 않은 행까지 나타나게 데이터가 없는 부분에 (+)를 표시하면 된다
+SELECT [출력을 원하는 필드]
+FROM [JOIN 하려는 테이블1] T1, [JOIN 하려는 테이블2] T2 
+WHERE T1.[비교하고자 하는 필드] = T2.[비교하고자 하는 필드](+)
+

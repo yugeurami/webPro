@@ -1,0 +1,77 @@
+[SELECT 문]
+가장 많이 쓰이는 DML(Data Manipulation Language) - 검색기능
+데이터는 대소문자 구분하지만 명령어는 대소문자를 구분하지 않는다
+최근에는 대문자로 구문을 작성
+
+1. SQL SELECT문장 작성법
+실행 : ctrl + Enter
+SHOW USER; -- 현재 계정
+SELECT*FROM TAB; -- 현 계정(scott)이 가지고 있는 테이블
+SELECT*FROM EMP; -- EMP 테이블의 모든 열(필드), 모든 행
+DESC EMP; -- EMP 테이블의 구조
+
+
+2. SQL문 실행(특정 열만 출력)
+SELECT 출력을 원하는 열 AS "별칭" FROM 테이블;
+별칭을 만들 수 있다
+"" 을 사용하지 않아도 된다. 단, 별칭에 space가 있으면 ""를 사용해야한다 
+AS도 생략 가능
+별칭을 만들 때를 제외하고는 오라클에서는 문자열을 ''안에 넣는다
+
+
+3. 특정행 출력 : WHERE 절(조건) 
+ WHERE절에는 별칭을 쓸 수 없다
+ORDER BY절에는 별칭 사용 가능
+SELECT 출력을 원하는 행 "별칭" FROM 테이블 WHERE 조건 ORDER BY 별칭;
+
+(1) 비교연산자 : 같다(=) 다르다(!=, ^= <>, NOT) 크거나 같다(>=) 
+비교 연산자는 숫자, 문자, 날짜형 전부 가능
+SELCT 출력을 원하는 행 FROM 테이블 WHERE 조건;
+SELECT 출력을 원하는 행 FROM 테이블 WHERE NOT 조건;
+
+(2) 논리연산자 : AND, OR
+SELECT 출력을 원하는 행 FROM 테이블 WHERE 조건 AND 조건;
+SELECT 출력을 원하는 행 FROM 테이블 WHERE 조건 OR 조건;
+
+*날짜 표기법 셋팅 (현재 : YY/MM/DD OR RR/MM/DD)
+ALTER SESSION SET NLS_DATE_FORMAT = 'MM/DD/RR';
+ALTER SESSION SET NLS_DATE_FORMAT = 'YY/MM/DD';
+날짜형 -> 문자형으로 변환하는 함수 : TO_CHAR(날짜형데이터, 패턴)
+문자형 -> 날짜형으로 변환하는 함수 : TO_DATE(문자형데이터, 패턴)
+
+(3) 산술표현식 : + - * /
+산술연산의 결과는 NULL포함하면 결과도 NULL
+NVL (NULL일 수도 있는 필드명, 대치값) 반드시 매개변수 둘은 타입이 같아야 함
+SELECT ENAME, SAL, COMM, SAL*12+COMM 연봉 FROM EMP;
+SELECT ENAME, SAL, COMM, SAL*12+NVL(COMM, 0) 연봉 FROM EMP;
+SELECT ENAME, NVL(MGR, '없음') FROM EMP; -- NVL 매개변수 타입 불일치 에러
+
+(4) 연결 연산자(||) :열이나 문자를 연결
+SELECT ENAME || '은' || JOB "EMPLOYEES" FROM EMP;
+    -- ex. "SMITH : 연봉 = XXX"과 같이 모든 행 출력 (연봉=SAL*12+COMM)
+SELECT ENAME || ': 연봉 = ' || (SAL*12+NVL(COMM, 0)) FROM EMP;
+
+(5) 중복제거 (DISTINCT) : 중복된 값을 제거
+SELECT DISTINCT JOB FROM EMP;
+SELECT DISTINCT DEPTNO FROM EMP;
+
+(6) SQL 연산자 (BETWEEN, IN, LIKE, IS NULL)
+<1>BETWEEN
+데이터 BETWEEN A AND B (A<=B)
+문자를 비교할 때
+ex. 이름이 'A로 시작하거나 'B로 시작하는 사람 = C까지의 사람을 찾은 다음에 C를 제외해준다.
+
+<2> IN
+데이터 IN (A, B, C....)
+
+<3> LIKE
+데이터 LIKE 패턴
+와일드카드 %: 0글자 이상 _: 한글자
+
+<4> IS NULL : NULL을 비교시 반드시 IS NULL로    
+
+
+4. 정렬 (오름차순, 내림차순)
+SELECT 출력을 원하는 열 FROM 테이블 ORDER BY 기준; -- 오름차순
+SELECT 출력을 원하는 열 FROM 테이블 ORDER BY 기준 ASC; -- 오름차순
+SELECT 출력을 원하는 열 FROM 테이블 ORDER BY 기준 DESC; -- 내림차순
