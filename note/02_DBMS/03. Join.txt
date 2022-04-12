@@ -14,12 +14,14 @@ WHERE [테이블1 공통 필드값] = [테이블2 공통 필드값];
 
 
 2. NON-EQUI JOIN
+일치되는 공통의 필드 값은 없어도 JOIN
 SELECT [출력을 원하는 필드]
 FROM [JOIN 하려는 테이블1] T1, [JOIN 하려는 테이블2] T2
 WHERE [비교하고자 하는 필드] BETWEEN [작은 사이값] AND [큰 사이값];
 
 
 3. SELF JOIN
+자기 자신과 JOIN
 SELECT [출력을 원하는 필드]
 FROM [JOIN 하려는 테이블1-1] T1, [JOIN 하려는 테이블1-2] T2
 WHERE T1.[비교하고자 하는 필드] = T2.[비교하고자 하는 필드]
