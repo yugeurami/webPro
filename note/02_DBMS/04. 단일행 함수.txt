@@ -1,0 +1,207 @@
+[단일행 함수]
+숫자관련함수, 문자관련함수, 날짜관련함수(예약어), 형변환함수, NVL(), ETC....
+-- DUAL 테이블 : 오라클에서 제공하는 1행 1열짜리 DUMMY TABLE 함수를 연습할 때 사용한다
+
+
+1. 숫자 관련 함수
+
+-- 절대값
+SELECT ABS(숫자) FROM DUAL;
+
+-- 내림
+SELECT FLOOR(숫자) FROM DUAL; -- 소수점에서 내림
+SELECT FLOOR(숫자*100)/100 FROM DUAL; -- 소수점 두번째 자리에서 내림
+
+SELECT TRUNC(숫자, 2) FROM DUAL; -- 소수점 두번째 자리에서 내림
+SELECT TRUNC(숫자) FROM DUAL; -- 소수점에서 내림
+SELECT TRUNC(숫자, -1) FROM DUAL; -- 일의 자리에서 내림
+﻿
+-- 올림
+SELECT CEIL(숫자) FROM DUAL; -- 소수점에서 올림
+SELECT CEIL(숫자*100)/100 FROM DUAL; -- 소수점 두번째 자리에서 올림
+
+-- 반올림
+SELECT ROUND(숫자) FROM DUAL; -- 소수점에서 반올림
+SELECT ROUND(숫자, 2) FROM DUAL; -- 소수점 두번째 자리에서 반올림
+SELECT ROUND(숫자, -1) FROM DUAL; -- 일의 자리에서 반올림
+
+-- 나머지 연산자
+SELECT MOD (나누려는 숫자, 나눌 숫자) FROM DUAL;
+내용을 입력하세요.
+
+
+2. 문자 관련 함수
+
+(1) 대소문자 관련
+-- 모든 글자를 대문자로
+﻿SELECT UPPER('abcABC') FROM DUAL;
+-- 모든 글자를 소문자로
+SELECT LOWER('abcABC') FROM DUAL;
+-- 첫 글자만 대문자로
+SELECT INITCAP('WELCOM TO ORACLE') FROM DUAL; -- Welcom To Oracle 출력
+내용을 입력하세요.
+
+
+(2) 문자 연결
+﻿SELECT 'AB' || 'CD' || 'EF' || 'GH' FROM DUAL;
+SELECT CONCAT ('AB', 'CD', 'EF', 'GH') FROM DUAL; -- 불가 CONCAT에는 매개변수 2개만
+SELECT CONCAT(CANCAT('AB', 'CD'), CANCAT('EF', 'GH')) FROM DUAL;
+내용을 입력하세요.
+
+
+(3) SUBSTR
+원하는 부분의 문자만 출력
+
+① SUBSTR(STR, 시작위치, 문자갯수)
+첫번째 위치가 1, 시작위치 음수가능
+O	R	A	C	L	E
+1	2	3	4	5	6
+-6	-5	-4	-3	-2	-1
+
+
+②SUBSTRB(STR, 시작바이트위치, 문자바이트수)
+XE버전에서는 한글 1글자가 3BYTE
+정식버전에서는 한글 1글자는 2BYTE
+﻿SELECT SUBSTR('ORACLE', 3, 2) FROM DUAL; -- 3번째 글자부터 2글자 추출
+SELECT SUBSTRB('ORACLE', 3,2) FROM DUAL; -- 3번째 바이트부터 2바이트 추출
+SELECT SUBSTR('데이터베이스', 4, 3) FROM DUAL; -- 4번째 글자부터 3글자 추출
+SELECT SUBSTRB('데이터베이스', 4, 3) FROM DUAL; -- 4번째 바이트부터 3바이트 추출 XE버전에서는 한글 1글자가 3BYTE
+
+
+(4) 글자수(LENGTH), 바이트 수(LENGTHB)
+LENGTH('문자열')
+LENGTHB('문자열')
+﻿SELECT LENGTH('ABC') FROM DUAL; -- 글자수 3
+SELECT LENGTHB('ABC') FROM DUAL; -- 3BYTE
+SELECT LENGTH('오라클') FROM DUAL; -- 글자수 3
+SELECT LENGTHB('오라클') FROM DUAL; -- 9BYTE
+
+
+(5) INSTR
+① INSTR(STR, 찾을 글자)
+STR에서 찾을 글자의 위치(첫번째 1, 없으면 0)
+
+② INSTR(STR, 찾을 글자, 시작위치)
+STR에서 시작위치부터 찾은 글자의 위치 (글자의 위치는 총 문자열에서의 위치를 말한다)
+위치는 음수 가능하고 위치가 음수일 경우 뒤에서 앞으로 찾아나온다
+
+﻿SELECT INSTR('ABCABC', 'B') FROM DUAL; -- 처음부터 찾아서 처음 나오는 B의 위치 :2
+SELECT INSTR('ABCABC', 'B', 3 ) FROM DUAL; -- 앞 3번째부터 찾아서 처음나오는 B의 위치 : 5
+SELECT INSTR('ABCABC', 'B', -3) FROM DUAL; -- 뒤 3번째 부터 뒤에서 앞으로 찾아 처음 나오는 B의 위치 : 2
+
+
+(6) 빈자리 채우기
+① LPAD(STR, 자리수, 채울문자)
+STR을 자리수만큼 확보하고 왼쪽 빈자리에 채울 문자 출력
+
+② RPAD(STR, 자리수, 채울문자)
+STR을 자리수만큼 확보하고 오른쪽 빈자리에 채울 문자 출력
+
+
+(7) 여백제거
+﻿TRIM('문자열') -- 양쪽 여백 제거
+RTRIM('문자열') -- 오른쪽 여백 제거
+LTRIM('문자열') -- 왼쪽 여백 제거
+
+
+(8) 문자 변경
+﻿REPLACE('문자열', '변경을 원하는 문자', '변경할 문자')
+
+SELECT REPLACE(ENAME, 'A', 'XX') FROM EMP;
+SELECT REPLACE(HIREDATE, '0', ' ') FROM EMP;
+
+
+3. 날짜 관련 함수 및 예약어
+(1) SYSDATE : 현재 시간
+숫자를 더하거나 빼면 24시간, 날짜 하루가 빠진다.
+
+
+(2) 날짜 계산
+① 일수와 년수 계산
+﻿SELECT SYSDATE +14 "반납 예정일" FROM DUAL;
+
+② 두 날짜간의 개월 수
+MONTHS_BETWEEN(날짜, 날짜)
+
+③ 특정시점부터 몇개월 후의 날짜
+ADD_MONTHS(날짜, 개월수)
+
+④ 특정날짜의 달의 말일
+﻿LAST_DAY(날짜)
+SELECT LAST_DAY(SYSDATE) FROM DUAL;
+
+⑤ ROUND(날짜, XX) : 날짜 반올림 / TRUNC(날짜, XX) : 날짜버림
+﻿--﻿ROUND(날짜, XX)﻿ : 날짜 반올림
+SELECT ROUND(SYSDATE, 'YEAR') FROM DUAL; -- 가까운 1월 1일
+SELECT ROUND(SYSDATE, 'MONTH') FROM DUAL; -- 가까운 1일
+SELECT ROUND(SYSDATE, 'DAY') FROM DUAL; -- 가까운 일요일
+SELECT ROUND(SYSDATE) FROM DUAL; -- 가까운 0시
+
+﻿--﻿TRUNC(날짜, XX)﻿ : 날짜버림
+SELECT TRUNC(SYSDATE, 'YEAR') FROM DUAL; -- 올해 1월 1일
+SELECT TRUNC(SYSDATE, 'MONTH') FROM DUAL; -- 이번 달 1일
+SELECT TRUNC(SYSDATE, 'DAY') FROM DUAL; -- 이번 주 일요일
+SELECT TRUNC(SYSDATE) FROM DUAL; -- 지난 0시
+
+⑥ 특정날짜로부터 처음 도래하는 요일
+﻿NEXT_DAY(날짜, '요일')
+
+
+4. 형변환 함수 (문자<->날짜, 문자<->숫자)
+(1) 날짜/숫자 → 문자
+﻿TO_CHAR (날짜형 데이터 ' 출력형식')
+YYYY 	년도 4자리
+YY / RR 	년도 2자리
+MM 	월
+DD	일
+DAY	요일
+DY	요일 요약표현
+AM / PM	오전이나 오후 표현
+HH12	시간표기 - 12시간
+HH24	시간표기 - 24시간
+MI	분
+SS	초
+
+
+(2) 문자 → 날짜
+TO_DATE(문자데이터, '패턴')
+
+
+(3) 숫자 → 문자
+﻿TO_CHAR(숫자데이터, '출력형식')
+
+0	자릿수
+	출력형식의 자릿수가 많으면 0으로 채움
+9	자릿수
+	출력 형식의 자릿수가 많아도 숫자만큼 출력 (소수점 앞)
+,	세자리마다 , 가능
+.	소수점
+$	통화단위 $가 앞에 붙을 수 있음
+L	지역통화단위가 앞에 붙을 수 있음
+
+
+(4) 문자 → 숫자
+﻿TO_NUMBER(문자데이터, '문자데이터의 패턴')
+
+
+5. NVL
+NULL일수도 있는 값에 대한 처리
+NVL(NULL일수도 있는 데이터, NULL이면 대신할 값) -- 매개변수 2개는 타입 일치
+
+
+6. ETC
+(1) EXTRACT -- 년도나 월이나 날짜를 숫자로 추출
+SELECT EXTRACT(YEAR FROM SYSDATE) FROM DUAL;
+SELECT EXTRACT(MONTH FROM HIREDATE) FROM EMP;
+
+
+(2) 계층적 출력(레벨별 출력)
+﻿LEVEL, START WITH 조건, CONNECT BY PRIOR 조건
+
+SELECT LEVEL, LPAD('└', LEVEL*2) || ENAME
+FROM EMP
+START WITH MGR IS NULL
+CONNECT BY PRIOR EMPNO=MGR;
+
+
+﻿

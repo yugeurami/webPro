@@ -242,7 +242,8 @@ SELECT EMPNO, ENAME, JOB, SAL, SAL*1.15 "New Salary", SAL*0.15 "Increase" FROM E
 --3. 이름, 입사일, 입사일로부터 6개월 후 돌아오는 월요일 구하여 출력하는 SELECT 문장을 기술하시오.
 SELECT ENAME, HIREDATE, ROUND(ADD_MONTHS(HIREDATE, 6)+1, 'DAY')+1 FROM EMP;
 --4. 이름, 입사일, 입사일로부터 현재까지의 개월수, 급여, 입사일부터 현재까지의 받은 급여의 총계를 출력
-SELECT ENAME, HIREDATE, FLOOR(MONTHS_BETWEEN(SYSDATE, HIREDATE)) 개월수, SAL, FLOOR(MONTHS_BETWEEN(SYSDATE, HIREDATE))*SAL 급여총계 FROM EMP;
+SELECT ENAME, HIREDATE, FLOOR(MONTHS_BETWEEN(SYSDATE, HIREDATE)) 개월수, SAL, ROUND(MONTHS_BETWEEN(SYSDATE, HIREDATE))*SAL 급여총계 
+FROM EMP;
 --5. 모든 사원의 이름과 급여(15자리로 출력 좌측의 빈 곳은 “*”로 대치)를 출력
 SELECT ENAME, LPAD(SAL, 15, '*') FROM EMP;
 --6. 모든 사원의 정보를 이름,업무,입사일,입사한 요일을 출력하는 SELECT 문장을 기술하시오.
@@ -256,6 +257,9 @@ SELECT ENAME, JOB, SAL, NVL(COMM,0), SAL+NVL(COMM,0) FROM EMP;
 SELECT SUBSTR(ENAME, 2, 3) 
 FROM EMP;
 --10. 사원 테이블에서 입사일이 12월인 사원의 사번, 사원명, 입사일을 검색하시오. 
+SELECT EMPNO, ENAME, HIREDATE
+FROM EMP
+WHERE HIREDATE LIKE '%/12/%';
 --  시스템에 따라 DATEFORMAT 다를 수 있으므로 아래의 방법도 알아보자
 SELECT EMPNO, ENAME, HIREDATE
 FROM EMP
@@ -266,7 +270,7 @@ WHERE EXTRACT(MONTH FROM HIREDATE) = 12;
 --7499		       ALLEN		******1600
 --7521		       WARD		******1250
 --……. 
-SELECT EMPNO, LPAD(ENAME, 10, ' ') ENAME, LPAD(SAL, 10, '*') "급여"
+SELECT EMPNO, ENAME, LPAD(SAL, 10, '*') "급여"
 FROM EMP;
 -- 12. 다음과 같은 결과를 검색할 수 있는 SQL 문장을 작성하시오
 -- EMPNO	 ENAME 	입사일
