@@ -1,0 +1,41 @@
+[그룹함수]
+SELECT column, group_function
+FROM table
+WHERE condition
+GROUP BY group_by_expression
+HAVING group_condition
+ORDER BY column
+
+종류 : SUM, AVG, MIN, MAX, COUNT, STDDEV(표준편차), VARIANCE(분산) 등...
+SELECT절, HAVING절, ORDER BY절에서만 사용가능하다
+그룹함수와 함께 사용되는 단일행은 GROUP BY 절을 꼭 붙여야한다
+모든 그룹함수는 NULL 을 제외하고 수행한다
+
+
+1. SUM, AVG, MIN, MAX, COUNT
+SUM(TABLE)	TABLE의 총합
+AVG(TABLE)	(TABLE)의 평균
+MIN(TABLE)	(TABLE)에서의 최소값
+MAX(TABLE)	(TABLE)에서의 최대값
+COUNT(TABLE)	(TABLE)의 수
+VARIANCE(TABLE)	(TABLE)의 분산
+STDDEV(TABLE)	(TABLE)의 표준편차
+
+
+2. GROUP BY 절
+그룹함수를 쓸 때 어떤 컬럼 값을 기준으로 그룹함수를 적용할 경우 GROUP BY 절 뒤에 해당 컬럼을 기술한다
+GROUP BY 절에는 별칭을 쓸 수 없다
+
+
+3. HAVING 절
+그룹함수 결과의 조건
+별칭 사용 불가능
+WHERE 절에는 그룹함수를 쓸 수 없다
+
+
+4. 결과 집계합 내 집계값 생성
+SELECT TABLE1, TABLE2 
+FROM EMP 
+GROUP BY ROLLUP(TABLE1); -- TABLE1을 기준으로 집계값 생성
+
+﻿
