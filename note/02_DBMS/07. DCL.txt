@@ -1,0 +1,39 @@
+﻿[DCL(Data Control Language)]
+데이터베이스 사용자의 권한 제어
+사용자 계정 생성, 사용자 권한 부여, 권한 박탈, 사용자 계정 삭제
+
+
+1. GRANT
+데이터 베이스 객체에 권한 부여
+
+
+2. REVOKE
+이미 부여된 데이터베이스 객체의 권한을 취소
+
+
+CREATE USER scott2 IDENTIFIED BY 1234;
+
+-- 1. 권한 부여(세션 권한, SCOTT.EMP, SCOTT.DEPT 테이블에 대해 모든 권한)
+GRANT CREATE SESSION TO scott2;
+GRANT ALL ON EMP TO scott2; -- EMP 테이블에 대한 모든 권한(검색, 추가, 수정, 삭제)
+GRANT ALL ON DEPT TO scott2;
+-- 2. 권한 박탈(권한 박탈할 사용자 계정이 접속 해제된 상태여야 가능)
+REVOKE ALL ON EMP FROM scott2; -- scott2의 EMP 테이블에 대한 모든 권한 박탈
+REVOKE ALL ON DEPT FROM scott2;
+-- 3. 사용자 계정 삭제(접속 중인 계정 삭제 불가)
+DROP USER scott2 CASCADE;
+
+
+
+3. COMMIT
+트랜잭션 확정
+
+
+4. ROLLBACK
+트랜잭션 취소
+
+
+5. SAVEPOINT
+복귀지점 설정
+
+﻿

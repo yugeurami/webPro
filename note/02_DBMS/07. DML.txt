@@ -1,0 +1,32 @@
+﻿[DML(Data Manipulation Language)]
+1. SELECT
+데이터베이스 객체로부터 데이터를 검색
+
+
+2. INSERT
+데이터베이스 객체에 데이터를 입력
+빈데이터에는 묵시적/명시적으로 NULL 이 추가
+VALUES에 서브쿼리를 사용할 수 있다
+
+INSERT INTO 테이블명 VALUES (값1, 값2, 값3....);
+INSERT INTO 테이블명 (필드명1, 필드명2,.....) VALUES (값1, 값2,....);
+
+
+3. UPDATE
+기존에 존재하는 데이터베이스 객체 안의 데이터 수정
+
+﻿UPDATE table_name
+	SET column_name1=value1, column_name2 = value2, …
+	WHERE condition;
+
+UPDATE table_name
+	SET column_name1=(SELECT column_name FROM table_name WHERE condition)
+	WHERE condition;
+
+4. DELETE
+데이터베이스 객체에 데이터를 삭제
+ROLLBACK이 가능하다
+
+DELETE FROM table_name 
+	WHERE condition;
+﻿

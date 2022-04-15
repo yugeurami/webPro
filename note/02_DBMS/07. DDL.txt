@@ -1,0 +1,125 @@
+﻿[DDL(Data Definition Language)]
+데이터와 그 구조를 정의한다
+ROLLBACK이 안됨으로 사용에 주의
+
+
+1. CREATE
+데이터 베이스 객체 생성
+서브쿼리를 이용해 테이블을 생성할 경우 제약조건은 포함되지 않는다
+
+CREATE TABLE table_name(
+	column_name  data_type expr, …);
+
+
+(1) 식별자 명명규칙
+반드시 문자로 시작. A~Z까지 대소문자, 0~9까지의 숫자, 특수기호는 _,$,#만 포함 가능
+1~30글자까지 가능. 공백 허용 안함.
+오라클에서 사용되는 예약어나 다른 객체명과 중복 불가
+
+
+(2) 서브쿼리를 이용한 테이블 생성
+서브쿼리 결과만 EMP02테이블 생성 후 들어감
+제약조건은 미포함
+
+CREATE TABLE table_name 
+    AS SELECT colomn_name FROM table_name WHERE condition;
+
+
+(3) 다른 테이블의 구조만 추출해서 가져오기
+WHERE절에 반드시 거짓인 조건을 넣으면 된다.
+CREATE TABLE table_name 
+    AS SELECT colomn_name FROM table_name WHERE 0=1
+
+
+(4) 데이터형
+CHAR(size)	고정 길이 문자 데이터
+		VARCHAR2와 동일한 형태의 자료를 저장할 수 있다
+		입력된 자료의 길이와는 상관없이 정해진 길이만큼 저장 영역 차지한다
+		최소 크기는 1
+
+VARCHAR2(size)	최대 4000 Bytes의 가변 길이 문자 데이
+		실제 입력된 문자열의 길이만큼 저장 영역을 차지한다
+		최대 크기는 명시해야 하며, 최소 크기는 1
+
+NUMBER		최고 40자리까지의 숫자를 저장할 수 있다
+		이때 소수점이나 부호는 길이에 포함되지 않는다
+
+NUMBER(w)	w자리까지의 수치로 최대 38자리까지 가능하다
+		38자리가 유효 숫자이다
+
+NUMBER(w, d)	w는 전체 길이, d는 소수점 이하 자릿수
+		소수점은 자릿수에 포함되지 않는다
+
+DATE		BC 4712년 1월 1일~AD 4712년 12월 31일까지의 날짜
+
+LOB		2GB까지의 가변 길이 바이너리 데이터를 저장할 수 있다
+		이미지 문서, 실행 파일을 저장할 수 있다
+		오라클에서 제공되는 LOB 데이터 형은 BLOB, CLOB, NCLOB, BFILE 등이 있다
+
+BLOB		그래픽 이미지, 동영상, 사운드와 같은 구조화되지 않은 데이터를 저장한다
+
+CLOB		e-BOOK과 같은 대용량의 텍스트 데이터를 저장하기 위해서 사용한다
+
+NCLOB		국가별 문자셋 데이터를 저장하고, BFILE은 바이너리 데이터를 파일 형태로 저장한다
+
+ROWNUM	테이블에서 행의 논리적인 순서
+
+
+
+2. ALTER
+기존에 존재하는 데이터베이스 객체를 다시 정의
+테이블 구조를 변경
+
+ALTER TABLE 테이블명 ADD : 추가
+ALTER TABLE 테이블명 MODIFY : 수정
+ALTER TABLE 테이블명 DROP : 삭제
+
+
+(1) 필드 추가
+추가된 필드의 데이터는 NULL이 들어간다
+ALTER TABLE table_name;
+
+
+(2) 필드 수정
+이미 데이터가 들어가 있는 경우, 다른 타입의 데이터나 데이터의 최대보다 작은 사이즈로 변경이 안된다
+데이터가 들어가 있지 않은 경우에는 자유롭게 변경이 가능하다
+ALTER TABLE table_name MODIFY (column_name data_type expr, …);
+
+
+
+3. DROP
+필드의 삭제
+데이터 베이스에 저장되어 있는 데이터의 양이 방대하기 때문에 해당 테이블에서 컬럼을 삭제하는 데 오랜 시간이 걸린다
+컬럼을 삭제하는 동안에는 다른 사용자는 해당 테이블을 이용할 수 없다
+이런 경우 작업이 원활하게 진행되지 않고 락(lock)이 발생하게 된다
+
+DROP TABLE table_name;
+DROP COLUMN column_name;
+
+
+(1)UNUSED
+논리적으로 특정 필드에 접근 못하도록 만들어준다
+
+ALTER TABLE table_name SET UNUSED(column_name);
+
+-- 논리적으로 접근 불가능했던 필드를 물리적으로 삭제
+ALTER TABLE table_name DROP UNUSED COLUMN;
+
+
+
+4. TRUNCATE
+테이블의 모든 로우를 제거
+
+TRUNCATE TABLE table_name -- ROLLBACK 불가능
+
+
+
+5. RANAME
+기존에 사용하던 테이블의 이름을 변경한다
+
+RENAME old_name TO new_name
+
+
+RENAME old_name TO new_name
+내용을 입력하세요.
+﻿
