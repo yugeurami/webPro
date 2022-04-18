@@ -1,0 +1,21 @@
+﻿[제약조건]
+부적합한 데이터가 테이블에 삽입, 수정되는 것을 방지하기 위해서 사용한다
+
+①PRIMARY KEY : 유일하게 테이블의 각 행을 식별. NOT NULL
+INSERT INTO EMP VALUES (7369, '홍', NULL, NULL, SYSDATE, NULL, NULL, 40); -- SMITH 사번과 중복 에러
+UPDATE EMP SET EMPNO = 7369 WHERE ENAME = 'ALLEN'; -- SMITH 사번과 중복 에러
+
+② NOT NULL : NULL 값을 포함하지 않음
+
+③UNIQUE : 모든 행에 대해 유일해야함 NILL 값을 허용(NULL은 여러행 입력가능)
+
+④FOREIGN KEY : 테이블의 열은 다른 테이블의 열을 참조 (ex. EMP 테이블의 DEPTNO는 DEPT 테이블의 DEPTNO를 참조)
+참조중인 테이블을 PARENT TABLE 혹은 부모 테이블이라고 한다
+- 식별관계 : 부모 테이블의 주키가 자식테이블의 PRIMARY KEY 필드로 관계 (exERD 초록 점선 화살표)
+- 비식별 관계 : 부모 테이블의 주키가 자식테이블의 일반 속성 필드로 관계 (exERD에서 빨간 점선 화살표)
+
+⑤CHECK(조건) : 해당 조건이 만족(NULL 값 허용)
+
+*DEFAULT : 기본값 설정 (해당 열의 데이터 입력값이 없으면 NULL이 들어감)
+
+﻿
