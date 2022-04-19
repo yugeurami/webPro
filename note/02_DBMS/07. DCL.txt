@@ -24,7 +24,6 @@ REVOKE ALL ON DEPT FROM scott2;
 DROP USER scott2 CASCADE;
 
 
-
 3. COMMIT
 트랜잭션 확정
 
@@ -35,5 +34,3 @@ DROP USER scott2 CASCADE;
 
 5. SAVEPOINT
 복귀지점 설정
-
-﻿

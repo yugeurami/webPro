@@ -80,7 +80,6 @@ ROWNUM	테이블에서 행의 논리적인 순서
 *DEFAULT : 기본값 설정 (해당 열의 데이터 입력값이 없으면 NULL이 들어감)
 
 ﻿
-
 2. ALTER
 기존에 존재하는 데이터베이스 객체를 다시 정의
 테이블 구조를 변경
@@ -89,17 +88,14 @@ ALTER TABLE 테이블명 ADD : 추가
 ALTER TABLE 테이블명 MODIFY : 수정
 ALTER TABLE 테이블명 DROP : 삭제
 
-
 (1) 필드 추가
 추가된 필드의 데이터는 NULL이 들어간다
 ALTER TABLE table_name;
-
 
 (2) 필드 수정
 이미 데이터가 들어가 있는 경우, 다른 타입의 데이터나 데이터의 최대보다 작은 사이즈로 변경이 안된다
 데이터가 들어가 있지 않은 경우에는 자유롭게 변경이 가능하다
 ALTER TABLE table_name MODIFY (column_name data_type expr, …);
-
 
 
 3. DROP
@@ -111,7 +107,6 @@ ALTER TABLE table_name MODIFY (column_name data_type expr, …);
 DROP TABLE table_name;
 DROP COLUMN column_name;
 
-
 (1)UNUSED
 논리적으로 특정 필드에 접근 못하도록 만들어준다
 
@@ -121,12 +116,10 @@ ALTER TABLE table_name SET UNUSED(column_name);
 ALTER TABLE table_name DROP UNUSED COLUMN;
 
 
-
 4. TRUNCATE
 테이블의 모든 로우를 제거
 
 TRUNCATE TABLE table_name -- ROLLBACK 불가능
-
 
 
 5. RANAME
@@ -134,7 +127,4 @@ TRUNCATE TABLE table_name -- ROLLBACK 불가능
 
 RENAME old_name TO new_name
 
-
-RENAME old_name TO new_name
-내용을 입력하세요.
 ﻿
