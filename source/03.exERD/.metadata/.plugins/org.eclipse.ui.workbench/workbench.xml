@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="13" version="2.0">
 <workbenchAdvisor/>
-<window height="1047" width="899" x="-7" y="0">
+<window height="1047" maximized="true" width="863" x="-7" y="0">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -56,14 +56,11 @@
 </view>
 <view id="org.eclipse.ui.views.ResourceNavigator" partName="네비게이터">
 <viewState LINK_NAVIGATOR_TO_EDITOR="0" sorter="1">
-<filters>
-<filter element=".*" isEnabled="false"/>
+<filters>&#x0A;<filter element=".*" isEnabled="false"/>
 </filters>
-<expanded>
-<element path="/newProject"/>
+<expanded>&#x0A;<element path="/newProject"/>
 </expanded>
-<selection>
-<element path="/newProject/dept_emp.exerd"/>
+<selection>&#x0A;<element path="/newProject/dept_emp.exerd"/>
 </selection>
 </viewState>
 </view>
@@ -139,7 +136,7 @@
 <layout>
 <mainWindow>
 <info folder="true" part="leftFolder">
-<folder appearance="2" expanded="0">
+<folder appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
@@ -154,20 +151,20 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.18" ratioLeft="180" ratioRight="820" relationship="2" relative="leftFolder"/>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@1ff2185" ratio="0.77926826" ratioLeft="639" ratioRight="181" relationship="2" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="0">
+<folder appearance="2" expanded="2">
 <page content="com.tomato.exerd.ui.views.thumbnail" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="rightFolder" ratio="0.249226" ratioLeft="161" ratioRight="485" relationship="4" relative="org.eclipse.ui.internal.ViewStack@1ff2185">
-<folder appearance="2" expanded="0">
+<folder appearance="2" expanded="2">
 <page content="com.tomato.exerd.modelview3.ModelView3" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info folder="true" part="bottomFolder" ratio="0.6996904" ratioLeft="452" ratioRight="194" relationship="4" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="0">
+<folder appearance="2" expanded="2">
 <page content="com.tomato.exerd.ui.views.domain" label="LabelNotFound"/>
 <page content="com.tomato.exerd.validate.ui.ValidateView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="LabelNotFound"/>
@@ -176,7 +173,7 @@
 </folder>
 </info>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@fb5821" ratio="0.2987616" ratioLeft="193" ratioRight="453" relationship="4" relative="leftFolder">
-<folder appearance="2" expanded="0">
+<folder appearance="2" expanded="2">
 <page content="org.eclipse.gef.ui.palette_view" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
