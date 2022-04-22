@@ -50,7 +50,7 @@ public class Ex2_select {
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
-		try {
+			try {
 			if(rs!=null) rs.close();
 			if(pstmt!=null) pstmt.close();
 			if(conn!=null) conn.close();
