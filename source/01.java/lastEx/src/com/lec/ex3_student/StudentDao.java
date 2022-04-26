@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class StudentDao {
 	private String driver = "oracle.jdbc.driver.OracleDriver";
@@ -27,15 +28,41 @@ public class StudentDao {
 			System.out.println(e.getMessage());
 		}
 	}
+	//전공 이름 리스트
+	public Vector<String> mnameList(){
+		Vector<String> mnames = new Vector<String>();
+		mnames.add("");
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT MNAME FROM MAJOR";
+		try {
+			conn = DriverManager.getConnection(url, "scott", "tiger");
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				mnames.add(rs.getString("mname"));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			try {
+				if(rs!=null) rs.close();
+				if(stmt!=null) stmt.close();
+				if(conn!=null) conn.close();
+			} catch (SQLException e) {}
+		}
+		return mnames;
+	}
 	// 학번검색
 	public StudentDto selectSno(int sno){
-		StudentDto student = new StudentDto();
+		StudentDto student = null;
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT SNO, SNAME, MNAME, SCORE" + 
 				"    FROM STUDENT S, MAJOR M" + 
-				"    WHERE S.MNO=M.MNO AND REG = 0 AND SNO = "+ sno;
+				"    WHERE S.MNO=M.MNO AND SNO = "+ sno;
 		try {
 			conn = DriverManager.getConnection(url, "scott", "tiger");
 			stmt = conn.createStatement();
@@ -44,7 +71,7 @@ public class StudentDao {
 				String sname = rs.getString("sname");
 				String mname = rs.getString("mname");
 				int score = rs.getInt("score");
-				return student = new StudentDto(sno, sname, mname, score);
+				student = new StudentDto(sno, sname, mname, score);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -65,7 +92,7 @@ public class StudentDao {
 		ResultSet rs = null;
 		String sql = "SELECT SNO, SNAME, MNAME, SCORE" + 
 				"    FROM STUDENT S, MAJOR M" + 
-				"    WHERE S.MNO=M.MNO AND REG = 0 AND SNAME ='"+sname+"'";
+				"    WHERE S.MNO=M.MNO AND SNAME ='"+sname+"'";
 		try {
 			conn = DriverManager.getConnection(url, "scott", "tiger");
 			stmt = conn.createStatement();
@@ -96,9 +123,9 @@ public class StudentDao {
 		Statement stmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT ROWNUM RANK, A.*" + 
-				"    FROM (SELECT SNO, SNAME, MNAME, SCORE" + 
+				"    FROM (SELECT SNO, SNAME, MNAME, SCORE, M.MNO" + 
 				"                FROM STUDENT S, MAJOR M" + 
-				"                WHERE S.MNO=M.MNO AND REG = 0 AND MNAME = '" + mname +"'"+ 
+				"                WHERE S.MNO=M.MNO AND MNAME = '" + mname +"'"+ 
 				"                ORDER BY SCORE DESC) A";
 		try {
 			conn = DriverManager.getConnection(url, "scott", "tiger");
@@ -110,6 +137,7 @@ public class StudentDao {
 				dto.setSno(rs.getInt("sno"));
 				dto.setSname(rs.getString("sname"));
 				dto.setMname(mname);
+				dto.setMno(rs.getInt("mno"));
 				dto.setScore(rs.getInt("score"));
 				dtos.add(dto);
 			}
@@ -155,9 +183,10 @@ public class StudentDao {
 		Connection 			conn = null;
 		PreparedStatement 	pstmt = null;
 		String sql = "UPDATE STUDENT" + 
-				"    SET   SNAME = ?," + 
+				"    	SET   SNAME = ?," + 
 				"            MNO = (SELECT MNO FROM MAJOR WHERE MNAME = ?)," + 
-				"            SCORE = ?" + 
+				"            SCORE = ?," + 
+				"            REG = 0" + 
 				"    WHERE SNO = ?";
 		try {
 			conn = DriverManager.getConnection(url, "scott", "tiger");
@@ -184,7 +213,7 @@ public class StudentDao {
 		Statement stmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT ROWNUM RANK, S.*" + 
-				"    FROM (SELECT SNO, SNAME, MNAME, SCORE FROM STUDENT S, MAJOR M" + 
+				"    FROM (SELECT SNO, SNAME, MNAME, SCORE, S.MNO FROM STUDENT S, MAJOR M" + 
 				"                WHERE S.MNO=M.MNO AND REG = 0 ORDER BY SCORE DESC) S";
 		try {
 			conn = DriverManager.getConnection(url, "scott", "tiger");
@@ -197,6 +226,7 @@ public class StudentDao {
 				dto.setSname(rs.getString("sname"));
 				dto.setMname(rs.getString("mname"));
 				dto.setScore(rs.getInt("score"));
+				dto.setMno(rs.getInt("mno"));
 				dtos.add(dto);
 			}
 		} catch (SQLException e) {
@@ -217,7 +247,7 @@ public class StudentDao {
 		Statement stmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT ROWNUM RANK, S.*" + 
-				"    FROM (SELECT SNO, SNAME, MNAME, SCORE FROM STUDENT S, MAJOR M" + 
+				"    FROM (SELECT SNO, SNAME, MNAME, SCORE, S.MNO FROM STUDENT S, MAJOR M" + 
 				"                WHERE S.MNO=M.MNO AND REG = 1 ORDER BY SCORE DESC) S";
 		try {
 			conn = DriverManager.getConnection(url, "scott", "tiger");
@@ -230,6 +260,7 @@ public class StudentDao {
 				dto.setSname(rs.getString("sname"));
 				dto.setMname(rs.getString("mname"));
 				dto.setScore(rs.getInt("score"));
+				dto.setMno(rs.getInt("mno"));
 				dtos.add(dto);
 			}
 		} catch (SQLException e) {
@@ -242,5 +273,27 @@ public class StudentDao {
 			} catch (SQLException e) {}
 		}
 		return dtos;
+	}
+	//재적처리
+	public int updateReg(StudentDto dto) {
+		int result = FAIL;
+		Connection 	conn = null;
+		Statement 	stmt = null;
+		String sql = "UPDATE STUDENT" + 
+				"    SET REG = 1" + 
+				"    WHERE SNO =" + dto.getSno();
+		try {
+			conn = DriverManager.getConnection(url, "scott", "tiger");
+			stmt = conn.createStatement();
+			result = stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			try {
+				if(stmt!=null) stmt.close();
+				if(conn!=null) conn.close();
+			} catch (SQLException e) {}
+		}
+		return result;
 	}
 }
