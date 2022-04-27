@@ -72,6 +72,7 @@ public class StudentMain extends JFrame implements ActionListener {
 		jpup.add(btnMnameSearch);
 		jpup.add(new JLabel("점수",(int) CENTER_ALIGNMENT));
 		jpup.add(txtScore);
+		
 		jpbtn.add(btnInput);
 		jpbtn.add(btnUpdate);
 		jpbtn.add(btnStudentOut);
