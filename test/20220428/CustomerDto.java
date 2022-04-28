@@ -29,10 +29,6 @@ public class CustomerDto {
 		return cname + "\t" + ctel + "\t\t" + cpoint + "\n";
 	}
 
-	public int getCno() {
-		return cno;
-	}
-
 	public String getCname() {
 		return cname;
 	}
