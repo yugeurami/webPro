@@ -34,7 +34,7 @@ public class CustomerMng extends JFrame implements ActionListener {
 	}
 	
 	private void print() {
-		jta.setText("ÀÌ¸§\tÀüÈ­¹øÈ£\t\tÆ÷ÀÎÆ®\n");
+		jta.setText("ì´ë¦„\tì „í™”ë²ˆí˜¸\t\tí¬ì¸íŠ¸\n");
 		for(int i = 0 ; i<80 ; i++) {
 			jta.append("-");
 		}
@@ -50,18 +50,18 @@ public class CustomerMng extends JFrame implements ActionListener {
 		txtPhone = new JTextField(15);
 		txtName = new JTextField(15);
 		txtPoint = new JTextField(15);
-		btnJoin = new JButton("°¡ÀÔ");
-		btnSearch = new JButton("ÆùÁ¶È¸");
-		btnOutput = new JButton("Ãâ·Â");
-		btnExit = new JButton("Á¾·á");
+		btnJoin = new JButton("ê°€ì…");
+		btnSearch = new JButton("í° ì¡°íšŒ");
+		btnOutput = new JButton("ì „ì²´ì¶œë ¥");
+		btnExit = new JButton("ì¢…ë£Œ");
 		jta = new JTextArea(15, 30);
 		scrollPane = new JScrollPane(jta);
 		
-		jpup.add(new JLabel("Æù¹øÈ£", (int) CENTER_ALIGNMENT));
+		jpup.add(new JLabel("í°ë²ˆí˜¸", (int) CENTER_ALIGNMENT));
 		jpup.add(txtPhone);
-		jpup.add(new JLabel("ÀÌ ¸§", (int) CENTER_ALIGNMENT));
+		jpup.add(new JLabel("ì´ ë¦„", (int) CENTER_ALIGNMENT));
 		jpup.add(txtName);
-		jpup.add(new JLabel("Æ÷ÀÎÆ®", (int) CENTER_ALIGNMENT));
+		jpup.add(new JLabel("í¬ì¸íŠ¸", (int) CENTER_ALIGNMENT));
 		jpup.add(txtPoint);
 		jpdown.add(btnJoin);
 		jpdown.add(btnSearch);
@@ -89,29 +89,29 @@ public class CustomerMng extends JFrame implements ActionListener {
 			String cname = txtName.getText().trim();
 			StringTokenizer pToken = new StringTokenizer(ctel, "-");
 			if(ctel.equals("")) {
-				jta.setText("ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+				jta.setText("ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 				return;
 			} else if(pToken.countTokens()!=3){
-				jta.setText("À¯È¿ÇÑ ÀüÈ­¹øÈ£ Çü½ÄÀÌ ¾Æ´Õ´Ï´Ù");
+				jta.setText("ì˜¬ë°”ë¥¸ ì „í™”ë²ˆí˜¸ í˜•ì‹ì´ ì•„ë‹™ë‹ˆë‹¤");
 				return;
 			}
 			if(cname.equals("")) {
-				jta.setText("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+				jta.setText("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 				return;
 			}
 			int result = dao.Join(ctel, cname);
 			if(result == dao.SUCCESS) {
-				jta.setText(cname+"´Ô °¡ÀÔµÇ¼Ì½À´Ï´Ù. \nÆ÷ÀÎÆ® 1000Á¡À» È¸¿ø°¡ÀÔ ¼±¹°·Î µå¸³´Ï´Ù");
+				jta.setText(cname+"ë‹˜ ê°€ì… ê°ì‚¬ë“œë¦½ë‹ˆë‹¤. \n ê°€ì… ì¶•í•˜ ì„ ë¬¼ë¡œ 1000í¬ì¸íŠ¸ë¥¼ ë“œë¦½ë‹ˆë‹¤.");
 				reset();
 			}
 		}else if (a.getSource() == btnSearch) {
 			jta.setText("");
 			String ctel = txtPhone.getText().trim();
 			if(ctel.equals("")) {
-				jta.setText("ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+				jta.setText("ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹  í›„ ê²€ìƒ‰í•´ì£¼ì„¸ìš”");
 				return;
 			} else if(ctel.length()<4) {
-				jta.setText("ÀüÈ­¹øÈ£´Â ÃÖ¼Ò 4±ÛÀÚ´Â ÀÔ·ÂÇÏ¼Å¾ßÇÕ´Ï´Ù");
+				jta.setText("ì „í™”ë²ˆí˜¸ëŠ” 4ìë¦¬ ì´ìƒ ì…ë ¥í•˜ì…”ì•¼í•©ë‹ˆë‹¤");
 				return;
 			}
 			customer = dao.Search(ctel);
@@ -128,7 +128,7 @@ public class CustomerMng extends JFrame implements ActionListener {
 					txtPoint.setText(String.valueOf(d.getCpoint()));
 				}
 			} else {
-				jta.setText("ÇØ´ç ¹øÈ£·Î µî·ÏµÈ °í°´ÀÌ ¾ø½À´Ï´Ù");
+				jta.setText("í•´ë‹¹ ë²ˆí˜¸ë¡œ ë“±ë¡ëœ íšŒì›ì´ ì—†ìŠµë‹ˆë‹¤");
 				reset();
 			}
 		}else if (a.getSource() == btnOutput) {
@@ -141,7 +141,7 @@ public class CustomerMng extends JFrame implements ActionListener {
 				}
 				reset();
 			} else {
-				jta.setText("µ¥ÀÌÅÍ º£ÀÌ½º¿¡ µî·ÏµÈ °í°´ÀÌ ¾ø½À´Ï´Ù");
+				jta.setText("ë°ì´í„°ë² ì´ìŠ¤ì— ë“±ë¡ëœ íšŒì›ì´ ì—†ìŠµë‹ˆë‹¤");
 			}
 		}else if (a.getSource() == btnExit) {
 			setVisible(false);
@@ -151,7 +151,7 @@ public class CustomerMng extends JFrame implements ActionListener {
 	}
 	
 	public static void main(String[] args) {
-		new CustomerMng("È¸¿ø°ü¸®");
+		new CustomerMng("È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 	}
 
 }

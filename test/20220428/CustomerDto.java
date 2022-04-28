@@ -8,7 +8,7 @@ public class CustomerDto {
 	
 	public CustomerDto() {}
 	
-	//ÀÔ·Â¿ë
+	//ìž…ë ¥ìš©
 	public CustomerDto(int cno, String cname, String ctel) {
 		super();
 		this.cno = cno;
@@ -16,7 +16,7 @@ public class CustomerDto {
 		this.ctel = ctel;
 	}
 	
-	//Ãâ·Â¿ë
+	//ì¶œë ¥ìš©
 	public CustomerDto(String cname, String ctel, int cpoint) {
 		super();
 		this.cname = cname;

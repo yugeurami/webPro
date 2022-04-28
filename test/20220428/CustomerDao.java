@@ -24,7 +24,7 @@ public class CustomerDao {
 			System.out.println(e.getMessage());
 		}
 	}
-	// °¡ÀÔ
+	// íšŒì›ê°€ì…
 	public int Join(String ctel, String cname) {
 		int result = FAIL;
 		Connection conn = null;
@@ -47,7 +47,7 @@ public class CustomerDao {
 		}
 		return result;
 	}
-	// Æù µŞÀÚ¸® Á¶È¸
+	// ì „í™”ë²ˆí˜¸ ì¡°íšŒ
 	public ArrayList<CustomerDto> Search(String ctel) {
 		ArrayList<CustomerDto> customers = new ArrayList<CustomerDto>();
 		CustomerDto customer = null;
@@ -80,7 +80,7 @@ public class CustomerDao {
 		}
 		return customers;
 	}
-	//ÀüÃ¼ Ãâ·Â
+	//ì „ì²´ ì¶œë ¥
 	public ArrayList<CustomerDto> Output() {
 		ArrayList<CustomerDto> customers = new ArrayList<CustomerDto>();
 		CustomerDto customer = null;
