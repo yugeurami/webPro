@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * { /*전체선택자 : 모든 태그에 적용 : 전체 페이지 디자인 초기화 용도*/
+            margin : 0; /*밖여백*/
+            padding : 0; /*안여백*/
+            /*페이지 내 기본 폰트 설정*/
+            color : saddlebrown;
+        }
+        header, nav, section, footer{
+            width: 500px; /*가로사이즈*/
+            margin : 10px auto; /*상, 우, 하 좌*/
+            border: 1px solid gray;
+        }
+        header h1 {
+            text-align : center;
+        }
+        nav ul{
+            overflow : hidden; /*수평으로 하고 픈 태그의 부모단*/
+        }
+        nav ul li { /*수직 li를 수평li로*/
+            float : left; /*block타입태그를 수평으로 배치*/
+            list-style : none;
+            /*padding : 10px 20px; *//* 10px 20px 10px 20px*/
+            width : 125px;
+            text-align : center;
+        }
+        section{
+            clear : both; /*overflow : hidden;을 잘 했으면 생략하기도 함 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>00 주식회사</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>회사소개</li>
+            <li>서비스</li>
+            <li>고객센터</li>
+            <li>공지사항</li>
+        </ul>
+    </nav>
+    <section>
+        <p>
+            모든 국민은 양심의 자유를 가진다. 새로운 회계연도가 개시될 때까지 예산안이 의결되지 못한 때에는 정부는 국회에서 예산안이 의결될 때까지 다음의 목적을 위한 경비는 전년도 예산에 준하여 집행할 수 있다.
+        </p>
+        <p>
+            법관이 중대한 심신상의 장해로 직무를 수행할 수 없을 때에는 법률이 정하는 바에 의하여 퇴직하게 할 수 있다. 감사원은 원장을 포함한 5인 이상 11인 이하의 감사위원으로 구성한다.
+        </p>
+    </section>
+    <footer>
+        <p>서울시 강남구 강남대로94길 13 좋은빌딩 402호</p>
+    </footer>
+</body>
+</html>
