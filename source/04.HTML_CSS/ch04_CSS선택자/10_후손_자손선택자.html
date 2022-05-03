@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #header, #wrap, #footer{
+            width : 600px;
+            margin : 0 auto;
+        }
+        #header {
+            overflow : hidden;
+        }
+        #header .logo{ /*후손선택자(아래단)*/
+            float : left;
+            padding : 10px 30px 10px 70px;
+        }
+        #header> .name{ /*자손선택자(바로 아래단)*/
+            float : left;
+            padding : 20px 30px 20px 70px
+        }
+        div p { /*후손선택자 (div 밑에 있는 p태그)*/
+            font-size : 25px; /* p태그의 기본 font-size는 16px */
+        }
+        div> p{/*자손 선택자(div 바로 밑에 있는 p태그만)*/
+            color : red;
+            font-size : 16px;
+        }
+        #footer{
+            text-align : center;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="logo">
+            <h1>LOGO</h1>
+        </div>
+        <div class="name">
+            <h2>00 주식회사</h2>
+        </div>
+    </div>
+    <div id="wrap">
+        <p>
+            무엇이 그림자는 실현에 있으며, 쓸쓸하랴? 안고, 인간에 얼음 속에 든 청춘의 별과 보라. 대고, 가슴에 그것을 끝에 얼마나 위하여서. 천고에 긴지라 예수는 못할 있으며, 보는 무엇을 피가 피다. 심장의 위하여 날카로우나 천자만홍이 넣는 꽃이 거친 가는 사랑의 부패뿐이다. 할지니, 이것이야말로 꾸며 피가 동력은 피고 하여도 원질이 보라. 안고, 하여도 능히 생생하며, 무한한 때까지 철환하였는가? 가슴에 착목한는 원질이 날카로우나 가치를 내는 그리하였는가? 피는 눈이 청춘의 것이다. 구하지 부패를 품에 온갖 인도하겠다는 보내는 충분히 칼이다. 모래뿐일 옷을 없으면 물방아 칼이다.
+        </p>
+        <ul>
+            <li><p>무엇이 그림자는 실현에 있으며, 쓸쓸하랴? 안고, 인간에 얼음 속에 든 청춘의 별과 보라.</p></li>
+            <li><p>무엇이 그림자는 실현에 있으며, 쓸쓸하랴? 안고, 인간에 얼음 속에 든 청춘의 별과 보라.</p></li>
+            <li><p>무엇이 그림자는 실현에 있으며, 쓸쓸하랴? 안고, 인간에 얼음 속에 든 청춘의 별과 보라.</p></li>
+        </ul>
+    </div>
+    <div id="footer">
+        <p>서울시 가남구 여사동 좋은빌딩 402호</p>
+    </div>
+</body>
+</html>

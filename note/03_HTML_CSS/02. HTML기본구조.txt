@@ -1,0 +1,42 @@
+[HTML]
+Hyper Text Markup Language
+웹문서를 기술하는 언어이다
+웹문서를 표현하기 위해 태그들로 구성되어 있다
+
+[HTML 기본 구조]
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    	<meta charset="utf-8" />
+    	<title></title>
+	<style></style>
+</head>
+<body>
+
+</body>
+</html>
+
+------------------------------------------------------------------------------
+﻿
+1. <!DOCTYPE html>
+웹 브라우저가 현재 웹 페이지가 HTML5 문서임을 인식하게 만들어준다
+모든 HTML5문서는 반드시 <!DOCTYPE html>태그를 표기해야 한다
+반드시 문서의 가장 첫번째 줄에 있어야 한다
+
+2. <html lang=”ko”>
+html태그의 시작을 알리고 lang 속성을 입력하는 부분
+lang속성은 실제 웹 브라우저가 동작하는데는 영향을 주지 않는다
+대신 검색 엔진이 웹 페이지를 탐색할 때 해당 웹 페이지가 어떠한 언어로 만들어져 있는지 쉽게 인식하게 해준다
+
+3.<head> … </head>
+문서의 정보인 title이나 설정값들인 css, javaScript등의 환경설정에 관한 정보를 넣는다
+meta	웹 페이지에 추가 정보 전달
+title	웹 페이지의 제목
+script	웹 페이지에 스크립트를 추가
+link	웹 페이지에 다른 파일을 추가
+style	웹 페이지의 스타일 시트를 추가
+
+4. <body> … </body>
+사용자에게 보이는 웹 문서 실제 정보
+
+﻿

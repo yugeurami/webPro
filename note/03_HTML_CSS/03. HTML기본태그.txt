@@ -1,0 +1,84 @@
+1. 글자관련 태그
+﻿제목 태그			<h></h>
+개행			<br />
+선			<hr />
+단락태그			<p></p>
+파워링크			<a href="주소" target="_blank">글자</a>
+이텔릭체			<i></i>
+윗첨자			<sup></sup>
+언더라인			<ins></ins>
+중간선			<del></del>
+			<ruby>
+글자 위에 작은 글자	글자
+			<rt>작은 글자</rt>
+			</ruby>
+<			&lt;
+>			&gt;
+
+
+2. 목록태그
+﻿﻿(1) 순서가 있는 목록 태그
+<ol>
+<li>순서1</li>
+</ol>
+
+type : 1, i, l, a, A
+
+(2) 순서가 없는 목록 태그
+<ul>
+<li>순서1</li>
+</ul>
+
+type : disc(검은원), circle(빈원), square(사각형)
+
+(3) 정의
+<dl>
+<dt>정의하고자 하는 용어(definition term)</dt>
+<dd>용어에 대한 상세 설명(definition description)</dd>
+</dl>
+
+﻿(4) 토글 기능
+﻿details : 세부정보나 추가정보를 숨기고 펼치는 토글되는 기능
+summary : 세부정보나 추가 정보의 제목
+
+<details>
+        <summary>토글 전에 보일 내용</summary>
+        <ul>
+            <li>세부내용1</li>
+            <li>세부내용2</li>
+            <li>세부내용3</li>
+        </ul>
+</details>
+
+
+
+3. 표태그
+﻿<table></table>		테이블을 만들어주는 태그
+<tr></tr>		행을 만들어주는 태그
+<td></td>		열을 만들어주는 태그
+<caption></caption>	표의 제목
+colspan="숫자"		숫자만큼 열병합(좌우병합)
+rowspan="숫자"		숫자만큼 행병합(위아래 병합)
+
+﻿
+4. 이미지태그
+<img src="이미지 파일의 경로" alt="이미지가 없을 때 나오는 글자 지정" width="숫자" height="숫자" />
+
+﻿﻿width와 height 값을 설정하지 않으면 이미지 파일의 원본 사이즈 그대로 올라가고
+둘 중 하나만 값을 주면 설정값에 맞춰서 비율이 줄어든다
+둘 다 설정하면 설정한 값에 맞춰서 이미지가 왜곡된다
+
+
+5. 오디오태그
+<audio src="오디오 파일의 경로" controls="controls" loop="loop" preload="auto" autoplay="autoplay"></audio>
+﻿
+controls="controls"		오디오 재생 도구를 출력 여부 지정
+preload="auto"		오디오 재생 전에 미리 불러올지 여부
+loop="loop"		오디오 반복 재생 여부
+autoplay="autoplay"	오디오의 자동 재생 여부
+
+﻿
+6. 비디오태그
+<video controls="controls" poster="썸네일로 지정하고 싶은 이미지 파일의 경로" weight="숫자" height="숫자" preload="auto">
+    <source src="동영상 파일의 경로" />
+</video>

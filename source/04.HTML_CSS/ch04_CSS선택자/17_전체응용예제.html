@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #header{
+            height : 150px;
+            margin : 0 auto;
+            overflow : hidden;
+        }
+        #content {
+            height: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #footer {
+            height: 152px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .left {
+            width: 150px;
+            height: 150px;
+            border: 1px solid gray;
+            background-color: lightgray;
+            float: left;
+        }
+        .center {
+            width: 693px;
+            height: 150px;
+            border: 1px solid gray;
+            background-color: lightgray;
+            float: left;
+        }
+        .right {
+            width: 150px;
+            height: 150px;
+            border: 1px solid gray;
+            background-color: lightgray;
+            float: left;
+        }
+        #header .left, #footer .right{
+            border-radius : 30px 0;
+        }
+        #header .center{
+            border-radius : 0 0 30px 30px;
+        }
+        #header .right, #footer .left{
+            border-radius : 0 30px;
+        }
+        #content .left {
+            height: 300px;
+            border-radius : 0 30px 30px 0;
+        }
+        #content .center {
+            height: 300px;
+            border-radius : 30px;
+        }
+        #content .right {
+            height: 300px;
+            border-radius : 30px 0 0 30px;
+        }
+        #footer .center{
+            border-radius : 30px 30px 0 0;
+        }
+        ul{
+            overflow : hidden;
+            margin : 20px;
+            padding : 0 0 0 0;
+        }
+        ul li{
+            float : left;
+            font-size : 28px;
+            margin : 0;
+            text-align : center;
+            width : 33%;
+            list-style : none;
+            font-weight : bold;
+        }
+        #academy {
+            text-align : center;
+            padding : 20px;
+        }
+        #academy p{
+            padding : 20px;
+        }
+        ol li:nth-child(9)~li{
+            color : red;
+        }
+        a {
+            text-decoration : none;
+            color : black;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+    <div id="content">
+        <div class="left"></div>
+        <div class="center">
+            <div id="nav">
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+            </ul>
+            </div>
+            <div id="academy">
+            <h3>자바 개발자 양성 과정</h3>
+            <p>본 과정은 좋다. 아주 좋다. 친구들 좋다</p>
+            </div>
+        </div>
+        <div class="right">
+            <ol>
+                <li>태그</li>
+                <li>전체(*)</li>
+                <li>id,class</li>
+                <li>속성</li>
+                <li>후손,자손(>)</li>
+                <li>동위</li>
+                <li>반응</li>
+                <li>상태</li>
+                <li>구조</li>
+                <li>문자</li>
+                <li>링크</li>
+                <li>부정</li>
+            </ol>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
