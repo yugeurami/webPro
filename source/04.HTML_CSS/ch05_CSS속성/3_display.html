@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div{
+            width : 100px;
+            height : 100px;
+            border : 1px solid black;
+            text-align : center;
+            font-weight : bold;
+        }
+        div:nth-child(1){
+            background-color : red;
+            display : block;
+        }        
+        div:nth-child(2){
+            background-color : green; /*display속성은 div 태그 기본값을 가짐*/
+        }        
+        div:nth-child(3){
+            background-color : blue;
+            display : inline; 
+            margin : 10px 10px 10px 10px; /*한행에 출력되기 때문에 위아래 margin/padding이 안붙음*/
+        }
+        div:nth-child(4){
+            background-color : yellow;
+            display : inline;
+        }
+        div:nth-child(5){
+            background-color : black;
+            display : none; /*안보이게 하고 공간도 사라짐*/
+        }
+        div:nth-child(6){
+            background-color: pink;
+            display : inline-block; /*height, 윗여백, 아랫여백 지정 가능*/
+        }
+        div:nth-child(7){
+            background-color : greenyellow;
+            display : inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div>content1</div><div>content2</div><div>content3</div><div>content4</div>
+    <div>content5</div><div>content6</div><div>content7</div><div>content8</div>
+</body>
+</html>
