@@ -1,0 +1,167 @@
+﻿/*초기화*/
+*{
+    margin : 0;
+    padding : 0;
+}
+header #wrap{
+    width : 1000px;
+    margin : 0 auto;
+    text-align : center;
+}
+a{
+    text-decoration : none;
+    color : black;
+}
+li{
+    list-style : none;
+}
+/*header .gnb*/
+header .gnb {
+    background-color: black;
+    height: 30px;
+}
+header .gnb ul {
+    overflow: hidden;
+    width : 1000px;
+    margin : 0 auto;
+}
+header .gnb ul li{
+    float : left;
+    width : 10%;
+}
+header .gnb ul li a{
+    color : white;
+    display : block;
+    text-align : center;
+    line-height : 30px;
+}
+/*header #wrap*/
+header #wrap{
+    position : relative;
+    height : 200px;   
+}
+header #wrap .logo{
+    width : 300px;
+    height : 150px;
+    border : 1px solid black;
+    margin : 5px;
+    position : absolute;
+    left : 350px;
+    line-height : 150px;
+}
+header #wrap .hitmenu{
+    overflow : hidden;
+    position : absolute;
+    bottom : 5px;
+    right : 10px;
+}
+header #wrap .hitmenu li{
+    float : left;
+    display : block;
+    border : 1px solid gray;
+    padding : 8px 15px;
+    box-sizing : border-box;
+}
+/*header .lnb*/
+header .lnb {
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+    height: 30px;
+}
+header .lnb ul {
+    overflow: hidden;
+    width : 1000px;
+    margin : 0 auto;
+}
+header .lnb ul li{
+    float : left;
+    width : 12.5%;
+}
+header .lnb ul li a{
+    display : block;
+    text-align : center;
+    line-height : 30px;
+}
+/*content .section1*/
+content .section1 {
+    width: 1000px;
+    margin: 0 auto;
+    height: 400px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 400px;
+    padding : 5px;
+}
+content .section1 .side_banner:nth-child(1){
+    width : 700px;
+    border : 1px solid black;
+    box-sizing : border-box;
+    float : left;
+}
+content .section1 .side_banner:nth-child(2){
+    width : 300px;
+    border : 1px solid black;
+    box-sizing : border-box;
+    float : left;
+}
+/*content .section2*/
+content .section2 {
+    width: 1000px;
+    margin : 0 auto;
+    text-align: center;
+    line-height: 400px;
+}
+content .section2 .hit_product{
+    height: 400px;
+    overflow: hidden;
+    border : 1px solid black;
+    margin : 5px 0;
+}
+content .section2 .hit_product li{
+    float : left;
+    width : 240px;
+    padding : 0 0 0 7px;
+}
+content .section2 .hit_product li a{
+    display : block;
+    border : 1px solid black;
+    box-sizing : border-box;
+}
+content .section2 .md_product{
+    height: 400px;
+    overflow: hidden;
+    border : 1px solid black;
+    margin : 10px 0;
+}
+content .section2 .md_product li{
+    float : left;
+    width : 240px;
+    padding : 0 0 0 7px;
+}
+content .section2 .md_product li a{
+    display : block;
+    border : 1px solid black;
+    box-sizing : border-box;
+}
+/*footer*/
+footer{
+    width : 1000px;
+    margin : 0 auto;
+    overflow : hidden;
+}
+footer > div{
+    border : 1px solid black;
+    box-sizing : border-box;
+    float : left;
+    padding : 0 10px;
+    width : 333px;
+    height : 80px;
+}
+footer .copyright{
+    width : 1000px;
+    height : 30px;
+    clear : both;
+    background-color : black;
+    color : white;
+    text-align : center;
+}
