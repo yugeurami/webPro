@@ -1,28 +1,25 @@
 ﻿/*초기화*/
-@font-face {
-    font-family: 'Amarante-Regular';
-    src : url('../font/Amarante-Regular.ttf');
-}
-*{
-    margin : 0;
-    padding : 0;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab'
 }
 li {
     list-style: none;
-    font-family: 'Amarante-Regular';
+    font-family: 'Roboto Slab'
 }
 a {
     text-decoration: none;
     color: black;
-    font-family: 'Amarante-Regular';
-    text-align : center;
+    text-align: center;
+    font-family: 'Roboto Slab'
 }
 /*header #header_nav*/
 header #header_nav{
     height : 25px;
     background-color : #2d1152;
     position : relative;
-    min-width : 810px;
+    min-width : 900px;
 }
 header #header_nav .gnb{
     width : 1000px;
@@ -33,7 +30,7 @@ header #header_nav .gnb li{
 }
 header #header_nav .gnb li a{
     color : white;
-    line-height : 25px;
+    line-height : 20px;
     display : block;
     padding : 5px;
 }
@@ -47,9 +44,9 @@ header #header_nav .survivalFootball > img{
     height : 21px;
 }
 header #header_nav .survivalFootball > span{
-    font-family: 'Amarante-Regular';
-    font-size : 16px;
-    font-weight : lighter;
+    font-family: 'Roboto Slab', serif;
+    font-weight : 300;
+    line-height : 20px;
 }
 /*header #header_info*/
 header #header_info{
@@ -63,22 +60,24 @@ header #header_info .logo{
 }
 header #header_info .search{
     float : left;
+    padding : 0 0 0 10px;
 }
-header #header_info .search .text{
-    width : 400px;
-}
-    header #header_info .search .bnt_search {
-        width: 124px;
-        height: 37px;
-        margin: 20px 0;
-        background: url('../img/search_btn.png') no-repeat;
-        background-size: 100%;
-        border: none;
-        color: white;
+header #header_info .search .text {
+    width: 400px;
+    height : 30px;
+    outline: 0;
     }
+header #header_info .search .bnt_search {
+    width: 124px;
+    height: 37px;
+    margin: 20px 0;
+    background: url('../img/search_btn.png') no-repeat;
+    border: none;
+    color: white;
+}
 header #header_info .service{
     float : left;
-    padding : 0 0 0 30px;
+    padding : 0 0 0 10px;
 }
 header #header_info .service > ul{
     overflow : hidden;
@@ -103,11 +102,8 @@ header #header_info .service > ul li a{
     float : left;
 }
 #content #main_menu > ul > li > a{
-    height : 50px;
-    line-height : 50px;
+    line-height : 60px;
     display : block;
-    margin : 0;
-    padding : 0;
 }
 #content #main{
     width : 600px;
@@ -162,9 +158,9 @@ header #header_info .service > ul li a{
     height : 200px;;
 }
 footer {
-    width : 750px;
+    width : 730px;
     height : 100px;
-    margin : 0 auto;
+    margin : 10px auto;
 }
 footer ul{
     overflow : hidden;
