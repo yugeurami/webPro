@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" name="viewport"
+          content="width=divce-width, initial-scale=1.0, user-scalable=yes,
+          maximum-scale=3.0, minimum-scale=0.7"/>
+    <title></title>
+    <style>
+        /*페이지 초기화*/
+        *{
+            margin : 0;
+            padding : 0;
+        }
+        a{
+            text-decoration : none;
+        }
+        li{
+            list-style : none;
+            text-align : center;
+        }
+        /* header */
+        header {
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            background-image: url('imgEx1/bg_header.png'); 
+            position : relative;
+        }
+        header .left{
+            position : absolute;
+            top : 6.5px;
+            left : 10px;
+        }
+        header .right{
+            position : absolute;
+            top : 6.5px;
+            right : 10px;
+        }
+        /* gnb */
+        #gnb{
+            overflow : hidden;
+            border : 5px solid gray;
+        }
+        #gnb ul li{ /* li 메뉴가 8개 li 하나당 12.5% 사용 가능*/
+            float : left;
+            margin : 1.25%;
+            width : 10%;
+            border : 1px solid gray;
+            box-sizing : border-box;
+        }
+        /* toggle 기능 */
+        #toggle {
+            display: none;
+        }
+        #gnb{
+            display : none;
+        }
+        input[type='checkbox']:checked ~ #gnb {
+            display : block;
+        }
+        /* lnb */
+        #lnb{
+            overflow : hidden;
+        }
+        #lnb ul li {
+            float: left;
+            width: 20%;
+            background-color: #137163;
+            border: 1px solid white;
+            box-sizing: border-box;
+        }
+        #lnb ul li a{
+            height : 60px;
+            line-height : 60px;
+            color : white;
+        }
+        #lnb ul li:first-child{
+            border-left : none;
+        }
+        #lnb ul li:last-child{
+            border-right : none;
+        }
+        /* content */
+        #content {
+            padding : 10px;
+            color : #333333;
+        }
+        #content .content_header{
+            height : 60px;
+            line-height : 60px;
+            border-bottom : 1px solid gray;
+        }
+        #content .content_body p:first-child{
+            color : deepskyblue;
+            padding : 10px;
+            /* 말줄임태그 */
+            white-space : nowrap;
+            overflow : hidden;
+            text-overflow : ellipsis;
+        }
+            #content .content_body p:last-child {
+                background : url('imgEx1/bg_image.png') -500px -200px;
+                padding : 10px;
+                font-weight : bold;
+            }
+        /* footer */
+        footer .logo {
+            text-align: center;
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+            padding : 20px;
+        }
+        footer .logo img{
+            width : 150px;
+        }
+        footer .info{
+            text-align : center;
+            font-weight : bold;
+            font-size : 1.5em;
+        }
+        footer .address {
+            text-align : center;
+            font-size : 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="toggle" />
+    <header>
+        <a href="#" class="left">
+            <img src="imgEx1/category.png" />
+        </a>
+        <h1>Mobile</h1>
+        <label for="toggle" class="right">
+            <img src="imgEx1/menu.png" />
+        </label>
+    </header>
+    <div id="gnb">
+        <ul>
+            <li><a href="#">gnb1</a></li>
+            <li><a href="#">gnb2</a></li>
+            <li><a href="#">gnb3</a></li>
+            <li><a href="#">gnb4</a></li>
+            <li><a href="#">gnb5</a></li>
+            <li><a href="#">gnb6</a></li>
+            <li><a href="#">gnb7</a></li>
+            <li><a href="#">gnb8</a></li>
+        </ul>
+    </div>
+    <div id="lnb">
+        <ul>
+            <li><a href="#">lnb1</a></li>
+            <li><a href="#">lnb2</a></li>
+            <li><a href="#">lnb3</a></li>
+            <li><a href="#">lnb4</a></li>
+            <li><a href="#">lnb5</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <div class="content_header"><h1>제목</h1></div>
+        <div class="content_body">
+            <p>첫번째 p태그는 한줄로 출력하는데 내용이 길면 말줄임(...)을 해서 보여준다</p>
+            <p>대통령은 내우·외환·천재·지변 또는 중대한 재정·경제상의 위기에 있어서 국가의 안전보장 또는 공공의 안녕질서를 유지하기 위하여 긴급한 조치가 필요하고 국회의 집회를 기다릴 여유가 없을 때에 한하여 최소한으로 필요한 재정·경제상의 처분을 하거나 이에 관하여 법률의 효력을 가지는 명령을 발할 수 있다. 국민경제의 발전을 위한 중요정책의 수립에 관하여 대통령의 자문에 응하기 위하여 국민경제자문회의를 둘 수 있다. 국회나 그 위원회의 요구가 있을 때에는 국무총리·국무위원 또는 정부위원은 출석·답변하여야 하며, 국무총리 또는 국무위원이 출석요구를 받은 때에는 국무위원 또는 정부위원으로 하여금 출석·답변하게 할 수 있다.</p>        
+        </div>
+    </div>
+    <footer>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Daum_communication_logo.svg/1200px-Daum_communication_logo.svg.png" />
+        </div>
+        <div class="info">
+            XX주식회사
+        </div>
+        <div class="address">
+            서울시 XX구 XX동 00-0 XX빌딩 402호
+        </div>
+    </footer>
+</body>
+</html>
