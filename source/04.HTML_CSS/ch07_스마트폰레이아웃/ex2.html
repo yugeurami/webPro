@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum=2.0"/>
+    <title></title>
+    <style>
+        /* 페이지 초기화 */
+        *{
+            margin : 0;
+            padding : 0;
+            font-family : 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+        li{
+            list-style : none;
+        }
+        a{
+            text-decoration : none;
+            color : black;
+        }
+        /* header */
+        header{
+            background-color : #ea8f00;
+            height : 100px;
+        }
+        /* header #logo_wrap */
+        header #logo_wrap{
+            height : 50px;
+            position : relative;
+            text-align : center;
+            line-height : 50px;
+        }
+        header #logo_wrap .menu{
+            position : absolute;
+            top : 0px;
+            left : 0px;
+        }
+        header #logo_wrap .myinfo{
+            position : absolute;
+            top : 0px;
+            right : 0px;
+        }
+        header #logo_wrap a.logo{
+            color : #FFFFFF;
+        }
+        /* header #search */
+        header #search{
+            height : 50px;
+            position : relative;
+        }
+        header #search input[type='text']{
+            outline : none;
+            border : 3px solid #ea8f00;
+            box-sizing : border-box;
+            width : 100%;
+            height : 50px;
+            padding : 5px 55px 5px 5px;
+            font-size : 1.3em;
+        }
+        header #search input[type='submit'] {
+            width: 50px;
+            height : 50px;
+            border : none;
+            background: url('imgEx2/search.png');
+            position : absolute;
+            top : 0;
+            right : 0;
+        }
+        /* lnb */
+        #lnb ul{
+            height : 20px;
+            line-height : 20px;
+            overflow : hidden;
+            text-align : center;
+            margin : 5px 0;
+        }
+        #lnb ul li a{
+            float : left;
+            width : 16.66666%;
+            border-right : 2px solid #ea8f00;
+            box-sizing : border-box;
+            display : block;
+        }
+        #lnb ul li:last-child a{
+            border-right : none;
+        }
+        /* section #section1 */
+        section #section1{
+            text-align : center;
+        }
+        section #section1 .row1, .row2, .row3{
+            overflow : hidden;
+        }
+        section #section1 .row1 > div, .row2 > div, .row3 > div{
+            float : left;
+            width : 50%;
+            height : 135px;
+            border : 2px solid white;
+            box-sizing : border-box;
+        }
+        section #section1 img{
+            width : 100%;
+            height : inherit; /*부모의 height를 그대로 상속받음 100%와 동일*/
+
+        }
+        /*section #section2*/
+        section #section2{
+            margin : 5px;
+        }
+        section #section2 ul li{
+            border : 1px solid lightgray;
+            padding : 6px;
+            /*말줄임태그*/
+            white-space : nowrap;
+            overflow : hidden;
+            text-overflow : ellipsis;
+        }
+        /*section #section3*/
+        section #section3 ul li{
+            border : 1px solid lightgray;
+            margin : 5px;
+            padding : 5px;
+            height : 120px;
+            position : relative;
+        }
+        section #section3 ul li .img{
+            position : absolute;
+            top : 15px;
+            left : 10px;
+            width : 100px;
+            height : 100px;
+        }
+        section #section3 ul li .text{
+            width : 100%-120px;
+            padding : 12px 5px 5px 120px;
+        }
+        section #section3 ul li .text span:first-child{
+            font-size : 1.2em;
+            font-weight : bold;
+            display : block;
+            /*말줄임태그*/
+            white-space : nowrap;
+            overflow : hidden;
+            text-overflow : ellipsis;
+        }
+        section #section3 ul li .text span:last-child{
+            font-size : 0.9em;
+            padding-top : 3px;
+            display : block;
+        }
+        /* footer */
+        footer {
+            background-color: #ea8f00;
+            text-align : center;
+        }
+        footer p:last-child{
+            font-size : 0.8em;
+            padding-bottom : 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo_wrap">
+            <img class="menu" src="imgEx2/menu.png" alt="메뉴 아이콘"/>
+            <a href="#" class="logo"><h2>mobile logo</h2></a>
+            <img class="myinfo" src="imgEx2/myinfo.png" alt="사람 아이콘" />
+        </div>
+        <div id="search">
+            <form action="#">
+                <input type="text" name="query_word" />
+                <input type="submit" value=""/>
+            </form>
+        </div>
+    </header>
+    <div id="lnb">
+        <ul>
+        <li><a href="#">lnb1</a></li>
+        <li><a href="#">lnb2</a></li>
+        <li><a href="#">lnb3</a></li>
+        <li><a href="#">lnb4</a></li>
+        <li><a href="#">lnb5</a></li>
+        <li><a href="#">lnb6</a></li>
+        </ul>
+    </div>
+    <section>
+        <div id="section1">
+            <div class="row1">
+                <div>
+                    <a href="https://n.news.naver.com/mnews/article/003/0011173450?sid=105">
+                        <img src="https://imgnews.pstatic.net/image/003/2022/05/10/NISI20220510_0000993065_web_20220510093833_20220510101305697.jpg?type=w647" alt="1행 1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://n.news.naver.com/mnews/article/079/0003640911?sid=101">
+                        <img src="https://imgnews.pstatic.net/image/079/2022/05/10/0003640911_001_20220510092801244.jpg?type=w647" alt="1행 2열" />
+                    </a>
+                </div>
+            </div>            
+            <div class="row2">
+                <div>
+                    <a href="https://n.news.naver.com/mnews/article/018/0005210841?sid=102">
+                        <img src="https://imgnews.pstatic.net/image/018/2022/05/09/0005210841_001_20220509135701065.jpg?type=w647" alt="2행 1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://n.news.naver.com/mnews/article/001/0013166755?sid=104">
+                        <img src="https://imgnews.pstatic.net/image/001/2022/05/10/AKR20220510039100071_01_i_P4_20220510092113834.jpg?type=w647" alt="2행 2열" />
+                    </a>
+                </div>
+            </div>            
+            <div class="row3">
+                <div>
+                    <a href="https://n.news.naver.com/mnews/article/001/0013166826?sid=103">
+                        <img src="https://imgnews.pstatic.net/image/001/2022/05/10/PYH2022051001810001300_P4_20220510093114711.jpg?type=w647" alt="3행 1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://n.news.naver.com/mnews/article/374/0000285229?sid=103">
+                        <img src="https://imgnews.pstatic.net/image/374/2022/05/10/0000285229_001_20220510095601596.jpg?type=w647" alt="3행 2열" />
+                    </a>
+                </div>
+            </div>
+        </div><!--section1-->
+        <div id="section2">
+            <ul>
+                <li><a href="https://n.news.naver.com/mnews/article/003/0011173081?sid=105">	갤노트20, 갤Z플립 지원금 최대 100만원…재고떨이 나섰나</a>
+                </li>
+                <li>
+                    <a href="https://n.news.naver.com/mnews/article/277/0005086404?sid=105">우크라 도운 머스크, 러시아 '경고'에 "나 죽을 지도 몰라"[과학을읽다]</a>
+                </li>
+                <li>
+                    <a href="https://n.news.naver.com/mnews/article/003/0011173337?sid=103">울산박물관, 박물관·미술관 주간 문화 행사 다채</a>
+                </li>
+                <li>
+                    <a href="https://n.news.naver.com/mnews/article/346/0000050648?sid=103">뇌출혈, 일찍 병원 갔으면 살았다? 전문가 의견 달랐다</a>
+                </li>               
+            </ul>
+        </div> <!--section2-->
+        <div id="section3">
+            <ul>
+                <li>
+                    <a href="https://n.news.naver.com/mnews/article/056/0011263419?sid=103">
+                        <p class="img">
+                            <img src="https://mimgnews.pstatic.net/image/origin/056/2022/05/10/11263419.jpg?type=nf106_72" width="100" height="100" alt="첫번째"/>
+                        </p>
+                        <p class="text">
+                            <span>[굿모닝 날씨] 서쪽 초여름·동해안은 선선…점차 흐려져</span>
+                            <span>오늘 서쪽 지역은 초여름 날씨를 보이겠지만, 동해안 지방은 비교적 선선하겠습니다.</span>
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://n.news.naver.com/mnews/article/025/0003193688?sid=103">
+                        <p class="img">
+                            <img src="https://mimgnews.pstatic.net/image/origin/025/2022/05/10/3193688.jpg?type=nf106_72" width="100" height="100" alt="두번째" />
+                        </p>
+                        <p class="text">
+                            <span>[쿠킹] 가지·애호박·피망·토마토 익숙한 채소로 만든 지중해풍 덮밥</span>
+                            <span>14년째 서울 연희동 자택에서 요리 교실 ‘구르메 레브쿠헨’을 운영해 온 나카가와 히데코 요리 선생에게는 특급 레시피가 차고도 넘친다. </span>
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div><!--section3-->
+    </section>
+    <footer>
+        <p><img src="imgEx2/logo.png" alt="logo"/></p>
+        <p>서울시 XX구 XX동 000 XX빌딩 402호</p>
+    </footer>
+</body>
+</html>
