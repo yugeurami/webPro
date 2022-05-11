@@ -1,0 +1,140 @@
+﻿/* 페이지 초기화 */
+*{
+    margin : 0;
+    padding : 0;
+}
+li{
+    list-style : none;
+}
+a{
+    text-decoration : none;
+    color : black;
+}
+#wrap{
+    width : 1200px;
+    margin : 0 auto;
+}
+/* header */
+header {
+    padding : 20px 50px;
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+header #logo a{
+    height : 40px;
+    width : 120px;
+    line-height : 40px;
+    display : block;
+    background-color : #FDEADA;
+    border : 2px solid lightgray;
+    float : left;
+}
+header #top_left_nav{
+    width : 300px;
+    height : 40px;
+    float : left;
+    margin : 0 30px;
+}
+header #top_left_nav ul{
+    overflow : hidden;
+}
+header #top_left_nav ul li a{
+    width : 70px;
+    line-height : 40px;
+    float : left;
+    margin-right : 30px;
+    font-size : 0.9em;
+    text-align : center;
+}
+header #top_right_nav{
+    width : 250px;
+    position : absolute;
+    top : 30px;
+    right : 50px;
+    bottom : 10px;
+}
+header #top_right_nav ul{
+    overflow : hidden
+}
+header #top_right_nav ul li a{
+    float : left;
+    display : block;
+    margin-right : 30px;
+    font-size : 0.9em;
+    text-align : center;
+}
+/* section */
+section #title{
+    font-size : 1.3em;
+    border-bottom : 3px solid lightgray;
+    padding : 10px;
+}
+section content{
+    overflow : hidden
+}
+section content #nav{
+    margin : 30px 10px;
+    width : 200px;
+    height : 300px;
+    float : left;
+}
+section content #nav ul li a{
+    height : 50px;
+    display : block;
+    line-height : 50px;
+    border : 1px solid lightgray;
+    padding-left : 10px;
+}
+section content #nav ul .sub a{
+    padding-left : 30px;
+}
+section content #nav ul li:nth-child(5) a{
+    background-color : #FDEADA;
+    font-weight : bold;
+}
+
+section content #info_change{
+    height : 600px;
+    width : 956px;
+    margin : 30px 10px;
+    float : left;
+    border : 2px solid lightgray;
+}
+section content #info_change > span{
+    line-height : 50px;
+    padding-left : 20px;
+    border-bottom : 2px solid lightgray;
+    display : block;
+}
+section content #info_change table{
+    width : 900px;
+    padding : 30px 70px;
+}
+section content #info_change table td{
+    line-height : 55px;
+}
+section content #info_change table td input{
+    height : 40px;
+    width : 100%;
+    border : 1px solid lightgray;
+}
+section content #info_change table tr:last-child{
+    text-align : center;
+}
+section content #info_change table tr:last-child input{
+    margin-top : 110px;
+    width : 60px;
+    height : 30px;
+}
+/* footer */
+footer{
+    clear : both;
+    width : 1000px;
+    margin : 0 auto;
+    background-color : #FDEADA;
+    border : 2px solid lightgray;
+    text-align : center;
+    line-height : 30px;
+}

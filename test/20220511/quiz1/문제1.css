@@ -1,0 +1,13 @@
+﻿span{
+    color : red;
+}
+form{
+    width : 350px;
+}
+form table tr td{
+    text-align : center;
+}
+form #button{
+    text-align : center;
+    margin-top : 20px;
+}
