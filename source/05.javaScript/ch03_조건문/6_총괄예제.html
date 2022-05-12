@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table{
+            padding : 10px 20px;
+            border : 1px solid lightgray;
+            text-align : center;
+        }
+        table tr td:first-child{
+            padding-right : 10px;
+        }
+        table tr td input{
+            width : 200px;
+            height : 30px;
+            border : 1px solid lightgray;
+            text-align : center;
+            font-size : 1.2em;
+        }
+        table tr td input[type="submit"]{
+            margin-top : 10px;
+            width : 80px;
+            font-weight : bold;
+            font-size : 20px;
+            line-height : 20px;
+            background-color : darkgray;
+        }
+        h3{
+            padding-left : 50px;
+        }
+    </style>
+    <script>
+        function chk() {
+            su1 = parseInt(frm.first.value);
+            su2 = parseInt(frm.second.value);
+            if (isNaN(su1) || isNaN(su2)) {
+                alert('숫자를 입력해주세요');
+                return false;
+            } else if (su1 > su2) {
+                msg = "첫번째 수가 " + (su1 - su2) + "만큼 큽니다";
+                document.body.innerHTML += "<h3>" + msg + "</h3>";
+                frm.first.value = su1;
+                frm.second.value = su2;
+                alert(msg);
+            } else if (su1 < su2) {
+                msg = "두번째 수가 " + (su2 - su1) + "만큼 큽니다";
+                document.body.innerHTML += "<h3>" + msg + "</h3>";
+                frm.first.value = su1;
+                frm.second.value = su2;
+                alert(msg);
+            } else {
+                msg = "두 수는 같습니다";
+                document.body.innerHTML += "<h3>" + msg + "</h3>";
+                frm.first.value = su1;
+                frm.second.value = su2;
+                alert(msg);
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="frm" onsubmit="return chk()">
+        <table>
+            <tr>
+                <td>첫번째수</td>
+                <td>
+                    <input type="text" name="first" id="first" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td>두번째수</td>
+                <td>
+                    <input type="text" name="second" id="second" required="required" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="결과" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

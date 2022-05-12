@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // 1. prompt 함수를 이용해서 국, 영어 점수를 입력받습니다(0~100점)
+        // 2. is NaN함수를 이용해서 점수를 입력하지 않았을 경우 점수를 다시 입력받기 (do~while)
+        // 3. 영어와 국어 점수의 평균을 출력 (document.write함수 사용)
+        do {
+            korStr = prompt("국어 점수를 입력하세요", "0~100점 사이");
+            if (korStr == null) {
+                alert("국어 점수를 입력해주세요");
+            } else {
+                kor = Number(korStr);
+                if (isNaN(kor)) {
+                    alert("점수는 0~100 사이의 정수만 입력이 가능합니다");
+                } else if (kor > 100 || kor < 0) {
+                    alert("점수는 0~100 사이의 정수만 입력이 가능합니다");
+                } else {
+                    break;
+                }
+            }
+        } while (true)
+        do {
+            engStr = prompt("영어 점수를 입력하세요", "0~100점 사이");
+            if (engStr == null) {
+                alert("영어 점수를 입력해주세요");
+            } else {
+                eng = Number(engStr);
+                if (isNaN(eng)) {
+                    alert("점수는 0~100 사이의 정수만 입력이 가능합니다");
+                } else if (eng > 100 || eng < 0) {
+                    alert("점수는 0~100 사이의 정수만 입력이 가능합니다");
+                } else {
+                    break;
+                }
+            }
+        } while (true)
+        document.write("국어점수는 " + kor + ", 영어점수는 " + eng + ", 평균은 " + (kor + eng) / 2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        document.write("<table><caption><h3>구구단 표</h3></caption>")
+        document.write("<tr>")
+        for (t = 2; t < 10; t++) {
+            document.write("<td>"+ t+"단</td>")
+        }
+        document.write("</tr>")
+        for (i = 1; i < 10; i++) {
+            document.write("<tr>")
+            for (j = 2; j < 10; j++) {
+                document.write("<td>" + j + " * " + i + " = " + (j * i) + "</td>");
+            }
+            document.write("</tr>")
+        }
+        document.write("</table>")
+    </script>
+    <style>
+        table{
+            width : 750px;
+            margin : 10px auto;
+            border : 2px solid lightgray;
+        }
+        table tr td{
+            padding : 5px;
+            border-bottom : 1px dashed lightgray;
+            border-right : 1px solid gray;
+        }
+        table tr:first-child td{
+            text-align : center;
+            font-weight : bold;
+        }
+        table tr td:last-child{
+            border-right : none;
+        }
+        table tr td:hover{
+            background-color : lightyellow;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
