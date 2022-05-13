@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // 1초마다 백그라운드 이미지가 수정되면서 시간출력(10초동안)
+        var color = ['yellow', 'black', 'red'];
+        var image = ['url(img/img01.png)', 'url(img/img02.png)', 'url(img/img03.png)'];
+        var s = 0;
+        var id = setInterval(function () {
+            document.write(new Date + '<br>');
+            document.body.style.background = image[s % 3] + 'no-repeat';
+            document.body.style.backgroundSize = '100%';
+            document.body.style.color = color[s % 3];
+            s++
+        }, 1000);
+        setTimeout(function () {
+            clearInterval(id);
+        }, 10000);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        document.write(array()+'<br>');
+        document.write(array(1) + '<br>');
+        document.write(array(1, 2) + '<br>'); // arguments에 매개변수가 저장된다
+        function array() { //가변인자 함수
+            //매개변수가(인자)가 0 :
+            //매개변수가(인자)가 1 : 방의 개수가 매개변수 만큼 : array(3)
+            //매개변수가(인자)가 2개 이상 : 매개변수 자체가 배열 : array(10, 20, 30)
+            var result = [];
+            if (arguments.length == 1) {
+                //매개변수 하나일때
+                for (var cnt = 1; cnt <= arguments[0]; cnt++) {
+                    result.push(null);
+                }
+            } else if (arguments.length >=2) {
+                // 매개변수가 2개 이상일 때, 실행할 명령어들
+                for (var idx = 0; idx < arguments.length; idx++) {
+                    result.push(arguments[idx]);
+                };
+               // for (var idx in arguments) {
+                   // result.push(arguments[idx]);
+                //}
+            }
+            // 만들어진 배열을 return
+            return result;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

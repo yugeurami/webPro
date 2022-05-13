@@ -1,0 +1,32 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>// 경고창 순서 : 3 - 3 - 3
+       /* for (var i = 0; i < 3; i++) {
+            setTimeout(function () { alert(i); }, 0);
+            // i가 0일 때, alert(i) - 타이머1 생성
+            // i가 1일 때, alert(i) - 타이머2 생성
+            // i가 2일 때, alert(i) - 타이머3 생성
+            // 구동! 따라서 i 값은 3으로 고정
+        }*/
+        /*[0, 1, 2].forEach(function (data, idx) { // 0 - 1 - 2
+            setTimeout(function () {
+                alert(data);
+                // data = 0일 때, alert(data) 타이머 생성
+                // data = 1일 때, alert(data) 타이머 생성
+                // data = 2일 때, alert(data) 타이머 생성
+            }, 0);
+        })*/
+        for (var i = 0; i < 3; i++) {
+            (function ( j ) { setTimeout( function ( ) { alert( j ); }, 0); })( i );
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
