@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var patternNum = /[0-9]/; 
+        var patternEng = /[a-zA-Z]/; 
+        var patternSpc = /[~`!@#$%^&*()-_+=|\\""''{}\[\]?<>,.:;]/;
+        var patternMail = /[a-zA-Z0-9][a-zA-Z0-9_.]+@[a-zA-z]\w+(\.[a-z]+){1,2}/;
+        function chk() {
+            if (frm.name.value.length < 2) {
+                alert('이름은 두글자 이상 입력하셔야합니다');
+                frm.name.focus();
+                return false;
+            }else if (patternNum.test(frm.name.value) || patternSpc.test(frm.name.value)) {
+                alert('이름에는 숫자, 특수문자를 입력하실 수 없습니다');
+                frm.name.focus();
+                return false;
+            } else if (!patternMail.test(frm.mail.value)) {
+                alert('잘못된 이메일 형식입니다');
+                frm.mail.focus();
+                return false;
+            } else if (frm.pw.value.length < 4 || !patternEng.test(frm.pw.value) || !patternSpc.test(frm.pw.value) || !patternNum.test(frm.pw.value)) {
+                alert('비밀번호는 숫자, 영어, 특수문자를 포함해 4글자 이상이어야합니다');
+                frm.pw.value = '';
+                frm.pw.focus();
+                return false;
+            } else if (frm.pw.value != frm.pwchk.value) {
+                alert('비밀번호를 확인하세요');
+                frm.pw.value = '';
+                frm.pwchk.value = '';
+                frm.pw.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <style>
+        *{
+            padding : 0;
+            margin : 0;
+        }
+        form table {
+            width: 300px;
+            height : 280px;
+            margin: 30px auto;
+            padding : 10px 50px;
+            text-align: center;
+            border: 3px solid royalblue;
+            box-sizing: border-box;
+        }
+        form table input {
+            height : 30px;
+            border: 3px solid royalblue;
+            box-sizing: border-box;
+        }
+        form table tr:last-child td{
+            padding : 0 5px;
+        }
+        form table tr:last-child td input {
+            width: 90px;
+            height: 45px;
+            font-size: 1.05em;
+            color : white;
+            border-radius: 10px;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <form name="frm" onsubmit="return chk()">
+        <table>
+            <tr>
+                <td>
+                    <label for="name">이 름</label>
+                </td>
+                <td colspan="2">
+                    <input type="text" name="name" id="name" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="mail">메 일</label>
+                </td>
+                <td colspan="2">
+                    <input type="text" name="mail" id="mail" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="pw">비밀번호</label>
+                </td>
+                <td colspan="2">
+                    <input type="password" name="pw" id="pw" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="pwchk">비밀번호</label>
+                </td>
+                <td colspan="2">
+                    <input type="password" name="pwchk" id="pwchk" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" name="join" id="join" value="회원가입" />
+                </td>
+                <td>
+                    <input type="reset"  value="취소" />
+                </td>
+                <td>
+                    <input type="submit" value="로그인" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
