@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var links = ['https://www.naver.com/', 'https://www.daum.net/', 'https://www.google.com/', 'https://www.youtube.com/premium'];
+        function webLink(num) {
+             location.href = links[num];
+        }
+    </script>
+    <style>
+        table {
+            border : 2px solid lightblue;
+        }
+        table tr:nth-child(2) td{
+            padding : 5px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4"><h1>메뉴</h1></td>
+        </tr>
+        <tr>
+            <td><button onclick="webLink(0)">네이버</button></td>
+            <td><button onclick="webLink(1)">다음</button></td>
+            <td><button onclick="webLink(2)">구글</button></td>
+            <td><button onclick="webLink(3)">유튜브</button></td>
+        </tr>
+    </table>
+</body>
+</html>

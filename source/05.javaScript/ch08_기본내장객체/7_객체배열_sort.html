@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function Student(name, kor, mat) {
+            this.name = name;
+            this.kor = kor;
+            this.mat = mat;
+        }
+        Student.prototype.getSum = function () {
+            return this.kor + this.mat;
+        }
+        Student.prototype.getAvg = function () {
+            return this.getSum() / 2;
+        }
+        Student.prototype.toString = function () {
+            return this.name + '( 국어 : ' + this.kor + ', 수학 : '+ this.mat + ', 총점 : ' + this.getSum() + ', 평균 : ' + this.getAvg() + ')';
+        }
+        var students
+            = [new Student('홍길동', 99, 100),
+                new Student('김길동', 88, 70),
+                new Student('김서동', 30, 85),
+                new Student('서길동', 98, 99),
+                new Student('윤길동', 100, 30),];
+        document.write('<h3>정렬 전 원 데이터</h3>');
+        students.forEach(function (data, idx) {
+            document.write(idx + '번째 : ' + data + '<br>');
+        });
+        originStudents = students; // 정렬 전 데이터를 저장하고 싶으면 다른 변수 할당
+        // 총점기준으로 오름차순 정렬
+        students.sort(function (left, right) {
+            return left.getSum() - right.getSum(); // return 음수면 left가 앞, 양수면 right가 앞
+        });
+        document.write('<hr><h3>총점 기준으로 오름차순 정렬한 데이터</h3>');
+        students.forEach(function (data, idx) {
+            document.write(idx + '번째 : ' + data + '<br>');
+        });
+        //이름 가나다 순으로 정렬
+        document.write('<hr><h3>이름 가나다 순 정렬</h3>');
+        students.sort(function (left, right) {
+            if (left.name < right.name) {
+                return -1; // left가 앞으로
+            } else if (left.name > right.name) {
+                return 1; // right가 앞으로
+            } else if (left.name == right.name) {
+                return 0; // 위치 그대로
+            }
+        });
+        students.forEach(function (data, idx) {
+            document.write(idx + '번째 : ' + data + '<br>');
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
