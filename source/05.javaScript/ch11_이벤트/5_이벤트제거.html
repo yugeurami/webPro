@@ -1,0 +1,33 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        span:nth-child(5n+1){color : red;}
+        span:nth-child(5n+2){color : green;}
+        span:nth-child(5n+3){color : blue;}
+        span:nth-child(5n+4){color : violet;}
+        span:nth-child(5n){color : black;}
+    </style>
+    <script>
+        /* 빨-초-파-보-검*/
+        window.onload = function () {
+            var cnt = 0; //클릭한 횟수
+            document.querySelector('h1').onclick = function () {
+                this.innerHTML += '<span>♥</span>';
+                cnt++;
+                // 클릭 이벤트는 5번만 가능하도록 = cnt가 5이면 이벤트 제거
+                if (cnt == 5) {
+                    this.onclick = null; //이벤트 제거
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <h1>좋아요</h1>
+</body>
+</html>

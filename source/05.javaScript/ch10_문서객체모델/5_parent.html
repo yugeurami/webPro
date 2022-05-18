@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        form {
+            width: 300px;
+            margin: 0px auto;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function childOpen() {
+            var child = open('5_child.html', '', 'width=500 height=100, left=100, top=100');
+        }
+        function join() {
+            var chk = document.getElementById('num').value;
+            if (chk == 1) {
+                alert('가입이 완료됐습니다');
+            } else {
+                alert('아이디 중복확인을 하셔야합니다');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="join()">
+        <p>
+            <label for="id">ID</label>
+            <input type="text" id="id" />
+            <input type="button" onclick="childOpen()" value="제출"/>
+        </p>
+        <p>
+            <input type="submit"  value="아이디사용"/>
+            <input type="hidden" id="num" value="0" />
+        </p>
+    </form>
+</body>
+</html>

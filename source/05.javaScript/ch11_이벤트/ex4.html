@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        img{
+            position : absolute;
+        }
+    </style>
+    <script>
+        window.onclick = function () {
+            document.body.innerHTML = '<img src="img/car.gif"/>';
+            document.body.innerHTML += 'screen 좌표값 : ' + event.screenX + ', ' + event.screenY + '<br>';
+            document.body.innerHTML += 'offset 좌표값 : ' + event.offsetX + ', ' + event.offsetY + '<br>';
+            document.querySelector('img').style.top = event.offsetY + 'px';
+            document.querySelector('img').style.left = event.offsetX + 'px';
+        };
+    </script>
+</head>
+<body>
+    <img src="img/car.gif" />
+</body>
+</html>

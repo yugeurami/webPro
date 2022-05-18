@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        form p{
+            width : 500px;
+            margin : 0 auto;
+            text-align : center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var id = opener.document.getElementById('id').value;
+            document.getElementById('id').setAttribute('value', id);
+        };
+        function idChk() {
+            opener.document.getElementById('id').value = document.getElementById('id').value;
+            opener.document.getElementById('num').setAttribute('value', 1);
+            this.close();
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>
+            <label for="id">아이디</label>
+            <input type="text" id="id" />
+            <input type="button" onclick="idChk()" value="중복확인" />
+        </p>
+    </form>
+</body>
+</html>
