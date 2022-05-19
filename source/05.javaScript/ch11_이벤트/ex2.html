@@ -9,11 +9,15 @@
             var img = document.querySelectorAll('img');
             var oldImg = ["img/0out.jpg", "img/1out.jpg", "img/2out.jpg", "img/3out.jpg"];
             var newImg = ["img/0over.jpg", "img/1over.jpg", "img/2over.jpg", "img/3over.jpg"];
-            var imgnum = img.src
-            function over() {
-          
-            }
-        }
+            for (let i = 0; i < img.length; i++) { //var로 쓰면 i값이 4인 상태라서 for문 안이 실행이 안된다  let을 써야 for문이 끝나면 i가 사라진다
+                img[i].onmouseover = function () {
+                    this.src = newImg[i];
+                };
+                img[i].onmouseout = function () {
+                    this.src = oldImg[i];
+                };
+            }//for
+        };
     </script>
 </head>
 <body>
