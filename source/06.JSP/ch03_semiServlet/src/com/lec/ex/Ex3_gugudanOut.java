@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Ex2_suOutput
+ * Servlet implementation class Ex3
  */
-@WebServlet(description = "sumOut", urlPatterns = { "/Ex2suOut" })
-public class Ex2_suOutput extends HttpServlet {
+@WebServlet("/Ex3")
+public class Ex3_gugudanOut extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Ex2_suOutput() {
+    public Ex3_gugudanOut() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,27 +28,27 @@ public class Ex2_suOutput extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String numStr = request.getParameter("num");
-		if(numStr==null || numStr=="") {
-			numStr = "1";
-		}
-		int num = Integer.parseInt(numStr);
-		int sum = 0;
-		for (int i = 1; i<=num; i++) {
-			sum += i;
-		}
-		response.setContentType("text/html; charset=utf-8");
-		PrintWriter out = response.getWriter();
-		
-		out.print("<h1>1부터 "+num+"까지 누적합은 "+sum+"입니다</h1>");
-		out.close();
+		 int su = Integer.parseInt(request.getParameter("su"));
+		 response.setContentType("text/html; charset=utf-8");
+		 PrintWriter out = response.getWriter();
+		 out.println("<html>");
+		 out.println("<head>");
+		 out.println("<link href=\"/ch03_semiServlet/css/ex3.css\" rel=\"stylesheet\">");
+		 out.println("</head>");
+		 out.println("<body>");
+		 out.println("<h3>"+su+"단 구구단 입니다<h3>");
+		 for(int i = 1; i<10; i++){
+			out.printf("<p>%d *%d = %d<p>", su, i, su*i); 
+		 }
+		 out.println("</body>");
+		 out.println("</html>");
+		 out.close();
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
