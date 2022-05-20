@@ -1,0 +1,26 @@
+package com.test2;
+//(1) Person클래스(슈퍼클래스)의 데이터와 메소드 : id, name / print()이나 infoString()이나 toString() 중 하나, 필요시엔 getter와 setter 메소드 추가
+//
+//(2) Student 클래스(학생)의 데이터와 메소드 : id, name, ban / print()이나 infoString()이나 toString() 중 하나, 필요시엔 getter와 setter 추가
+//
+//(3) Gangsa 클래스(강사)의 데이터와 메소드 : id, name, subject / print()이나 infoString()이나 toString() 중 하나, 필요시엔 getter와 setter 추가
+//
+//(4) Staff 클래스(직원)의 데이터와 메소드 : id, name, department/print()이나 infoString()이나 toString() 중 하나, 필요시엔 getter와 setter 추가
+//(ID)A01 (이름)나학생 (반)JAVA반
+ 
+public class Person {
+	private String id;
+	private String name;
+	public Person(String id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	@Override
+	public String toString() {
+		return "(ID)"+ id + "\t(이름)" + name;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+}
