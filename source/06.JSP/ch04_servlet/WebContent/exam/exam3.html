@@ -3,12 +3,31 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
+	<link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-	<h2>게시판</h2>
-	<form action="Exam3" method="post">
-		<p>제목 : <input type="text" name="title"></p>
-		<p>작성자 : <input type="text" name="name"></p>
+	<form action="../Exam3" method="post">
+		<table>
+			<caption>게시판</caption>
+			<tr>
+				<td>제목</td>
+				<td><input type="text" name="title"></td>
+			</tr>
+			<tr>
+				<td>작성자</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td><textarea name="contents" rows="10"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="글전송" class="btn">
+					<input type="reset" value="초기화" class="btn">
+				</td>
+			</tr>
+		</table>
 	</form>
 </body>
 </html>
