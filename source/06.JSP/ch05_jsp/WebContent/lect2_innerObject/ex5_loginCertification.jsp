@@ -15,14 +15,14 @@
 			String msg = "아이디와 비밀번호를 확인하세요";
 			msg = URLEncoder.encode(msg, "utf-8");
 			response.sendRedirect("ex5_loginFrm.jsp?msg="+msg);
-		} else{
+		} /* else{
 			out.println("<h2>ID는 "+id+"이고<br>비밀번호는"+pw+"입니다<br>반갑습니다");
-		}
+		} */
 	%>
-	<%-- <h2>
+	<h2>
 		ID는 <%=id %>이고<br>
 		비밀번호는 <%=pw %>입니다<br>
 		반갑습니다
-	</h2> --%>
+	</h2> 
 </body>
 </html>
