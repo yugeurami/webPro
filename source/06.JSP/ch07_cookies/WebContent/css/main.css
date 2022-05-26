@@ -1,0 +1,9 @@
+@charset "UTF-8";
+#mainForm_wrap{
+	width : 430px;
+	margin : 0 auto;
+	height : 600px;
+	text-align : center;
+	font-weight : bold;
+	line-height : 660px;
+}
