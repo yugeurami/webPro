@@ -30,6 +30,7 @@
 		String gender = request.getParameter("gender");
 		String email = request.getParameter("email");
 		String[] mailSend = request.getParameterValues("mailSend");
+		session.setAttribute("id", id);
 	%>
 	<jsp:include page="header.jsp"/>
 	<div id="joinForm_wrap">

@@ -23,7 +23,7 @@
 				<li><a href="<%=conPath %>/member/main.jsp">home</a></li>					
 			<%}else{ %>
 				<li><a href="<%=conPath %>/member/logout.jsp">logout</a></li>			
-				<li><a href="<%=conPath %>/member/joinPro.jsp">my page</a></li>			
+				<li><a href="#">my page</a></li>			
 				<li><a href="<%=conPath %>/member/main.jsp"><%=name %>님</a></li>			
 			<%} %>
 		</ul>
