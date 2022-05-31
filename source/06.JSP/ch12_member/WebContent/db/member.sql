@@ -33,4 +33,4 @@ UPDATE MEMBER SET PW='111',
                             BIRTH = '1990-12-01',
                             ADDRESS = '수원'
                             WHERE ID ='aaa';
-
+COMMIT;

@@ -24,10 +24,6 @@ function infoConfirm(){
 		join_frm.name.focus();
 		return;
 	}
-	if(join_frm.tempbirth.value.length==0){
-		alert('생년월일은 필수 입력 사항입니다');
-		join_frm.tempbirth.focus();
-		return;
-	}
+	
 	join_frm.submit(); // 강제로 submit 이벤트 발생
 }
