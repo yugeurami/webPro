@@ -1,0 +1,77 @@
+﻿[﻿﻿브라우저 객체 모델]
+웹 브라우저와 관련된 객체의 집합을 의미한다
+
+<window 객체>
+브라우저 기반 자바 스크립트 최상위 객체
+1. 객체 생성
+//새로운 window 객체 생성
+open(URL, name, features, replace)
+
+(1)URL
+열고자하는 HTML 페이지의 URL
+
+(2) name
+윈도우 간 통신하는 게 사용하는 윈도우 이름 또는 target 속성
+
+(3) features
+윈도우 출력 모양을 지정하는 옵션
+
+
+height	새 윈도우의 높이		px
+width	새 윈도우의 너비		px
+location	주소 입력창의 유무		yes(1), no(0)
+menubar	메뉴의 유무		yes(1), no(0)
+resizable	화면 크기 조절 가능 여부	yes(1), no(0)
+status	상태 표시줄의 유무		yes(1), no(0)
+toolbar	상태 표시줄의 유무		yes(1), no(0)
+
+
+2. 메소드
+window 객체는 형태와 위치를 변경할 수 있다
+
+
+moveBy(x ,y)	윈도우의 위치를 상대적으로 이동
+moveTo(x ,y)	윈도우의 위치를 절대적으로 이동
+resizeBy(x ,y)	윈도우의 크기를 상대적으로 지정
+resizeTo(x ,y)	윈도우의 크기를 절대적으로 지정
+scrollBy(x ,y)	윈도우 스크롤의 위치를 상대적으로 이동
+scrollTo(x ,y)	윈도우 스크롤의 위치를 절대적으로 이동
+focus()		윈도우에 초점을 맞춤
+blur()		윈도우에 초점을 제거
+close()		윈도우 닫기
+
+
+<screen 객체>
+화면 전체와 관련된 객체
+var child = window.open('', '','width=300, height=300');
+    var i = 0;
+    var w = screen.width/2;
+    var h = screen.height/2;
+    child.resizeTo(w, h);
+    child.moveTo(screen.width/4, screen.height/4);
+----------------------------------------------------------------
+스크린 객체를 이용해서 윈도우의 값을 설정해준다
+
+
+<location 객체>
+브라우저의 주소 표시줄과 관련된 객체
+location 객체는 페이지를 이동할 때 많이 사용한다
+
+
+href		문서의 URL 주소
+host		호스트 이름과 포트번호
+hostname	호스트 이름
+port		포트번호
+pathname	디렉토리 경로
+hash		앵커 이름
+search		요청 매개변수
+protocol		프로토콜 종류
+----------------------------------------------------------------
+assign(link)	현재 위치를 이동(뒤로 가기 가능)
+reload()		새로고침
+replace(link)	현재 위치를 이동(뒤로 가기 불가)
+
+location = ‘http://naver.com’;
+location.href = ‘http:///naver.com’;
+location.assign(‘http:///naver.com’);
+location.replace(‘http:///naver.com’);

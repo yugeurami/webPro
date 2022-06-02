@@ -2,12 +2,17 @@ package com.lec.member;
 
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Timestamp;
 
-public class MemberDao {
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
+public class MemberDaoConnPool {
 	public static final int SUCCESS = 1; // 회원가입, 정보 수정 성공시 리턴값
 	public static final int FAIL = 0; // 회원가입, 정보 수정 실패시 리턴값
 	public static final int MEMBER_EXISTENT = 0; // 중복된 ID일 때 리턴값
@@ -15,20 +20,18 @@ public class MemberDao {
 	public static final int LOGIN_SUCCESS = 1; // 로그인 성공시 리턴값
 	public static final int LOGIN_FAIL_ID = -1; // 로그인  아이디 오류일 때 리턴값
 	public static final int LOGIN_FAIL_PW = 0; // 로그인 비밀번호 오류일 때 리턴값
-	private static MemberDao instance; // 자신의 클래스를 참조하는 변수
-	public static MemberDao getInstance() {
-		if(instance==null) {
-			instance = new MemberDao();
-		}
-		return instance;
-	}
-	
-	public MemberDao() {}
 	
 	//conn 객체 리턴하는 함수
-	private Connection getConnection() throws Exception  {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "scott", "tiger");
+	private Connection getConnection() throws SQLException {
+		// 커넥션풀의 DataSource안의 conn 객체 이용
+		Connection conn = null;
+		try {
+			Context ctx = new InitialContext();
+			DataSource ds = (DataSource) ctx.lookup("java:comp/env/jdbc/Oracle11g");
+			conn = ds.getConnection();
+		} catch (NamingException e) {
+			System.out.println("커넥션풀 이름 오류 : " + e.getMessage());
+		}
 		return conn;
 	}
 	
@@ -49,7 +52,7 @@ public class MemberDao {
 			} else {
 				result = MEMBER_NONEXISTENT; // 없는 ID(사용가능한 ID)				
 			}
-		}catch(Exception e) {
+		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}finally {
 			try{
@@ -84,7 +87,7 @@ public class MemberDao {
 			pstmt.setNString(10, dto.getAddress());
 			result = pstmt.executeUpdate();
 			System.out.println(result==SUCCESS? "회원가입성공":"회원가입실패");
-		} catch(Exception e) {
+		} catch(SQLException e) {
 			System.out.println(e.getMessage());
 			System.out.println("회원가입 실패 : "+ dto);
 		}finally {
@@ -119,7 +122,7 @@ public class MemberDao {
 			} else { // 유효하지 않은 아이디
 				result = LOGIN_FAIL_ID;
 			}
-		}catch(Exception e) {
+		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}finally {
 			try{
@@ -157,7 +160,7 @@ public class MemberDao {
 				String 		address = rs.getString("address");
 				dto = new MemberDto(id, pw, name, phone1, phone2, phone3, gender, email, birth, rdate, address);
 			} 
-		}catch(Exception e) {
+		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}finally {
 			try{
@@ -200,7 +203,7 @@ public class MemberDao {
 			pstmt.setString(10, dto.getId());
 			result = pstmt.executeUpdate();
 			System.out.println(result==SUCCESS? "회원정보 수정 성공":"회원정보 수정 실패");
-		} catch(Exception e) {
+		} catch(SQLException e) {
 			System.out.println(e.getMessage());
 			System.out.println("회원정보 수정 실패 : "+ dto);
 		}finally {
