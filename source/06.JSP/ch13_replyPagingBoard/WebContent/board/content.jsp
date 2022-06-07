@@ -32,7 +32,7 @@
 			<td colspan="2">
 				<button onclick="location.href='updateForm.jsp?num=<%=num%>&pageNum=<%=pageNum%>'">수정</button>
 				<button onclick="location.href='deleteForm.jsp?num=<%=num%>&pageNum=<%=pageNum%>'">삭제</button>
-				<button>답변</button>
+				<button onclick="location.href='writeForm.jsp?num=<%=dto.getNum() %>&pageNum=<%=pageNum%>'">답변</button>
 				<button onclick="location.href='list.jsp?pageNum=<%=pageNum%>'">목록</button>
 			</td>
 		</tr>

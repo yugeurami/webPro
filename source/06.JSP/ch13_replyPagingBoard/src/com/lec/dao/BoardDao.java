@@ -313,4 +313,68 @@ public class BoardDao {
 		}
 		return result;
 	}
+	// 8. 답변글 저장전 스텝A(re_step/re_indent 수정):
+	private void preReplyStepA(int ref, int re_step) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "UPDATE BOARD SET RE_STEP = RE_STEP+1 WHERE REF = ? AND RE_STEP > ?";
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, ref);
+			pstmt.setInt(2, re_step);
+			int result = pstmt.executeUpdate();
+			System.out.println(result+"개 조정");
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally{
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			} catch (Exception e2) {
+				System.out.println(e2.getMessage());
+			}
+		}
+	}
+	// 9. 답변글 저장
+	public int reply(BoardDto dto) {
+		int result = FAIL;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		// NUM, WRITER, SUBJECT, CONTENT, EMAIL, PW, REF, RE_STEP, RE_INDENT, IP
+		// 사용자로부터 입력 받을 내용 : WRITER, SUBJECT, CONTENT, EMAIL, PW
+		// 원글에 대한 정보 : REF, RE_STEP, RE_INDENT
+		// 시스템으로부터 구현되어 저장될 정보 : IP
+		String sql = "INSERT INTO BOARD (NUM, WRITER, SUBJECT, CONTENT, EMAIL, PW, REF, RE_STEP, RE_INDENT, IP)" + 
+				"    VALUES ((SELECT NVL(MAX(NUM), 0)+1 FROM BOARD), ?, ?, ?, ?, ?, ?, ?, ?, ? )";
+		preReplyStepA(dto.getRef(), dto.getRe_step()); // 답변글 저장전 step A
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getWriter());
+			pstmt.setString(2, dto.getSubject());
+			pstmt.setString(3, dto.getContent());
+			pstmt.setString(4, dto.getEmail());
+			pstmt.setString(5, dto.getPw());
+			pstmt.setInt(6, dto.getRef());
+			pstmt.setInt(7, dto.getRe_step()+1); //  원글의 re_step+1
+			pstmt.setInt(8, dto.getRe_indent()+1); // 원글의 re_intent+1
+			pstmt.setString(9, dto.getIp());
+			result = pstmt.executeUpdate();
+			// DB에 저장될 dto 내용
+			dto.setRe_step(dto.getRe_step()+1);
+			dto.setRe_indent(dto.getRe_indent()+1);
+			System.out.println(result==SUCCESS ? "답변글 성공 : "+ dto : "답변글 실패 : "+ dto);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally{
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			} catch (Exception e2) {
+				System.out.println(e2.getMessage());
+			}
+		}
+		return result;
+	}
 }

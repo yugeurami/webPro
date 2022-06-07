@@ -15,11 +15,16 @@
 	<%
 		dto.setIp(request.getRemoteAddr()); //요청한 곳의 주소(ip) 불러옴
 		BoardDao dao = BoardDao.getInstance();
-		int result = dao.insertBoard(dto);
+		int result = BoardDao.FAIL;
+		if(dto.getNum()!=0){ // 답변 글
+			result = dao.reply(dto);
+		} else{ // 원글
+			result = dao.insertBoard(dto);
+		}
 		if(result == BoardDao.SUCCESS){%>
 			<script>
 				alert('글쓰기 완료');
-				location.href = 'list.jsp';
+				location.href = 'list.jsp?pageNum=<%=request.getParameter("pageNum")%>';
 			</script>
 	<%	}else{%>
 			<script>
