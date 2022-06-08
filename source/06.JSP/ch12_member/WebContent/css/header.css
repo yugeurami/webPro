@@ -1,0 +1,19 @@
+@charset "UTF-8";
+header{
+	width: 1000px;
+	margin: 0 auto;
+}
+header ul{
+	overflow : hidden;
+}
+header ul li {
+	float : right;
+	list-style : none;
+	padding: 10px 30px;
+}
+header ul li a{
+	text-decoration : none;
+	font-weight: bold;
+	color : black;
+	font-family: 'Barlow', sans-serif;
+}

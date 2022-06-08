@@ -53,8 +53,11 @@
 					}
 					// 답변글일 경우
 					if(dto.getRe_indent()>0){
-						int width = dto.getRe_indent() * 10; 
-						out.println("<img src='"+conPath+"/img/re.gif' width='"+width+" height='10'>");
+						int width = (dto.getRe_indent()-1) * 10; 
+						for(int i = 1; i<=dto.getRe_indent(); i++){
+							out.println("<img src='"+conPath+"/img/level.gif' width='"+width+"' height='10'>");
+						}
+						out.println("<img src='"+conPath+"/img/re.gif' width='10' height='10'>");
 					}
 					out.println("<a href='"+conPath+"/board/content.jsp?num="+dto.getNum()+"&pageNum="+pageNum+"'>"+dto.getSubject()+"</a></td>");
 					out.println("<td>"+dto.getWriter()+"</td>");
