@@ -1,0 +1,25 @@
+[개발 환경 설정]
+﻿1.JDK 설치
+
+2. 이클립스 jee 설치
+Eclipse IDE for EE Developers 설치
+www.eclipse.org
+
+
+3. tomcat
+tomcat.apache.org
+Tomcat 9.0.x zip 파일 다운받아 압축을 푼다
+
+(1) 서버 설정
+No server are available. Click this link to….. 이용하여 server 생성
+Tomcat v9.0 Server at localhost [Stopped, Republish] 생성
+포트 번호 겹치지 않도록 생성하기
+
+(2) 이클립스 한글 코드 설정 바꾸기
+General –Workspace 선택 후 utf-8로
+Web – CSS files 선택 후 Encoding에 utf-8
+Web - HTML 선택 후 Encoding에 utf-8
+Web – JSP 선택 후 Encoding에 utf-8
+
+(3)서버 구동 확인
+http://localhost:8090

@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+body { 
+	background-color: #F2F2F2; 
+	font-size: 9pt;
+}
+#mainForm_wrap{
+	width : 1000px;
+	margin : 30px auto;
+	height : 300px;
+	text-align : center;
+	font-weight : bold;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+table {
+	border: 2px solid #262626; 
+	width:95%; 
+	margin: 10px auto;
+}
+table tr { 
+	background-color:#A6A6A6; 
+	height: 40px;
+}
+table tr:hover { 
+	background-color: #737373;
+	cursor: pointer;
+	color : #F2F2F2;
+}
+table tr:hover a{
+	color : #F2F2F2;
+}
+td, th {
+	text-align: center; 
+	padding:5px; 
+}
+caption {
+	font-size: 20px; 
+	padding:10px;
+}
+h2, b{
+	text-align: center; 
+	color:red;
+}
+a { 
+	text-decoration: none; 
+	color:#0D0D0D
+}
+.nav ul li a{
+	text-decoration : none;
+	font-weight: bold;
+	color : white;
+	font-family: 'Barlow', sans-serif;
+}
+.left{
+	text-align: left;
+}
+.paging {
+	text-align: center;
+}
+input:not(.btn), textarea {
+	width: 90%;
+}
