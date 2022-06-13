@@ -42,6 +42,7 @@ header{
 	float : right;
 	list-style : none;
 	text-align: center;
+	padding: 10px 30px;
 }
 #lnb ul li a{
 	text-decoration : none;

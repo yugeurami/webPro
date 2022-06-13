@@ -120,9 +120,9 @@ public class FileboardDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = "INSERT INTO FILEBOARD (FNUM, CID, FSUBJECT, FCONTENT, FFILENAME, FPW," + 
-				"                FREF, FRE_STEP, FRE_LEVEL, FIP)" + 
+				"                FREF, FRE_STEP, FRE_LEVEL, FIP, FRDATE)" + 
 				"        VALUES (FILEBOARD_SEQ.NEXTVAL, ?, ?, ?, ?, ?," + 
-				"                FILEBOARD_SEQ.CURRVAL, 0, 0, ?);";
+				"                FILEBOARD_SEQ.CURRVAL, 0, 0, ?, SYSDATE)";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -133,6 +133,7 @@ public class FileboardDao {
 			pstmt.setString(5, dto.getFpw());
 			pstmt.setString(6, dto.getFip());
 			result = pstmt.executeUpdate();
+			System.out.println(result==SUCCESS?"성공 :"+dto:"실패 :"+dto);
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		} finally {
@@ -225,14 +226,14 @@ public class FileboardDao {
 				String ffilename = rs.getString("ffilename");
 				String fpw = rs.getString("fpw");
 				int fhit = rs.getInt("fhit");
-				int fret = rs.getInt("fret");
+				int fref = rs.getInt("fref");
 				int fre_step = rs.getInt("fre_step");
 				int fre_level = rs.getInt("fre_level");
 				String fip = rs.getString("fip");
 				Date frdate = rs.getDate("frdate");
 				String cname = rs.getString("cname");
 				String cemail = rs.getString("cemail");
-				dto = new FileboardDto(fnum, cid, fsubject, fcontent, ffilename, fpw, fhit, fret, fre_step, fre_level, fip, frdate, cname, cemail);
+				dto = new FileboardDto(fnum, cid, fsubject, fcontent, ffilename, fpw, fhit, fref, fre_step, fre_level, fip, frdate, cname, cemail);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());

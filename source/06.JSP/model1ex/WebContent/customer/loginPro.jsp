@@ -18,7 +18,7 @@
 		if(result == CustomerDao.SUCCESS){
 			CustomerDto customer = dao.getCustomer(cid);
 			session.setAttribute("customer", customer);
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("../main/main.jsp");
 		}else{
 			response.sendRedirect("login.jsp?msg=error");							
 		}

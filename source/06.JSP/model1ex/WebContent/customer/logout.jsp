@@ -14,7 +14,7 @@
 		CustomerDto name = (CustomerDto)session.getAttribute("customer");		
 		if(session.getAttribute("customer")!=null){
 			session.invalidate();
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("../main/main.jsp");
 		}
 	%>
 </body>

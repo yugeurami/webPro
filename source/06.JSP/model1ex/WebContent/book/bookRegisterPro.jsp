@@ -23,7 +23,7 @@
 	<% 
 		request.setCharacterEncoding("utf-8"); 
 		String path = request.getRealPath("bookImg");
-		int maxSize = 1024*1024*5; // 최대 업로드 용량이 5MB
+		int maxSize = 1024*1024*10; // 최대 업로드 용량이 5MB
 		String[] bimages = {"", ""};
 		MultipartRequest mRequest = null;			
 		try{
@@ -43,10 +43,10 @@
 			if(imgName!=null){
 				InputStream is = null;
 				OutputStream os = null;
-				File serverFile = new File(path+"/"+imgName);
 				try{
+					File serverFile = new File(path+"/"+imgName);
 					is = new FileInputStream(serverFile);
-					os = new FileOutputStream("D:/yujin/webPro/source/06.JSP/model1ex/WebContent/bookImg"+imgName);
+					os = new FileOutputStream("D:/yujin/webPro/source/06.JSP/model1ex/WebContent/bookImg/"+imgName);
 					byte[] bs = new byte[(int)serverFile.length()];
 					while(true){
 						int readbyteCnt = is.read(bs);
@@ -61,8 +61,6 @@
 				}
 			}
 		}
-		
-		// 파일 첨부외 파라미터에서 입력된 정보 get
 		String btitle =  mRequest.getParameter("btitle");
 		int bid = 0;
 		int bprice = Integer.parseInt(mRequest.getParameter("bprice"));
@@ -78,14 +76,14 @@
 	%>
 		<script>
 			alert('책 등록이 성공적으로 이루어졌습니다');
-			history.back();
+			location.href="book_list.jsp";
 		</script>
 	<%
 		}else{
 	%>
 		<script>
 			alert('책 등록에 실패했습니다');
-			location.href="book_list.jsp";
+			history.back();
 		</script>
 	<%
 		}

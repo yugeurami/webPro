@@ -42,7 +42,7 @@
 					<li><a href="<%=conPath %>/book/book_list.jsp">도서보기</a></li>
 				<%}else{ %>
 					<li><a href="<%=conPath %>/book/book_list.jsp">도서보기</a></li>
-					<li><a href="<%=conPath %>/book/bookRegisterForm.jsp.jsp">도서등록</a></li>			
+					<li><a href="<%=conPath %>/book/bookRegisterForm.jsp">도서등록</a></li>			
 				<%} %>
 			</ul>
 		</div>

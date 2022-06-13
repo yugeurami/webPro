@@ -57,6 +57,7 @@ public class FileboardDto {
 		this.cemail = cemail;
 	}
 	
+	
 
 	public int getFnum() {
 		return fnum;

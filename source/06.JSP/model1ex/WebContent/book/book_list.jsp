@@ -33,7 +33,7 @@
 			for(int i = 0 ; i<books.size() ; i++){
 		%>
 			<td>
-				<a href="ontent.jsp?bid=<%=books.get(i).getBid()%>&pageNum=<%=pageNum%>">
+				<a href="content.jsp?bid=<%=books.get(i).getBid()%>&pageNum=<%=pageNum%>">
 					<img src="<%=conPath %>/bookImg/<%=books.get(i).getBimg1() %>" alt="대표"><br>
 					<%=books.get(i).getBtitle() %><br>
 					<%if(books.get(i).getBdiscount()==0){%>
