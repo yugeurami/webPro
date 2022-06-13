@@ -64,6 +64,9 @@
 		String fsubject = mRequest.getParameter("fsubject");
 		String fcontent = mRequest.getParameter("fcontent");
 		String fpw = mRequest.getParameter("fpw");
+		if(ffilename == null){
+			ffilename = mRequest.getParameter("dbfile");
+		}
 		FileboardDao dao = FileboardDao.getInstance();
 		FileboardDto dto = new FileboardDto(fnum, cid, fsubject, fcontent, ffilename, fpw, 0, 0, 0, 0, fip, null);
 		int result = dao.updateContent(dto);

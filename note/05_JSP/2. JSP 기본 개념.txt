@@ -1,0 +1,24 @@
+[JSP]
+동적 웹어플리케이션 컴포넌트
+컴포넌트 : JSP,HTML 등 웹 어플리케이션을 이루는 요소
+클라이언트의 요청에 동적으로 작동하고 응답은 HTML을 이용한다
+JSP는 서블릿으로 변환되어 실행된다(컴파일되면 톰캣서버가 변환함)
+
+Java Resource-src	서블릿과 자바 소스 파일이 위치해야 하는 디렉토리
+WebContent	서블릿과 자바 소스 파일을 제외한 모든 파일이 위치해야 하는 디렉토리
+	WebContent-META-INF		리소스 설정에 관련된 파일(context.xml)이 위치
+	WebContent-WEB-INF		웹 애플리케이션 설정에 관련된 파일(web.xml)이 위치
+	WebContent-WEB-INF-classes	컴파일 된 서블릿 클래스나 자바 클래스들이 위치
+	WebContent-WEB-INF-lib		참조해야 하는 라이브러리(jar) 파일들이 위치
+
+​
+
+1. Context root 
+서버 입장에서 각 프로젝트를 구분해주는 이름
+같은 Context root가 있으면 구동이 안되고 재설치 해야한다
+
+​
+
+​2. JSP 파일의 실행
+JSP 파일은 그 자체로 실행할 수 없기 때문에 java파일로 변환한 후 컴파일 해서 class파일로 만든 후 실행한다
+이 과정에서 파일이 톰캣 폴더로 복사되고 서버가 재부팅 될 때마다 workspace에 있는 폴더들이 복사된다

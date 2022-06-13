@@ -15,7 +15,7 @@
 		int pageNum = Integer.parseInt(request.getParameter("pageNum"));
 	%>
 	<jsp:include page="../main/header.jsp"/>
-	<form action="replyPro.jsp" method="post" enctype="multipart/form-data">
+	<form action="writePro.jsp" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="fnum" value="<%=fnum%>">
 		<input type="hidden" name="pageNum" value="<%=pageNum%>">
 		<table>

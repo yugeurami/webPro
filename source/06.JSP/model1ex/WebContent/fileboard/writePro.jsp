@@ -56,15 +56,35 @@
 				if(os!=null) os.close();
 				if(is!=null) is.close();
 			}
-		}				
-		CustomerDto customer = (CustomerDto)(session.getAttribute("customer"));
-		String cid = customer.getCid();
-		String fsubject = mRequest.getParameter("fsubject");
-		String fcontent = mRequest.getParameter("fcontent");
-		String fpw = mRequest.getParameter("fpw");
-		FileboardDao dao = FileboardDao.getInstance();
-		FileboardDto dto = new FileboardDto(0, cid, fsubject, fcontent, ffilename, fpw, 0, 0, 0, 0, fip, null);
-		int result = dao.insertFileboard(dto);
+		}
+		String fnumStr = mRequest.getParameter("fnum");
+		String pageNumStr = mRequest.getParameter("pageNum");
+		int result = FileboardDao.FAIL;
+		if(fnumStr!=null && pageNumStr!=null){
+			CustomerDto customer = (CustomerDto)(session.getAttribute("customer"));
+			String cid = customer.getCid();
+			int fnum = Integer.parseInt(fnumStr);
+			int pageNum = Integer.parseInt(pageNumStr);
+			String fsubject = mRequest.getParameter("fsubject");
+			String fcontent = mRequest.getParameter("fcontent");
+			String fpw = mRequest.getParameter("fpw");
+			FileboardDao dao = FileboardDao.getInstance();
+			FileboardDto dto = dao.getFileboard(fnum);
+			dto.setCid(cid);
+			dto.setFsubject(fsubject);
+			dto.setFcontent(fcontent);
+			dto.setFpw(fpw);
+			result = dao.reply(dto);
+		} else{
+			CustomerDto customer = (CustomerDto)(session.getAttribute("customer"));
+			String cid = customer.getCid();
+			String fsubject = mRequest.getParameter("fsubject");
+			String fcontent = mRequest.getParameter("fcontent");
+			String fpw = mRequest.getParameter("fpw");
+			FileboardDao dao = FileboardDao.getInstance();
+			FileboardDto dto = new FileboardDto(0, cid, fsubject, fcontent, ffilename, fpw, 0, 0, 0, 0, fip, null);
+			result = dao.insertFileboard(dto);					
+		}
 		if(result == FileboardDao.SUCCESS){
 	%>
 		<script>
