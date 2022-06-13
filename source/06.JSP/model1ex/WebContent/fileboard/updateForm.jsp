@@ -21,7 +21,7 @@
 	<form action="updatePro.jsp" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="fnum" value="<%=fnum%>">
 		<input type="hidden" name="pageNum" value="<%=pageNum%>">
-		<input type="hidden" name="dbfile" value="<%=dto.getFfilename()%>">
+		<input type="hidden" name="dbfile" value="<%= dto.getFfilename() == null ? "" : dto.getFfilename() %>">
 		<table>
 			<caption><%=fnum %>번 글 수정</caption>
 			<tr>
@@ -33,13 +33,13 @@
 			<tr>
 				<th>첨부파일</th>
 				<td>
-					<input type="file" name="file" style="width:30%"><%=dto.getFfilename()!=null ? dto.getFfilename() : "첨부파일 없음" %>
+					<input type="file" name="file" style="width:30%"><%=dto.getFfilename()!= null ? dto.getFfilename() : "첨부파일 없음" %>
 				</td>
 			</tr>
 			<tr>
 				<th>본문</th>
 				<td>
-					<textarea rows="5" cols="20" name="fcontent"><%=dto.getFcontent()%></textarea>
+					<textarea rows="5" cols="20" name="fcontent"><%=dto.getFcontent() == null ? "" : dto.getFcontent()%></textarea>
 				</td>
 			</tr>
 			<tr>
