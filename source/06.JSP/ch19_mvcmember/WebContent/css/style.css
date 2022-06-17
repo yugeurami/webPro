@@ -1,0 +1,18 @@
+@charset "UTF-8";
+table{
+	width : 60%;
+	margin : 30px auto;
+}
+th, td{
+	text-align: center;
+	padding : 10px;
+}
+h2, b{
+	text-align: center;
+}
+a{
+	color : black;
+}
+.paging{
+	text-align: center;
+}

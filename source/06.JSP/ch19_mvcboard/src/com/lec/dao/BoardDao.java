@@ -58,10 +58,10 @@ public class BoardDao {
 				Date bdate = rs.getDate("bdate");
 				int bhit = rs.getInt("bhit");
 				int bgroup = rs.getInt("bgroup");
-				int bsetp = rs.getInt("bsetp");
+				int bstep = rs.getInt("bstep");
 				int bindent = rs.getInt("bindent");
 				String bip = rs.getString("bip");
-				dtos.add(new BoardDto(bid, bname, btitle, bcontent, bdate, bhit, bgroup, bsetp, bindent, bip));
+				dtos.add(new BoardDto(bid, bname, btitle, bcontent, bdate, bhit, bgroup, bstep, bindent, bip));
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -174,10 +174,10 @@ public class BoardDao {
 				Date bdate = rs.getDate("bdate");
 				int bhit = rs.getInt("bhit");
 				int bgroup = rs.getInt("bgroup");
-				int bsetp = rs.getInt("bsetp");
+				int bstep = rs.getInt("bstep");
 				int bindent = rs.getInt("bindent");
 				String bip = rs.getString("bip");
-				dto = new BoardDto(bid, bname, btitle, bcontent, bdate, bhit, bgroup, bsetp, bindent, bip);
+				dto = new BoardDto(bid, bname, btitle, bcontent, bdate, bhit, bgroup, bstep, bindent, bip);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -213,10 +213,10 @@ public class BoardDao {
 				Date bdate = rs.getDate("bdate");
 				int bhit = rs.getInt("bhit");
 				int bgroup = rs.getInt("bgroup");
-				int bsetp = rs.getInt("bsetp");
+				int bstep = rs.getInt("bstep");
 				int bindent = rs.getInt("bindent");
 				String bip = rs.getString("bip");
-				dto = new BoardDto(bid, bname, btitle, bcontent, bdate, bhit, bgroup, bsetp, bindent, bip);
+				dto = new BoardDto(bid, bname, btitle, bcontent, bdate, bhit, bgroup, bstep, bindent, bip);
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -261,7 +261,7 @@ public class BoardDao {
 		int result = FAIL;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		stepA(dto.getBgroup(), dto.getBsetp());
+		stepA(dto.getBgroup(), dto.getBstep());
 		String sql = "INSERT INTO BOARD" + 
 				"        (BID, BNAME, BTITLE, BCONTENT, BGROUP, BSTEP, BINDENT, BIP)" + 
 				"        VALUES(BOARD_SEQ.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)";
@@ -272,7 +272,7 @@ public class BoardDao {
 			pstmt.setString(2, dto.getBtitle());
 			pstmt.setString(3, dto.getBcontent());
 			pstmt.setInt(4, dto.getBgroup());
-			pstmt.setInt(5, dto.getBsetp()+1);
+			pstmt.setInt(5, dto.getBstep()+1);
 			pstmt.setInt(6, dto.getBindent()+1);
 			pstmt.setString(7, dto.getBip());
 			result = pstmt.executeUpdate();

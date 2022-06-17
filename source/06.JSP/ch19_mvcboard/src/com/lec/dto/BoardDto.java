@@ -10,11 +10,11 @@ public class BoardDto {
 	private Date bdate;
 	private int bhit;
 	private int bgroup;
-	private int bsetp;
+	private int bstep;
 	private int bindent;
 	private String bip;
 
-	public BoardDto(int bid, String bname, String btitle, String bcontent, Date bdate, int bhit, int bgroup, int bsetp,
+	public BoardDto(int bid, String bname, String btitle, String bcontent, Date bdate, int bhit, int bgroup, int bstep,
 			int bindent, String bip) {
 		this.bid = bid;
 		this.bname = bname;
@@ -23,7 +23,7 @@ public class BoardDto {
 		this.bdate = bdate;
 		this.bhit = bhit;
 		this.bgroup = bgroup;
-		this.bsetp = bsetp;
+		this.bstep = bstep;
 		this.bindent = bindent;
 		this.bip = bip;
 	}
@@ -84,12 +84,12 @@ public class BoardDto {
 		this.bgroup = bgroup;
 	}
 
-	public int getBsetp() {
-		return bsetp;
+	public int getBstep() {
+		return bstep;
 	}
 
-	public void setBsetp(int bsetp) {
-		this.bsetp = bsetp;
+	public void setBstep(int bstep) {
+		this.bstep = bstep;
 	}
 
 	public int getBindent() {
@@ -111,7 +111,7 @@ public class BoardDto {
 	@Override
 	public String toString() {
 		return "BoardDto [bid=" + bid + ", bname=" + bname + ", btitle=" + btitle + ", bcontent=" + bcontent
-				+ ", bdate=" + bdate + ", bhit=" + bhit + ", bgroup=" + bgroup + ", bsetp=" + bsetp + ", bindent="
+				+ ", bdate=" + bdate + ", bhit=" + bhit + ", bgroup=" + bgroup + ", bsetp=" + bstep + ", bindent="
 				+ bindent + ", bip=" + bip + "]";
 	}
 	

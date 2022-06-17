@@ -46,7 +46,7 @@ SELECT *
 -- 원글 작성하기
 INSERT INTO BOARD 
     (BID, BNAME, BTITLE, BCONTENT, BGROUP, BSTEP, BINDENT, BIP)
-    VALUES(BOARD_SEQ.NEXTVAL, '홍길동', '글3', '-', BOARD_SEQ.CURRVAL, 0, 0, '192.168.10.30');
+    VALUES(BOARD_SEQ.NEXTVAL, '홍길동', '글1', '-', BOARD_SEQ.CURRVAL, 0, 0, '192.168.10.30');
 
 -- BID로 조회수 올리기
 UPDATE BOARD SET BHIT = BHIT+1 WHERE BID = 1;
@@ -62,7 +62,7 @@ SELECT * FROM BOARD WHERE BID = 1;
     -- 답변글 작성
     INSERT INTO BOARD 
         (BID, BNAME, BTITLE, BCONTENT, BGROUP, BSTEP, BINDENT, BIP)
-        VALUES(BOARD_SEQ.NEXTVAL, '김길동', '글1-2', '-', 1, 1, 1, '192.168.10.31');
+        VALUES(BOARD_SEQ.NEXTVAL, '김길동', '글1-3', '-', 1, 1, 1, '192.168.10.31');
         
 -- 글 수정하기
 UPDATE BOARD 
@@ -75,4 +75,17 @@ UPDATE BOARD
 -- 글삭제하기
 DELETE FROM BOARD WHERE BID = 2;
 
+-- 자기의 답변글까지 같이 지우기
+SELECT 
+DELETE FROM BOARD
+  WHERE BID=136 OR   
+            BGROUP = (SELECT *
+                            FROM BOARD B, (SELECT * FROM BOARD WHERE BID=136) A
+                            WHERE B.BGROUP=A.BGROUP) AND
+            BSTEP >= (SELECT MIN(B.BSTEP)
+                            FROM BOARD B, (SELECT * FROM BOARD WHERE BID=136) A
+                            WHERE B.BGROUP=A.BGROUP AND B.BSTEP>A.BSTEP AND B.BINDENT>A.BINDENT) AND
+            BINDENT >= (SELECT MIN(B.BINDENT)
+                                FROM BOARD B, (SELECT * FROM BOARD WHERE BID=136) A
+                                WHERE B.BGROUP=A.BGROUP AND B.BSTEP>A.BSTEP AND B.BINDENT>A.BINDENT);
 COMMIT;
