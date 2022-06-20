@@ -29,8 +29,8 @@ UPDATE MVC_MEMBER
             MPHOTO = 'kang.jpg', 
             MBIRTH = '1981-08-18', 
             MADDRESS = '부산광역시'
-    WHERE MID = 'aaa';
-
+    WHERE MID = 'kang';
+    
 -- 회원리스트
 SELECT * 
     FROM (SELECT ROWNUM RN, A.*

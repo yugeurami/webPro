@@ -9,10 +9,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lec.service.MAllViewService;
+import com.lec.service.MJoinService;
+import com.lec.service.MLoginService;
+import com.lec.service.MLogoutService;
+import com.lec.service.MModifyService;
 import com.lec.service.Service;
 
-@WebServlet("/MemberController")
-public class MemberController extends HttpServlet {
+@WebServlet("*.do")
+public class MController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private boolean join_view = false;
 
@@ -31,8 +36,36 @@ public class MemberController extends HttpServlet {
 		String command = uri.substring(conPath.length());
 		String viewPage = null;
 		Service service = null;
-		if(command.equals("")) {
-			
+		if(command.equals("/joinView.do")) {
+			join_view = true;
+			viewPage = "member/join.jsp";
+		}else if(command.equals("/join.do")) {
+			if(join_view) {
+				service = new MJoinService();
+				service.execute(request, response);
+				join_view = false;
+			}
+			viewPage = "loginView.do";
+		}else if(command.equals("/loginView.do")) {
+			viewPage = "member/login.jsp";
+		}else if(command.equals("/login.do")) {
+			service = new MLoginService();
+			service.execute(request, response);
+			viewPage = "member/main.jsp";
+		}else if(command.equals("/allView.do")) {
+			service = new MAllViewService();
+			service.execute(request, response);
+			viewPage = "member/mAllView.jsp";
+		}else if(command.equals("/modifyView.do")) {
+			viewPage = "member/modify.jsp";
+		}else if(command.equals("/modify.do")) {
+			service = new MModifyService();
+			service.execute(request, response);
+			viewPage = "member/main.jsp";
+		}else if(command.equals("/logout.do")) {
+			service = new MLogoutService();
+			service.execute(request, response);
+			viewPage = "member/main.jsp";
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);

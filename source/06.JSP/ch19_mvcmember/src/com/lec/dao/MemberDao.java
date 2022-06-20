@@ -224,7 +224,7 @@ public class MemberDao {
 				String mpw = rs.getString("mpw");
 				String mname = rs.getString("mname");
 				String memail = rs.getString("memail");
-				String mphoto = rs.getString("memail");
+				String mphoto = rs.getString("mphoto");
 				Date mbirth = rs.getDate("mbirth");
 				String maddress = rs.getString("maddress");
 				Date mrdate = rs.getDate("mrdate");
