@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style></style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('input[name="pwChk"]').keyup(function(){
+				if($(this).val()!=$('input[name="pw"]').val()){
+					$('.result').html('<b>비밀번호가 일치하지 않습니다</b>');
+				}else{
+					$('.result').text('비밀번호가 일치합니다');
+				}
+			});
+			$('form').submit(function(){
+				var resultMsg = $('.result').text().trim();
+				if(resultMsg != '비밀번호가 일치합니다'){
+					alert('비밀번호를 확인하세요');
+					$('input[name="pw"]').val('');
+					$('input[name="pwChk"]').val('');
+					$('.result').html('');
+					$('input[name="pw"]').focus();
+					return false;
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<form action="">
+		<table>
+			<tr>
+				<th>ID</th>
+				<td><input type="text" name="id"></td>
+			</tr>
+			<tr>
+				<th>PW</th>
+				<td><input type="password" name="pw"></td>
+			</tr>
+			<tr>
+				<th>PW</th>
+				<td><input type="password" name="pwChk"></td>
+			</tr>
+			<tr>
+				<td> </td>
+				<td class="result"> </td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="로그인"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

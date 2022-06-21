@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<!-- <script src="js/jquery-3.6.0.min.js"></script> 내 프로젝트 내에 있는 jQuery-->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+			crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			//jQuery 소스
+			$('#p1').click(function(){
+				$(this).html("<b>태그 내용이 바뀜</b>")
+			});
+		});
+		//window.onload = function(){}; 와 같음
+	</script>
+</head>
+<body>
+	<p id="p1">p태그 하나</p>
+</body>
+</html>

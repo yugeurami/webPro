@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('p#msg').html('<b>Hello, jQuery</b>');
+			//$('p#msg').text('<b>Hello, jQuery</b>');
+			var msg = $('#msg').html(); // msg = <b>Hello, jQuery</b>
+			var msg = $('#msg').text(); // msg = Hello, jQuery
+			$('input[name="msg"]').val('Hello, jQuery2');
+			var msg = $('input[name="msg"]').val(); // msg = Hello, jQuery2
+			alert(msg);
+		});
+	</script>
+</head>
+<body>
+	<p id="msg"></p>
+	<p>메세지<input type="text" name="msg"></p>
+</body>
+</html>
