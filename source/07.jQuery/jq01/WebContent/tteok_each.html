@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		td{
+			width : 100px;
+			height : 100px;
+			background-color : #AAFFAA;
+			background-size : cover;
+		}
+		div{
+			width : 300px;
+			text-align : center;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var tteok = Math.ceil(Math.random()*8);
+			$('td').each(function(idx, item){
+				$(item).click(function(){
+					$('td').css('background-color', '#AAFFAA');
+					if(idx==tteok){
+						$(this).css('background-image', 'url("img/dduk.jpg")');
+						$('p').text('축하축하 맞췄어요');
+						$('input').val('축하축하 맞췄어요');
+						$('td').off();
+					} else{
+						$(this).css('background-color', 'red');
+						$('p').text('거기가 아니예요. 비밀인디'+ tteok);
+						$('input').val('거기가 아니예요. 비밀인디'+ tteok);
+					}
+				});			
+			});
+		});
+	</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<div>
+		<p>선택한 답이 맞는지 답뿌리는 곳</p>
+		<input type="text" name="result" value="선택한 답이 맞는지 답뿌리는 곳">
+	</div>
+</body>
+</html>
