@@ -1,0 +1,31 @@
+@charset "UTF-8";
+footer {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+footer div.office_address ul{
+	margin: 15px 20px 20px 20px;
+}
+footer div.office_address ul li{
+	padding:2px;
+	color:gray;
+	font-size: 0.8em;
+	list-style: none;
+}
+footer div.copyright{
+	clear: both;
+	border: 0;
+	width: 1000px;
+	height: 25px;
+	margin: 0 auto;
+	background-color: black;
+	color: white;
+	text-align: center;
+	line-height: 25px;
+	font-size: 0.9em;
+	font-family: 'Barlow', sans-serif;
+}
+a{
+	color : black;
+}
