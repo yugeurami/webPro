@@ -16,7 +16,7 @@
 		$(document).ready(function(){
 			$('#mid').val("${mid }");
 			$('#join').click(function(){
-				location.href="${conPath}/joinView.do"
+				location.href="${conPath}/joinView.do";
 			});
 		});
 	</script>
@@ -33,7 +33,7 @@
 <body>
 	<jsp:include page="../main/header.jsp"/>
 	<div id="login">
-		<form action="" method="post">
+		<form action="${conPath }/login.do" method="post">
 			<table>
 				<tr>
 					<th><label for="mid">ID</label></th>

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 #joinForm_wrap {
-	width:430px; 
+	width:500px; 
 	margin: 10px auto; 
 	border: 1px solid black; 
 	padding:20px;
@@ -21,9 +21,10 @@
 	padding-left:10px;
 }
 #joinForm_wrap table td {
+	text-align : center;
 	width: 300px;
-	}
-.mname, .mid, .mpw, .pwChk, .tempbirth, .memail, .maddress{
+}
+.mname, .mid, .mpw, .pwChk, .tempbirth, .memail, .maddress, .oldpw{
 	border: 1px solid black; 
 	height:20px;	
 	width:95%; 

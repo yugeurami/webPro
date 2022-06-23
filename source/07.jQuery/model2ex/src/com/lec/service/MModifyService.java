@@ -18,13 +18,15 @@ import com.lec.dto.MemberDto;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-public class JoinService implements Service {
+public class MModifyService implements Service {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		String path = request.getRealPath("memberPhoto");
 		int maxSize = 1024*1024; // 사진 업로드 제한 용량 : 1MB
 		String mphoto = ""; // 첨부된 파일이 저장된 이름
+		HttpSession session = request.getSession();
+		MemberDto mdto = (MemberDto) session.getAttribute("member");
 		try {
 			MultipartRequest mRequest = new MultipartRequest(request, path, maxSize, "utf-8", new DefaultFileRenamePolicy());			
 			Enumeration<String> params = mRequest.getFileNames(); 
@@ -33,31 +35,35 @@ public class JoinService implements Service {
 			
 			String mid = mRequest.getParameter("mid");
 			String mpw = mRequest.getParameter("mpw");
+			if(mpw.equals("")) {
+				mpw = mdto.getMpw();
+			}
 			String mname = mRequest.getParameter("mname");
 			String memail = mRequest.getParameter("memail");
 			Date mbirth = null;
 			if(mphoto == null){
-				mphoto = "NOIMG.JPG";
+				mphoto = mdto.getMphoto();
 			}
 			if(!mRequest.getParameter("tempbirth").equals("")) {
-				mbirth = Date.valueOf(mRequest.getParameter("mbirth"));
+				mbirth = Date.valueOf(mRequest.getParameter("tempbirth"));
+			}else {
+				mbirth = mdto.getMbirth();
 			}
 			String maddress = mRequest.getParameter("maddress");
 			MemberDao dao = MemberDao.getInstance();
 			MemberDto dto = new MemberDto(mid, mpw, mname, memail, mphoto, mbirth, maddress, null);
-			int result = dao.join(dto);
+			int result = dao.modify(dto);
 			if(result == MemberDao.SUCCESS) {
-				HttpSession session = request.getSession();
-				session.setAttribute("mid", mid);
-				request.setAttribute("joinResult", "회원가입 성공");
+				session.setAttribute("member", dao.getMember(mid));
+				request.setAttribute("modifyResult", "정보 수정 성공");
 			} else {
-				request.setAttribute("joinErrorMSG", "정보가 너무 길어서 회원가입 실패");
+				request.setAttribute("modifyErrorMSG", "정보가 너무 길어서 수정 실패");
 			}			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		File serverFile = new File(path + "/" + mphoto);
-		if(!mphoto.equals("NOIMG.JPG")) {
+		if(!mphoto.equals(mdto.getMphoto())) {
 			InputStream is = null;
 			OutputStream os = null;
 			try {

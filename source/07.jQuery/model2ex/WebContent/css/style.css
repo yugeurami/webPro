@@ -1,0 +1,27 @@
+@charset "UTF-8";
+table{
+	width : 50%;
+	margin : 30px auto;
+	background-color : black;
+}
+th, td{
+	text-align: center;
+	padding : 10px;
+	background-color : white;
+}
+table tr:hover td{ 
+	background-color: gray;
+	cursor: pointer;
+}
+h2, b{
+	text-align: center;
+}
+a{
+	color : black;
+}
+input:not(.btn), textarea {
+	width: 90%;
+}
+.paging{
+	text-align: center;
+}

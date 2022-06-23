@@ -13,19 +13,22 @@
 	</style>
 	<link href="${conPath}/css/join.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<c:if test="${empty member }">
+		<script>
+			location.href="${conPath}/main.do";
+		</script>
+	</c:if>
 	<script>
 		$(document).ready(function(){
-			$('#mid').keyup(function(){
-				var mid = $('#mid').val();
-				$.ajax({
-					url : '${conPath}/idCheck.do',
-					data : 'mid='+mid,
-					type : 'get',
-					dataType : 'html',
-					success : function(data){
-						$('#idCheckResult').html(data);							
-					}
-				});
+			$('#oldpw').keyup(function(){
+				var oldpw = $('#oldpw').val();
+				if(!oldpw){
+					$('#pwResult').text('비밀번호를 입력해주세요');				
+				}else if(oldpw == ${member.mpw }){
+					$('#pwResult').text('비밀번호가 맞습니다');				
+				}else{
+					$('#pwResult').text('비밀번호가 다릅니다');				
+				}
 			});
 			$('#mpw, #pwChk').keyup(function(){
 				var mpw = $('#mpw').val();
@@ -56,13 +59,10 @@
 				}
 			});
 			$('form').submit(function(){
-				var idCheckResult = $('#idCheckResult').text().trim();
+				var pwResult = $('#pwResult').text().trim();
 				var pwCheckResult = $('#pwCheckResult').text().trim();
 				var emailCheckResult = $('#emailCheckResult').text().trim();
-				if(idCheckResult == '중복된 ID입니다'){
-					alert('사용가능한 ID로 가입하세요');
-					return false;
-				}else if(pwCheckResult == '비밀번호 불일치'){
+				if(pwResult == '비밀번호가 다릅니다' || pwCheckResult == '비밀번호 불일치'){
 					alert('비밀번호가 일치하지 않습니다');
 					return false;
 				}else if(emailCheckResult == '중복된 이메일입니다'){
@@ -71,7 +71,7 @@
 				}
 			});
 			$('input[type=button]').click(function(){
-				location.href="${conPath}/loginView.do"
+				location.href="${conPath}/main.do"
 			});
 		});
 	</script>
@@ -99,79 +99,88 @@
 <body>
 	<jsp:include page="../main/header.jsp"/>
 	<div id="joinForm_wrap">
-		<form action="join.do" method="post" name="frmJoin" enctype="multipart/form-data" >
+		<form action="modify.do" method="post" name="frmJoin" enctype="multipart/form-data" >
 			<table>
-				<caption><h3>회원가입</h3></caption>
+				<caption><h3>회원 정보 수정</h3></caption>
 				<tr>
 					<th><label for="mid">아이디</label></th>
 					<td>
-						<input type="text" name="mid" class="mid" id="mid" autofocus="autofocus" required="required">
+						<input type="text" name="mid" class="mid" id="mid" autofocus="autofocus" readonly="readonly" value="${member.mid }">
+					</td>
+					<td rowspan="3">
+						<img src="${conPath }/memberPhoto/${member.mphoto }" height="200">
+					</td>
+				</tr>
+				<tr>
+					<th><label for="oldpw">비밀번호</label></th>
+					<td>
+						<input type="password" name="oldpw" class="oldpw" id="oldpw" required="required">
 					</td>
 				</tr>
 				<tr>
 					<td></td>
 					<td>
-						<div id="idCheckResult"> &nbsp; </div>
+						<div id="pwResult"> 비밀번호를 입력해주세요 </div>
 					</td>
 				</tr>
 				<tr>
-					<th><label for="mpw">비밀번호</label></th>
-					<td>
-						<input type="password" name="mpw" class="mpw" id="mpw" required="required">
+					<th><label for="mpw">수정할 비밀번호</label></th>
+					<td colspan="2">
+						<input type="password" name="mpw" class="mpw" id="mpw" placeholder="수정 시에만 입력해주세요">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="pwChk">비밀번호 확인</label></th>
-					<td>
-						<input type="password" name="pwChk" id="pwChk" class="pwChk" required="required">
+					<td colspan="2">
+						<input type="password" name="pwChk" id="pwChk" class="pwChk">
 					</td>
 				</tr>
 				<tr>
 					<td></td>
-					<td>
+					<td colspan="2">
 						<div id="pwCheckResult"> &nbsp; </div>
 					</td>
 				</tr>
 				<tr>
 					<th><label for="mname">이름</label></th>
-					<td>
-						<input type="text" name="mname" class="mname" id="mname" required="required">
+					<td colspan="2">
+						<input type="text" name="mname" class="mname" id="mname" required="required" value="${member.mname }">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="memail">이메일</label></th>
-					<td>
-						<input type="text" name="memail" id="memail" class="memail">
+					<td colspan="2">
+						<input type="text" name="memail" id="memail" class="memail" value="${member.memail }">
 					</td>
 				</tr>
 				<tr>
 					<td></td>
-					<td>
+					<td colspan="2">
 						<div id="emailCheckResult"> &nbsp; </div>
 					</td>
 				</tr>
 				<tr>
 					<th>사진</th>
-					<th>
+					<th colspan="2">
 						<input type="file" name="mphoto" id="mphoto" class="mphoto">
 					</th>
 				</tr>
 				<tr>
 					<th><label for="tempbirth">생년월일</label></th>
-					<td>
-						<input type="text" name="tempbirth" class="tempbirth" id="datepicker">
+					<td colspan="2">
+						<input type="text" name="tempbirth" class="tempbirth" id="datepicker" value="${member.mbirth }">
 					</td>
 				</tr>
 				<tr>
 					<th><label for="maddress">주소</label></th>
-					<td>
-						<input type="text" name="maddress" class="maddress" id="maddress">
+					<td colspan="2">
+						<input type="text" name="maddress" class="maddress" id="maddress" value="${member.maddress }">
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2">
-						<input type="submit" value="회원가입" class="joinBtn_style">
-						<input type="button" value="로그인" class="joinBtn_style">
+					<td colspan="3">
+						<input type="submit" value="회원 정보 수정" class="joinBtn_style">
+						<input type="button" value="취소" class="joinBtn_style">
 					</td>
 				</tr>
 			</table>

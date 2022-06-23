@@ -6,63 +6,50 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.sql.Date;
 import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.lec.dao.MemberDao;
+import com.lec.dao.BoardDao;
+import com.lec.dto.BoardDto;
 import com.lec.dto.MemberDto;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
-public class JoinService implements Service {
+public class BoardWriteService implements Service {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		String path = request.getRealPath("memberPhoto");
+		String path = request.getRealPath("freeBoardUp");
 		int maxSize = 1024*1024; // 사진 업로드 제한 용량 : 1MB
-		String mphoto = ""; // 첨부된 파일이 저장된 이름
+		String ffilename = ""; // 첨부된 파일이 저장된 이름
+		HttpSession session = request.getSession();
+		MemberDto mdto = (MemberDto) session.getAttribute("member");
+		String fip = request.getRemoteAddr();
 		try {
 			MultipartRequest mRequest = new MultipartRequest(request, path, maxSize, "utf-8", new DefaultFileRenamePolicy());			
 			Enumeration<String> params = mRequest.getFileNames(); 
 			String param = params.nextElement(); 
-			mphoto = mRequest.getFilesystemName(param);
+			ffilename = mRequest.getFilesystemName(param);
+			System.out.println("파일이름"+ffilename);
+			BoardDao dao = BoardDao.getInstance();
+			String ftitle = mRequest.getParameter("ftitle");
+			String fcontent = mRequest.getParameter("fcontent");
+			int result = dao.writeBoard(new BoardDto(0, mdto.getMid(), mdto.getMname(), ftitle, fcontent, ffilename, null, 0, 0, 0, 0, fip));
+			request.setAttribute("writeResult", result);
 			
-			String mid = mRequest.getParameter("mid");
-			String mpw = mRequest.getParameter("mpw");
-			String mname = mRequest.getParameter("mname");
-			String memail = mRequest.getParameter("memail");
-			Date mbirth = null;
-			if(mphoto == null){
-				mphoto = "NOIMG.JPG";
-			}
-			if(!mRequest.getParameter("tempbirth").equals("")) {
-				mbirth = Date.valueOf(mRequest.getParameter("mbirth"));
-			}
-			String maddress = mRequest.getParameter("maddress");
-			MemberDao dao = MemberDao.getInstance();
-			MemberDto dto = new MemberDto(mid, mpw, mname, memail, mphoto, mbirth, maddress, null);
-			int result = dao.join(dto);
-			if(result == MemberDao.SUCCESS) {
-				HttpSession session = request.getSession();
-				session.setAttribute("mid", mid);
-				request.setAttribute("joinResult", "회원가입 성공");
-			} else {
-				request.setAttribute("joinErrorMSG", "정보가 너무 길어서 회원가입 실패");
-			}			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		File serverFile = new File(path + "/" + mphoto);
-		if(!mphoto.equals("NOIMG.JPG")) {
+		if(ffilename == null) {
+			File serverFile = new File(path + "/" + ffilename);
 			InputStream is = null;
 			OutputStream os = null;
 			try {
 				is = new FileInputStream(serverFile);
-				os = new FileOutputStream("D:\\yujin\\webPro\\source\\07.jQuery\\model2ex\\WebContent\\memberPhoto\\"+mphoto); 
+				os = new FileOutputStream("D:\\yujin\\webPro\\source\\07.jQuery\\model2ex\\WebContent\\freeBoardUp\\"+ffilename); 
 				byte[] bs = new byte[(int)serverFile.length()];
 				while(true) {
 					int readByteCnt = is.read(bs);
