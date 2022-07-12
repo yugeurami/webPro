@@ -1,0 +1,41 @@
+DI(Dependency Injection)
+
+1. 개념
+=의존주입 = 부품조립
+스프링을 이용한 객체 생성과 조립
+
+
+2. 스프링 프로퍼티 설정
+<bean id="이름" class="참조하는Class의 위치"/>
+<bean id="bean이름" class="com.lec.ch02.bmi.MyInfo">
+	<property name="이름" ref="참조하는bean객체명"/> <!-- 다른 빈 객체 참조 -->
+	<property name="객체명" value="값"/> <!--기본데이터-->
+	<property name="객체명"> <!--List 타입데이터-->
+		<list>
+			<value>수영</value>
+			<value>요리</value>
+			<value>독서</value>
+		</list>
+	</property>
+</bean>
+
+
+3. 의존 관계
+- DI를 한국어로 하면 '의존하는 객체를 주입하는 것'이다
+- setter를 위한 주입과 생성자를 통한 주입이 있다
+(1) xml파일을 이용한 의존 주입
+<bean id="studentInfo" class="com.lec.ex.StudentInfo">
+	<!-- <constructor-arg ref="student1"/> -->
+	<constructor-arg>
+		<ref bean="student1"/>
+	</constructor-arg>
+</bean>
+
+(2) java 파일을 이용한 의존 주입
+Student student2 = ctx.getBean(“student2”,Student.class);
+studentInfo.setStudent(student2);
+studentInfo.getStudentInfo();
+
+
+4. 장점
+interface를 통해 타입을 통일 시킬 수 있고 강제로 오버라이드해서 작업을 통일 시킬 수 있다

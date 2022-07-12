@@ -11,11 +11,12 @@
 	<link href="${conPath}/css/style.css" rel="stylesheet">
 	<style></style>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			
-		});
-	</script>
+	<c:if test="${!content.mid eq member.mid }">
+		<script>
+			alert('권한이 없습니다');
+			location.href="${conPath }/loginView.do"
+		</script>
+	</c:if>
 </head>
 <body>
 	<jsp:include page="../main/header.jsp"/>

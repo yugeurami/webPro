@@ -145,7 +145,7 @@ public class BoardDao {
 	public void hitup(int fid) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		String sql = "UPDATE FILEBOARD SET FHIT = FHIT +1 WHERE FID = 1";
+		String sql = "UPDATE FILEBOARD SET FHIT = FHIT +1 WHERE FID = ?";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -247,7 +247,7 @@ public class BoardDao {
 			pstmt.setInt(4, dto.getFgroup());
 			pstmt.setInt(5, dto.getFstep()+1);
 			pstmt.setInt(6, dto.getFindent()+1);
-			pstmt.setString(5, dto.getFip());
+			pstmt.setString(7, dto.getFip());
 			result = pstmt.executeUpdate();
 			System.out.println(result == SUCCESS ? "답변글 작성 성공" : "답변글 작성 실패");
 		} catch (SQLException e) {
