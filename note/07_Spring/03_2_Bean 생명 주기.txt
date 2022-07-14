@@ -1,0 +1,82 @@
+﻿
+Spring 컨테이너
+
+컨테이너는 객체를 미리 생성해서 담아두는 것이다
+
+
+생명 주기
+
+
+//﻿1. 생성
+GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
+﻿
+//2. 설정
+ctx.load(“classpath:applicationCTX.xml”); 
+ctx.refresh();
+
+//3. 사용
+Student st = ctx.getBean(“student”,Student.class); st.getName();
+
+//4. 소멸(자원해제)
+ctx.close();﻿
+내용을 입력하세요.
+
+Spring Bean
+
+개념
+
+컨테이너가 관리하는 자바 객체
+
+
+
+범위(scope)
+
+객체가 어디까지 영향을 미치는 지 결정하는 것
+
+
+1. Singletone
+
+컨테이너에서 한 번 생성한다
+
+하나만 생성되기 때문에 동일한 것을 참조한다
+
+기본적으로 모든 bean은 Singletone이다
+
+
+2. Prototype
+
+모든 요청에 새로운 객체를 생성한다
+
+의존성 관계의 bean에 주입될 때 새로운 객체가 생성되어 주입된다
+
+
+
+생명 주기
+
+1.인터페이스를 이용한 생명 주기
+
+(1) 생명 주기
+
+EnvironmentAware를 implements 하면 setEnvironment() 가 생성된다
+
+setEnvironment()는 빈이 만들어지기 전에 수행되며 환경 변수에 대한 변경이 있을 때만 호출된다
+
+
+(2) 생명 주기 관리
+
+InitializingBean/DisposableBean을 implements하면
+
+각각 afterPropertiesSet()과 destroy()가 생성되는데
+
+afterPropertiesSet()는 빈 초기화 과정,
+
+destroy() 빈 소멸 과정에서 호출된다
+
+
+2. 어노테이션(@)을 이용한 생명 주기 관리
+
+(1) @PostConstruct : 빈이 생성되고 바로 호출
+
+(2) @PreDestroy : 빈이 소멸되기 바로 직전에 호출
+
+﻿

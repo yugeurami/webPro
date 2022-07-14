@@ -1,0 +1,6 @@
+[﻿﻿DI(Dependency Injection) 자동 설정]
+
+<객체 간 의존 자동 연결>
+DI의 자동 설정은 XML 파일을 이용하면 가능하다
+의존하는 클래스에 @Autowired를 사용해서 연결해준다
+XML 파일에서 <context:annotation-config/> 를 추가해서 @를 읽도록 만든다
