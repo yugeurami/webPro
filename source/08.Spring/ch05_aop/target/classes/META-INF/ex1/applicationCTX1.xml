@@ -25,5 +25,21 @@
 			<aop:pointcut expression="within(com.lec.ch05.ex1.*)" id="aroundM"/>
 			<aop:around method="aroundAdvice" pointcut-ref="aroundM"/>
 		</aop:aspect>
+		<aop:aspect id="beforeAspect" ref="proxyClass">
+			<aop:pointcut expression="execution(* com.lec.ch05.ex1.Worker.get*() )" id="beforeM"/>
+			<aop:before method="beforeAdvice" pointcut-ref="beforeM"/>
+		</aop:aspect>
+		<aop:aspect id="afterAspect" ref="proxyClass">
+			<aop:pointcut expression="bean(stud*)" id="afterM"/>
+			<aop:after method="afterAdvice" pointcut-ref="afterM"/>
+		</aop:aspect>
+		<aop:aspect id="afterReturn" ref="proxyClass">
+			<aop:pointcut expression="within(com.lec.ch05.ex1.*)" id="afterReturn"/>
+			<aop:after-returning method="afterReturningAdvice" pointcut-ref="afterReturn"/>
+		</aop:aspect>
+		<aop:aspect id="afterThrow" ref="proxyClass">
+			<aop:pointcut expression="execution(void com.lec.ch05.ex1.Student.*() )" id="afterThrow"/>
+			<aop:after-throwing method="afterThrowingAdvice" pointcut-ref="afterThrow"/>
+		</aop:aspect>
 	</aop:config>
 </beans>

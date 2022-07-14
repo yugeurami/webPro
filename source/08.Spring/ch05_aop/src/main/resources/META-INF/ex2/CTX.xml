@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+	<aop:aspectj-autoproxy/> <!-- 프록시 클래스에 aop 어노테이션을 사용하겠다 -->
+	<bean id="proxyClass2" class="com.lec.ch05.ex2.ProxyClass2"/>
+	
+	<bean id="student" class="com.lec.ch05.ex2.Student2">
+		<property name="name" value="이학생"/>
+		<property name="age" value="18"/>
+		<property name="gradeNum" value="2"/>
+		<property name="classNum" value="3"/>
+	</bean>
+	
+	<bean id="worker" class="com.lec.ch05.ex2.Worker2">
+		<property name="name" value="김일꾼"/>
+		<property name="age" value="28"/>
+		<property name="job" value="개발자"/>
+	</bean>
+
+</beans>
