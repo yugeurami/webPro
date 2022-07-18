@@ -1,0 +1,53 @@
+[AOP(Aspect Oriented Programming)]
+
+{개념}
+핵심 기능과 공통 기능을 분리시켜 놓고 공통 기능을 필요로 하는 핵심 기능들에서 사용하는 방식
+공통 기능을 모든 모듈에 적용하기 위한 방법 중 하나
+상속을 통한 방법도 있으나 JAVA에서는 다중 상속이 불가하다는 한계가 있다
+이를 극복하기 위해 AOP가 등장했다
+
+
+{용어}
+Aspect		공통 기능
+Advice		공통 기능을 구현한 객체 메소드
+Join Point	핵심 기능, 공통 기능을 적용할 수 있는 대상
+PointCuts		Join Point의 부분으로 실제 Advice를 적용해야 되는 부분
+Proxy		Advice가 적용됐을 때 만들어지는 객체
+Weaving		Advice와 target이 결합되어서 프록시 객체를 만드는 과정
+
+
+{구현}
+Proxy를 이용하여 구현한다
+
+{Weaving의 방식}
+1. XML을 이용
+Pom.xml에서 의존 설정
+Proxy Class 제작(공통 기능 Class 제작 - Advice 역할)
+
+2. @Aspect 어노테이션을 이용
+의존 설정
+@Aspect 어노테이션을 이용해 Aspect Class 제작
+XML설정 파일에 <aop:aspectj-autoproxy/>설정
+
+
+{Advice의 종류}
+<aop:before> 		핵심기능 메소드 실행 전에 advice 실행
+<aop:after-returning> 	정상적으로 핵심기능 메소드 실행 후에 advice 실행
+<aop:after-throwing> 	핵심기능 메소드 실행 중 exception 발생시 advice 실행
+<aop:after> 		핵심기능 메소드 실행 후( exception이 발생여부에 상관없이 반드시 ) advice 실행
+<aop:around> 		핵심기능 메소드 실행 전/후 및 exception 발생시 advice 실행 (가장 광범위하게 사용)
+
+{AspectJ Pointcut 표현식}
+Pointcut을 지정할 때 사용하는 표현식으로 AspectJ 문법을 사용한다
+*	모든
+.	현재
+..	0개 이상
+
+1. execution
+@Pointcut("execution(메소드)") 
+
+2. within
+@Pointcut("within(클래스)")
+
+3. bean
+@Pointcut("bean(빈의 이름)")
