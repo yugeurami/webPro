@@ -19,6 +19,7 @@ Weaving		Advice와 target이 결합되어서 프록시 객체를 만드는 과�
 {구현}
 Proxy를 이용하여 구현한다
 
+
 {Weaving의 방식}
 1. XML을 이용
 Pom.xml에서 의존 설정
@@ -36,6 +37,7 @@ XML설정 파일에 <aop:aspectj-autoproxy/>설정
 <aop:after-throwing> 	핵심기능 메소드 실행 중 exception 발생시 advice 실행
 <aop:after> 		핵심기능 메소드 실행 후( exception이 발생여부에 상관없이 반드시 ) advice 실행
 <aop:around> 		핵심기능 메소드 실행 전/후 및 exception 발생시 advice 실행 (가장 광범위하게 사용)
+
 
 {AspectJ Pointcut 표현식}
 Pointcut을 지정할 때 사용하는 표현식으로 AspectJ 문법을 사용한다
