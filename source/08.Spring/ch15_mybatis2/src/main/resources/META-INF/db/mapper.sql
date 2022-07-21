@@ -5,8 +5,15 @@ SELECT * FROM DEPT;
 SELECT * 
     FROM (SELECT ROWNUM RN, A.* 
                 FROM (SELECT * FROM EMP ORDER BY EMPNO) A)
+    WHERE RN BETWEEN 1 AND 10;
+-- Emp.xml ID=empDeptList
+SELECT * 
+    FROM (SELECT ROWNUM RN, A.*
+                 FROM (SELECT E.*, DNAME, LOC 
+                            FROM EMP E, DEPT D
+                            WHERE E.DEPTNO=D.DEPTNO ORDER BY EMPNO) A)
     WHERE RN BETWEEN 6 AND 10;
-
+    
 -- EMP.XML ID=totCnt
 SELECT COUNT(*) CNT FROM EMP;
 
@@ -34,11 +41,3 @@ UPDATE EMP
 
 -- emp.xml ID=delete
 DELETE FROM EMP WHERE EMPNO = 9000;
-
--- EmpDept.xml ID=dmpDeptList
-SELECT * 
-    FROM (SELECT ROWNUM RN, A.*
-                 FROM (SELECT EMPNO, ENAME, DNAME, LOC 
-                            FROM EMP E, DEPT D
-                            WHERE E.DEPTNO=D.DEPTNO ORDER BY EMPNO) A)
-    WHERE RN BETWEEN 6 AND 10;

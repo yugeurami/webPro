@@ -1,4 +1,4 @@
-package com.lec.ch15.dto;
+package com.lec.ch15.model;
 
 import lombok.Data;
 
