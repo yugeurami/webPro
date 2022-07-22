@@ -1,9 +1,8 @@
 package com.lec.ch15.service;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 import java.util.List;
 
-import org.mybatis.spring.batch.MyBatisPagingItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -82,7 +81,7 @@ public class EmpServiceImpl implements EmpService {
 			emp.setEname("홍"+i);
 			emp.setJob("IT");
 			emp.setMgr(7566);
-			emp.setHiredate(Timestamp.valueOf("2022-07-24 14:00:00"));
+			emp.setHiredate(Date.valueOf("2022-07-24"));
 			emp.setSal(i);
 			emp.setComm(i/10);
 			emp.setDeptno(40);
