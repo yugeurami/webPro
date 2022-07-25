@@ -43,20 +43,23 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public int write(Board board) {
+	public int write(Board board, HttpServletRequest request) {
+		board.setBip(request.getLocalAddr());
 		return boardDao.write(board);
 	}
 
 	@Override
-	public int reply(Board board) {
+	public int reply(Board board, HttpServletRequest request) {
 		boardDao.stepA(board);
+		board.setBip(request.getLocalAddr());
 		board.setBstep(board.getBstep()+1);
 		board.setBindent(board.getBindent()+1);
 		return boardDao.reply(board);
 	}
 
 	@Override
-	public int modify(Board board) {
+	public int modify(Board board, HttpServletRequest request) {
+		board.setBip(request.getLocalAddr());
 		return boardDao.modify(board);
 	}
 

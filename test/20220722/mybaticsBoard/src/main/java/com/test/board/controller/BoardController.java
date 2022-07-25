@@ -43,8 +43,7 @@ public class BoardController {
 	
 	@RequestMapping(value = "write", method = RequestMethod.POST)
 	public String write(Board board, Model model, HttpServletRequest request) {
-		board.setBip(request.getLocalAddr());
-		model.addAttribute("writeResult", boardService.write(board));
+		model.addAttribute("writeResult", boardService.write(board, request));
 		return "forward:list.do";
 	}
 	
@@ -56,8 +55,7 @@ public class BoardController {
 	
 	@RequestMapping(value = "modify", method = RequestMethod.POST)
 	public String modify(Board board, Model model, HttpServletRequest request) {
-		board.setBip(request.getLocalAddr());
-		model.addAttribute("modifyResult", boardService.modify(board));
+		model.addAttribute("modifyResult", boardService.modify(board, request));
 		return "forward:content.do";
 	}
 	
@@ -70,7 +68,7 @@ public class BoardController {
 	@RequestMapping(value = "reply", method = RequestMethod.POST)
 	public String reply(Board board, Model model, HttpServletRequest request) {
 		board.setBip(request.getLocalAddr());
-		model.addAttribute("replyResult", boardService.reply(board));
+		model.addAttribute("replyResult", boardService.reply(board, request));
 		return "forward:list.do";
 	}
 	

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lec.ch19.dao.MemberDao">
+	<resultMap type="Member" id="MemberResult">
+		<result property="mid" column="mid"/>
+		<result property="mpw" column="mpw"/>
+		<result property="mname" column="mname"/>
+		<result property="mmail" column="mmail"/>
+		<result property="mpost" column="mpost"/>
+		<result property="maddr" column="maddr"/>
+	</resultMap>
+	
+	<select id="idConfirm" parameterType="String" resultType="Member">
+		SELECT * FROM MEMBER WHERE mID = #{mid}
+	</select>
+	
+	<select id="getMemberDto" parameterType="String" resultType="Member">
+		SELECT * FROM MEMBER WHERE mID = #{mid}
+	</select>
+	
+	<insert id="joinMember" parameterType="Member">
+		INSERT INTO MEMBER VALUES (#{mid}, #{mpw}, #{mname}, #{mmail}, #{mpost}, #{maddr})
+	</insert>	
+	
+	<update id="modifyMember" parameterType="Member">
+		UPDATE MEMBER 
+        SET mPW = #{mpw},
+            mNAME = #{mname},
+            mMAIL = #{mmail},
+            mPOST = #{mpost},
+            mADDR = #{maddr}
+        WHERE mID = #{mid}
+	</update>
+	
+</mapper>
