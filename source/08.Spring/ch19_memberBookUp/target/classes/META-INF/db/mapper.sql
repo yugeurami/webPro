@@ -20,12 +20,19 @@
         FROM (SELECT ROWNUM RN, A.*
                     FROM (SELECT * FROM BOOK ORDER BY bRDATE DESC) A);
     -- bookList
-    SELECT * 
-        FROM (SELECT ROWNUM RN, A.*
-                    FROM (SELECT * FROM BOOK ORDER BY bTITLE) A)
-        WHERE RN BETWEEN 1 AND 5;
+      SELECT * 
+            FROM (SELECT ROWNUM RN, A.*
+                        FROM (SELECT * FROM BOOK 
+                                    WHERE 1=1
+                                     AND bTITLE LIKE '%'||'김'||'%'
+                                    OR bWRITER LIKE '%'||'김'||'%'
+                                    ORDER BY bTITLE) A)
+            WHERE RN BETWEEN 1 AND 5;
     -- totCntBook
-    SELECT COUNT(*) CNT FROM BOOK;
+    SELECT COUNT(*) CNT FROM BOOK
+        WHERE 1=1
+        AND bTITLE LIKE '%'||'김'||'%'
+        OR bWRITER LIKE '%'||'김'||'%';
     -- getDetailBook
     SELECT * FROM BOOK WHERE bNUM = 1;
     -- registerBook

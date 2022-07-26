@@ -8,8 +8,8 @@ import com.lec.ch19.dto.Book;
 
 public interface BookService {
 	public List<Book> mainList();
-	public List<Book> bookList(String pageNum);
-	public int totCntBook();
+	public List<Book> bookList(String pageNum, String schItem, String schWord);
+	public int totCntBook(String schItem, String schWord);
 	public Book getDetailBook(int bnum);
 	public int registerBook(MultipartHttpServletRequest mRequest ,Book book);
 	public int modifyBook(MultipartHttpServletRequest mRequest, Book book);

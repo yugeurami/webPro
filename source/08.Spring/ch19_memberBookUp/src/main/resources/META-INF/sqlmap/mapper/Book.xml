@@ -20,7 +20,19 @@
 	<select id="bookList" parameterType="Book" resultMap="BookResult">
 		SELECT * 
         FROM (SELECT ROWNUM RN, A.*
-                    FROM (SELECT * FROM BOOK ORDER BY bTITLE) A)
+                    FROM (SELECT * FROM BOOK 
+                    		WHERE 1 = 1
+                    		<if test="schItem == 'all'">
+				    	    	AND UPPER(bTITLE) LIKE '%'||UPPER(#{schWord})||'%'
+				    	        OR UPPDER(bWRITER) LIKE '%'||UPPER(#{schWord})||'%'
+				        	</if>
+				        	<if test="schItem == 'btitle'">
+				    	    	AND UPPER(bTITLE) LIKE '%'||UPPER(#{schWord})||'%'
+				        	</if>
+				        	<if test="schItem == 'bwriter'">
+				    	        AND UPPDER(bWRITER) LIKE '%'||UPPER(#{schWord})||'%'
+				        	</if>
+                    		ORDER BY bTITLE) A)
         WHERE RN BETWEEN #{startRow} AND #{endRow}
 	</select>
 	
@@ -28,26 +40,37 @@
 		SELECT * FROM BOOK WHERE bNUM = #{bnum}
 	</select>
 	
-	<select id="totCntBook" resultType="int">
+	<select id="totCntBook" parameterType="Book" resultType="int">
 		SELECT COUNT(*) CNT FROM BOOK
+			WHERE 1 = 1
+           		<if test="schItem == 'all'">
+	    	    	AND UPPER(bTITLE) LIKE '%'||UPPER(#{schWord})||'%'
+	    	        OR UPPDER(bWRITER) LIKE '%'||UPPER(#{schWord})||'%'
+	        	</if>
+	        	<if test="schItem == 'btitle'">
+	    	    	AND UPPER(bTITLE) LIKE '%'||UPPER(#{schWord})||'%'
+	        	</if>
+	        	<if test="schItem == 'bwriter'">
+	    	        AND UPPDER(bWRITER) LIKE '%'||UPPER(#{schWord})||'%'
+	        	</if>
 	</select>
 	
 	<insert id="registerBook" parameterType="Book">
 		INSERT INTO BOOK
-		<if test=" bimg1 != null and bimg2 != null">
-			 (bNUM, bTITLE, bWRITER, bRADATE, bIMG1, bIMG2, bINFO)
+		<if test=" bimg1 != '' and bimg2 != ''">
+			 (bNUM, bTITLE, bWRITER, bRDATE, bIMG1, bIMG2, bINFO)
 			 VALUES	(BOOK_SQ.NEXTVAL, #{btitle}, #{bwriter}, #{brdate}, #{bimg1}, #{bimg2}, #{binfo})
 		</if>
-		<if test="bimg1 == null and bimg2 != null">
-			 (bNUM, bTITLE, bWRITER, bRADATE, bIMG2, bINFO)
+		<if test="bimg1 == '' and bimg2 != ''">
+			 (bNUM, bTITLE, bWRITER, bRDATE, bIMG2, bINFO)
 			 VALUES	(BOOK_SQ.NEXTVAL, #{btitle}, #{bwriter}, #{brdate}, #{bimg2}, #{binfo})
 		</if>
-		<if test="bimg1 != null and bimg2 == null">
-			 (bNUM, bTITLE, bWRITER, bRADATE, bIMG1, bINFO)
+		<if test="bimg1 != '' and bimg2 == ''">
+			 (bNUM, bTITLE, bWRITER, bRDATE, bIMG1, bINFO)
 			 VALUES	(BOOK_SQ.NEXTVAL, #{btitle}, #{bwriter}, #{brdate}, #{bimg1}, #{binfo})
 		</if>
-		<if test="bimg1 == null and bimg2 == null">
-			 (bNUM, bTITLE, bWRITER, bRADATE, bINFO)
+		<if test="bimg1 == '' and bimg2 == ''">
+			 (bNUM, bTITLE, bWRITER, bRDATE, bINFO)
 			 VALUES	(BOOK_SQ.NEXTVAL, #{btitle}, #{bwriter}, #{brdate}, #{binfo})
 		</if>
 	</insert>
@@ -57,9 +80,9 @@
        		bTITLE = #{btitle},
             bWRITER = #{bwriter},
             bRDATE = #{brdate},
-            <if test="bimg1 != null and bimg1 = ''">bIMG1 = #{bimg1},</if>
-            <if test="bimg2 != null and bimg2 = ''">bIMG2 = #{bimg2},</if>
+            <if test="bimg1 != ''">bIMG1 = #{bimg1},</if>
+            <if test="bimg2 != ''">bIMG2 = #{bimg2},</if>
             bINFO = #{binfo}
-        WHERE bNUM = #{bnum};
+        WHERE bNUM = #{bnum}
 	</update>
 </mapper>

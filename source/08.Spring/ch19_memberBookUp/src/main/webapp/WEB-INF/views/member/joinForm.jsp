@@ -47,34 +47,34 @@
 			<tr>
 				<td>아이디</td>
 				<td>
-					<input type="text" name="mid" id="mid">
+					<input type="text" name="mid" id="mid" required="required">
 					<input type="button" class="idconfirm" value="중복확인"><br>
 					<span id="idConfirmMsg"></span>
 				</td>
 			</tr>
 			<tr>
 				<td>비밀번호</td>
-				<td><input type="password" name="mpw"></td>
+				<td><input type="password" name="mpw" required="required"></td>
 			</tr>
 			<tr>
 				<td>이름</td>
-				<td><input type="text" name="mname"></td>
+				<td><input type="text" name="mname" required="required"></td>
 			</tr>
 			<tr>
 				<td>메일</td>
-				<td><input type="text" name="mmail"></td>
+				<td><input type="text" name="mmail" required="required"></td>
 			</tr>
 			<tr>
 				<td>우편번호</td>
 				<td>
-					<input type="text" id="sample4_postcode" name="mpost" class="text_box"  placeholder="우편번호">
+					<input type="text" id="sample4_postcode" name="mpost" class="text_box"  placeholder="우편번호" required="required">
 					<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
 				</td>
 			</tr>
 			<tr>
 				<td>주소</td>
 				<td>
-					<input type="text" id="sample4_roadAddress" name="maddr"  placeholder="도로명주소">
+					<input type="text" id="sample4_roadAddress" name="maddr"  placeholder="도로명주소" required="required">
 					<input type="hidden" id="sample4_jibunAddress" placeholder="지번주소">
 					<span id="guide"></span>
 				</td>

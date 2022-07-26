@@ -3,7 +3,7 @@
 #content tr {background-color: #FFE271; }
 #content tr:HOVER { background-color: orange; cursor: pointer; }
 #content td, #content th { text-align: center; padding: 5px;}
-#content caption { font-size: 1.3em; text-align: center;}
+#content caption { font-size: 1.5em; text-align: center;}
 #content h2 {text-align: center; color:red;}
 #content div { text-align: center; }
 #content .left { text-align: left; }

@@ -31,14 +31,19 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public int totCntBook() {
-		return bookDao.totCntBook();
+	public int totCntBook(String schItem, String schWord) {
+		Book book = new Book();
+		book.setSchItem(schItem);
+		book.setSchWord(schWord);
+		return bookDao.totCntBook(book);
 	}
 	
 	@Override
-	public List<Book> bookList(String pageNum) {
-		Paging paging = new Paging(bookDao.totCntBook(), pageNum);
+	public List<Book> bookList(String pageNum, String schItem, String schWord) {
 		Book book = new Book();
+		book.setSchItem(schItem);
+		book.setSchWord(schWord);
+		Paging paging = new Paging(bookDao.totCntBook(book), pageNum);
 		book.setStartRow(paging.getStartRow());
 		book.setEndRow(paging.getEndRow());
 		return bookDao.bookList(book);
@@ -91,7 +96,7 @@ public class BookServiceImpl implements BookService {
 			String param = params.next();
 			MultipartFile mFile = mRequest.getFile(param); // 파라미터에 첨부된 파일 객체
 			bimg[idx] = mFile.getOriginalFilename();
-			if(bimg[idx]!=null && !bimg[idx].equals("")) {
+			if(bimg[idx]!= null && !bimg[idx].equals("")) {
 				if(new File(uploadPath + bimg[idx]).exists()) {
 					// 첨부한 파일 이름과 같은 이름의 파일 서버 존재 여부
 					bimg[idx] = System.currentTimeMillis() + "_" + bimg[idx];
@@ -110,12 +115,12 @@ public class BookServiceImpl implements BookService {
 		} // while
 		book.setBimg1(bimg[0]);
 		book.setBimg2(bimg[1]);
+		System.out.println("서비스단 : " + book);
 		return bookDao.modifyBook(book);
 	}
 	
 	private boolean fileCopy(String serverFile, String backupFile) {
 		boolean isCopy = false;
-		// 복사
 		FileInputStream is = null;
 		FileOutputStream os = null;
 		try {
