@@ -5,10 +5,11 @@ body {
 }
 #mainForm_wrap{
 	width : 1000px;
-	margin : 30px auto;
-	height : 300px;
+	margin : 0px auto;
 	font-weight : bold;
 	font-family: 'Noto Sans KR', sans-serif;
+	background-color: white;
+	overflow: hidden;
 }
 table {
 	border: 2px solid #262626; 
